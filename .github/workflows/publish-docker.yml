@@ -2,6 +2,9 @@ name: Publish Docker
 on:
   push:
     branches: [main, '*-public-docker']
+permissions:
+  contents: read
+  packages: write
 jobs:
   discover:
     runs-on: ubuntu-latest
