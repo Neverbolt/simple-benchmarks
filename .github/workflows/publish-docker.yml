@@ -1,0 +1,53 @@
+name: Publish Docker
+on:
+  push:
+    branches: [main, '*-public-docker']
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out
+        uses: actions/checkout@v4
+        with:
+          submodules: recursive
+
+      - name: Log in to GitHub Container Registry
+        uses: docker/login-action@v3
+        with:
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Build and push Docker images for each service
+        run: |
+          IMAGE_PREFIX="ghcr.io/$(echo '${{ github.repository }}' | tr '[:upper:]' '[:lower:]')"
+          TIMESTAMP=$(date +'%Y%m%d%H%M%S')
+
+          echo "Publishing Docker images with prefix $IMAGE_PREFIX at $TIMESTAMP"
+
+          for dir in */ ; do
+            [ ! -d "$dir" ] && continue
+
+            DOCKERFILE_PATH="${dir}Dockerfile"
+            if [ -f "$DOCKERFILE_PATH" ]; then
+              FOLDER_NAME="${dir%/}"
+              IMAGE_SUFFIX=$(echo "$FOLDER_NAME" | tr '[:upper:]' '[:lower:]' | sed 's/[^a-z0-9._-]/-/g')
+              IMAGE_SUFFIX=${IMAGE_SUFFIX#-}
+              IMAGE_SUFFIX=${IMAGE_SUFFIX%-}
+
+              if [ -z "$IMAGE_SUFFIX" ]; then
+                echo "Skipping $FOLDER_NAME because it results in an empty image suffix"
+                continue
+              fi
+
+              IMAGE_NAME="${IMAGE_PREFIX}/${IMAGE_SUFFIX}"
+              echo "Building $IMAGE_NAME from $DOCKERFILE_PATH"
+
+              docker build -t "$IMAGE_NAME:$TIMESTAMP" -t "$IMAGE_NAME:latest" -f "$DOCKERFILE_PATH" "$dir"
+
+              docker push "$IMAGE_NAME:$TIMESTAMP"
+              docker push "$IMAGE_NAME:latest"
+            else
+              echo "Skipping $dir because no Dockerfile was found"
+            fi
+          done
