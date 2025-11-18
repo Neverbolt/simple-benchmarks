@@ -1,0 +1,26 @@
+{% extends '_base.html' %}
+{% load qr_code %}
+
+{% block page_title %}Ticket {{ ticket.id }}{% endblock %}
+
+{% block extra_css %}
+    svg {
+        width: 100%;
+        height: auto;
+    }
+{% endblock %}
+
+{% block body_content %}
+    <h1><a href="{% url 'event' ticket.event.id %}">{{ ticket.event.name }}</a></h1>
+    <p>Total: {{ ticket.total }}</p>
+    <p>Ordered on: {{ ticket.order_date }}</p>
+
+    <h2>Seats</h2>
+    <ul>
+        {% for seat in ticket.seats.all %}
+            <li>Row {{ seat.row }} - Seat {{ seat.number }}</li>
+        {% endfor %}
+    </ul>
+
+    {% qr_from_text qr_content %}
+{% endblock %}

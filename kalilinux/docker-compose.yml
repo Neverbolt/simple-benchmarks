@@ -1,0 +1,17 @@
+services:
+  kalilinux:
+    build: .
+    container_name: kalilinux
+    environment:
+      - ROOT_PASSWORD=ohze8eHu6thiex9h
+    ports:
+      - target: 22
+        published: 2223
+        protocol: tcp
+        host_ip: 127.0.0.1
+    networks:
+      - wintermute
+networks:
+  wintermute:
+    external: true
+    name: wintermute

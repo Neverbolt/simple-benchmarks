@@ -1,0 +1,15 @@
+services:
+  phblog:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "80:80"
+    env_file:
+      - .env
+    networks:
+      - wintermute
+networks:
+  wintermute:
+    external: true
+    name: wintermute

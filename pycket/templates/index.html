@@ -1,0 +1,26 @@
+{% extends "_base.html" %}
+
+{% block page_title %}Pycket Shop{% endblock %}
+
+{% block body_content %}
+    <div class="event-list">
+        <h1>Upcoming Events</h1>
+    {% for event in events %}
+        <a class="event" href="{% url 'event' event.id %}">
+            <img src="{{ event.image.url }}" alt="{{ event.name }}">
+            <div class="event-details">
+                <div class="event-name">
+                    <h2>{{ event.name }}</h2>
+                    <h6>{{ event.location}}</h6>
+                </div>
+                <div class="event-location">
+                    <p>{{ event.date | date:"Y.m.d" }} | {{ event.time | time:"H:i" }}</p>
+                </div>
+                <div class="event-price">
+                    <p>{{ event.price }}€</p>
+                </div>
+            </div>
+        </a>
+    {% endfor %}
+    </div>
+{% endblock %}

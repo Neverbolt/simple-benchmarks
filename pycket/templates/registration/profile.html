@@ -1,0 +1,17 @@
+{% extends '../_base.html' %}
+
+{% block page_title %}Register{% endblock %}
+
+{% block body_content %}
+<h2>Your profile</h2>
+<form method="post">
+    {% csrf_token %}
+    {% for field in form %}
+        <p {% if field.name not in "first_name,last_name,email" %}style="display:none" {% endif %}>
+            {{ field.label_tag }} {{ field }}
+        </p>
+    {% endfor %}
+    <button type="submit">Save changes</button>
+    <p><i>Your balance is {{user.customer.balance}}€, please visit the Royal Security Hall for further deposits.</i></p>
+</form>
+{% endblock %}

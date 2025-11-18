@@ -1,0 +1,57 @@
+{% extends '_base.html' %}
+
+{% block page_title %}Ticket {{ ticket.id }}{% endblock %}
+
+{% block body_content %}
+    {% if not upcoming and not previous %}
+        <h1>No tickets found</h1>
+    {% endif %}
+    
+    {% if upcoming %}
+        <h1>Upcoming Tickets</h1>
+        {% for ticket in upcoming %}
+            {% with event=ticket.event %}
+            <a class="event" href="{% url 'ticket' ticket.id %}">
+                <img src="{{ event.image.url }}" alt="{{ event.name }}">
+                <div class="event-details">
+                    <div class="event-name">
+                        <h2>{{ event.name }}</h2>
+                        <h6>{{ event.location}}</h6>
+                    </div>
+                    <div class="event-location">
+                        <p>{{ event.date | date:"Y.m.d" }} | {{ event.time | time:"H:i" }}</p>
+                    </div>
+                    <div class="event-price">
+                        <p>Seats: {{ ticket.seats.all|length}}</p>
+                        <p>Total: {{ ticket.total }}€</p>
+                    </div>
+                </div>
+            </a>
+            {% endwith %}
+        {% endfor %}
+    {% endif %}
+
+    {% if previous %}
+        <h1>Previous Tickets</h1>
+        {% for ticket in previous %}
+            {% with event=ticket.event %}
+                <a class="event" href="{% url 'ticket' ticket.id %}">
+                    <img src="{{ event.image.url }}" alt="{{ event.name }}">
+                    <div class="event-details">
+                        <div class="event-name">
+                            <h2>{{ event.name }}</h2>
+                            <h6>{{ event.location}}</h6>
+                        </div>
+                        <div class="event-location">
+                            <p>{{ event.date | date:"Y.m.d" }} | {{ event.time | time:"H:i" }}</p>
+                        </div>
+                        <div class="event-price">
+                            <p>Seats: {{ ticket.seats.all|length}}</p>
+                            <p>Total: {{ ticket.total }}€</p>
+                        </div>
+                    </div>
+                </a>
+            {% endwith %}
+        {% endfor %}
+    {% endif %}
+{% endblock %}

@@ -1,0 +1,208 @@
+{% extends '_base.html' %}
+{% load form_tags %}
+
+{% block page_title %}View {{ event.name }}{% endblock %}
+
+{% block extra_css %}
+    main {
+        margin-top: 1rem;
+    }
+
+    main img {
+        width: 100%;
+        height: auto;
+    }
+
+    main h2 {
+        margin-bottom: 0;
+    }
+
+    aside {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    aside::last-child {
+        margin-right: 0;
+    }
+
+    .seating {
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .stage-block {
+        text-align: center;
+        background-color: brown;
+        color: white;
+        font-weight: bold;
+        height: 40px;
+    }
+
+    .seating table {
+        border: 3px solid black;
+        margin-bottom: 2rem;
+    }
+
+    .seating .seat input {
+        display: none;
+    }
+
+    .seating .seat label {
+        cursor: pointer;
+        display: inline-block;
+        width: 30px; /* Width of the seat */
+        height: 30px; /* Height of the seat */
+        background-color: sienna;
+        margin: 5px;
+        border-radius: 8px 8px 0 0; /* Rounded corners for the seat */
+        box-shadow: 0 0 1px sienna; /* Add some shadow to create a 3D effect */
+        position: relative;
+        user-select: none;
+    }
+
+    .seating .seat label .seat-number {
+        text-align: center;
+        font-size: smaller;
+    }
+
+    .seating .seat input:disabled + label {
+        /* Occupied seat */
+        cursor: not-allowed;
+        background-color: gray;
+    }
+    .seating .seat input:not(:disabled):checked + label {
+        /* Selected, free seat */
+        background-color: greenyellow;
+        box-shadow: 0 0 1px greenyellow; /* Add some shadow to create a 3D effect */
+    }
+
+    .error {
+        color: red;
+        font-weight: bold;
+    }
+{% endblock %}
+
+{% block body_content %}
+    <img src="{{ event.image.url }}" alt="{{ event.name }}">
+    <h2>{{ event.name }}</h2>
+    <aside>
+        <p>{{ event.location }}</p>
+        <p>{{ event.date }}</p>
+    </aside>
+
+    <h3>Description</h3>
+    <p>{{ event.description }}</p>
+
+    {% if tickets %}
+        <h3>Your Tickets</h3>
+        {% for ticket in tickets %}
+            {% with event=ticket.event %}
+                <a class="ticket" href="{% url 'ticket' ticket.id %}">
+                    <div class="ticket-details">
+                        <div><p>Ordered on: {{ ticket.order_date | date:"Y.m.d" }}</p></div>
+                        <div><p>Seats: {{ ticket.seats.all|length}}</p></div>
+                        <div><p>Total: {{ ticket.total }}€</p></div>
+                    </div>
+                </a>
+            {% endwith %}
+        {% endfor %}
+    {% endif %}
+
+    <h3>Seating</h3>
+    <form class="seating" method="post">
+        {% csrf_token %}
+        <table>
+            <thead>
+                <tr style="height: 10px;"> </tr>
+            </thead>
+            <tbody>
+            {% for i, row in seating.rows_for_display %}
+                <tr>
+                {% for _ in seating.seating_row_padding_left %}
+                    <th style="width: 30px; margin: 5px;">&nbsp;</th>
+                {% endfor %}
+                    <th style="width: 30px; margin: 5px; text-align: right">{{i}}</th>
+                {% for field_name in row %}
+                    <td class="seat">
+                    {% if field_name %}
+                        {{ seating|get_field:field_name }}
+                        <label for="{{ seating|get_field_id_for_label:field_name }}">
+                            <span class="seat-number">{{ forloop.counter }}</span>
+                        </label>
+                    {% else %}
+                        <div class="seat-placeholder"></div>
+                    {% endif %}
+                    </td>
+                {% endfor %}
+                    <th style="width: 30px; margin: 5px; text-align: left">{{i}}</th>
+                {% for _ in seating.seating_row_padding_right %}
+                    <th style="width: 30px; margin: 5px;">&nbsp;</th>
+                {% endfor %}
+                </tr>
+            {% endfor %}
+            </tbody>
+            <tfoot>
+                <tr>
+                    <th style="width: 3rem; text-align: right;">right</th>
+                {% for _ in seating.stage_row_padding_left %}
+                    <th style="width: 30px; margin: 5px;">&nbsp;</th>
+                {% endfor %}
+                    <th colspan="{{ seating.stage_width }}" class="stage-block">Stage</th>
+                {% for _ in seating.stage_row_padding_right %}
+                    <th style="width: 30px; margin: 5px;">&nbsp;</th>
+                {% endfor %}
+                    <th style="width: 3rem; text-align: left;">left</th>
+                </tr>
+                <tr style="height: 10px;"> </tr>
+            </tfoot>
+        </table>
+    
+        <div>
+            <label for="num_seats">Number of Seats:</label>
+            <input type="number" id="num_seats" readonly name="num_seats" value="0">
+        </div>
+    
+        <p class="error" id="error">{{error}}</p>
+
+        {% if user.is_authenticated %}
+            <button type="submit">Reserve Selected Seats for <span id="event-price">{{ event.price }}</span>€ per Seat</button>
+            <p><i>Available Balance: <span id="customer-balance">{{ user.customer.balance }}</span>€</i></p>
+        {% else %}
+            <p>Please <a href="{% url 'login' %}?next={{ request.path }}">log in</a> or <a href="{% url 'register' %}?next={{ request.path }}">register</a> to reserve a seat.</p>
+        {% endif %}
+    </form>
+    <script>
+        document.querySelectorAll('.seat label').forEach(label => {
+            label.addEventListener('click', () => {
+                const input = label.previousElementSibling;
+                if (input.hasAttribute('disabled')) {
+                    return false;
+                }
+
+                const seats = document.getElementById('num_seats');
+                const count = parseInt(seats.value) + (input.checked ? -1 : 1);
+                seats.value = count;
+
+                const form = document.querySelector('form');
+                const submitButton = form.querySelector('button[type="submit"]');
+                const funds = parseFloat(document.getElementById('customer-balance').innerText);
+                const price = parseFloat(document.getElementById('event-price').innerText);
+                console.log("funds: " + funds + ", price: " + price + ", count: " + count + ", total: " + count * price);
+                if (count * price > funds) {
+                    document.getElementById('error').innerText = 'Insufficient funds.';
+                    submitButton.setAttribute("disabled", "true");
+                    form.setAttribute("disabled", "true");
+                } else {
+                    document.getElementById('error').innerText = '';
+                    submitButton.removeAttribute("disabled");
+                    form.removeAttribute("disabled");
+                }
+            });
+        });
+    </script>
+{% endblock %}
