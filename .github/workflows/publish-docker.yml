@@ -3,8 +3,45 @@ on:
   push:
     branches: [main, '*-public-docker']
 jobs:
-  build:
+  discover:
     runs-on: ubuntu-latest
+    outputs:
+      matrix: ${{ steps.generate.outputs.matrix }}
+      has_work: ${{ steps.generate.outputs.has_work }}
+    steps:
+      - name: Check out
+        uses: actions/checkout@v4
+        with:
+          submodules: recursive
+
+      - name: Discover Dockerfile directories
+        id: generate
+        run: |
+          folders=()
+          for dir in */ ; do
+            [ ! -d "$dir" ] && continue
+            if [ -f "${dir}Dockerfile" ]; then
+              folders+=("\"${dir%/}\"")
+            fi
+          done
+
+          if [ ${#folders[@]} -eq 0 ]; then
+            echo "matrix={\"folder\":[]}" >> "$GITHUB_OUTPUT"
+            echo "has_work=false" >> "$GITHUB_OUTPUT"
+            echo "No Dockerfiles discovered."
+          else
+            printf 'matrix={"folder":[%s]}\n' "$(IFS=,; echo "${folders[*]}")" >> "$GITHUB_OUTPUT"
+            echo "has_work=true" >> "$GITHUB_OUTPUT"
+            echo "Discovered Dockerfile folders: ${folders[*]}"
+          fi
+
+  build:
+    needs: discover
+    if: ${{ needs.discover.outputs.has_work == 'true' }}
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix: ${{ fromJson(needs.discover.outputs.matrix) }}
     steps:
       - name: Check out
         uses: actions/checkout@v4
@@ -18,36 +55,29 @@ jobs:
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Build and push Docker images for each service
+      - name: Build and push ${{ matrix.folder }}
         run: |
           IMAGE_PREFIX="ghcr.io/$(echo '${{ github.repository }}' | tr '[:upper:]' '[:lower:]')"
           TIMESTAMP=$(date +'%Y%m%d%H%M%S')
+          DIR="${{ matrix.folder }}/"
+          DOCKERFILE_PATH="${DIR}Dockerfile"
 
-          echo "Publishing Docker images with prefix $IMAGE_PREFIX at $TIMESTAMP"
+          if [ ! -f "$DOCKERFILE_PATH" ]; then
+            echo "Dockerfile missing for $DIR, skipping."
+            exit 0
+          fi
 
-          for dir in */ ; do
-            [ ! -d "$dir" ] && continue
+          IMAGE_SUFFIX=$(echo "${{ matrix.folder }}" | tr '[:upper:]' '[:lower:]' | sed 's/[^a-z0-9._-]/-/g')
+          IMAGE_SUFFIX=${IMAGE_SUFFIX#-}
+          IMAGE_SUFFIX=${IMAGE_SUFFIX%-}
 
-            DOCKERFILE_PATH="${dir}Dockerfile"
-            if [ -f "$DOCKERFILE_PATH" ]; then
-              FOLDER_NAME="${dir%/}"
-              IMAGE_SUFFIX=$(echo "$FOLDER_NAME" | tr '[:upper:]' '[:lower:]' | sed 's/[^a-z0-9._-]/-/g')
-              IMAGE_SUFFIX=${IMAGE_SUFFIX#-}
-              IMAGE_SUFFIX=${IMAGE_SUFFIX%-}
+          if [ -z "$IMAGE_SUFFIX" ]; then
+            echo "Folder name ${{ matrix.folder }} leads to invalid image suffix, skipping."
+            exit 0
+          fi
 
-              if [ -z "$IMAGE_SUFFIX" ]; then
-                echo "Skipping $FOLDER_NAME because it results in an empty image suffix"
-                continue
-              fi
-
-              IMAGE_NAME="${IMAGE_PREFIX}/${IMAGE_SUFFIX}"
-              echo "Building $IMAGE_NAME from $DOCKERFILE_PATH"
-
-              docker build -t "$IMAGE_NAME:$TIMESTAMP" -t "$IMAGE_NAME:latest" -f "$DOCKERFILE_PATH" "$dir"
-
-              docker push "$IMAGE_NAME:$TIMESTAMP"
-              docker push "$IMAGE_NAME:latest"
-            else
-              echo "Skipping $dir because no Dockerfile was found"
-            fi
-          done
+          IMAGE_NAME="${IMAGE_PREFIX}/${IMAGE_SUFFIX}"
+          echo "Building $IMAGE_NAME from $DOCKERFILE_PATH"
+          docker build -t "$IMAGE_NAME:$TIMESTAMP" -t "$IMAGE_NAME:latest" -f "$DOCKERFILE_PATH" "$DIR"
+          docker push "$IMAGE_NAME:$TIMESTAMP"
+          docker push "$IMAGE_NAME:latest"
