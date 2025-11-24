@@ -193,7 +193,9 @@ def run_config(config_path: str):
 
     client = docker.from_env()
     coord_net = ensure_network(client, f"{experiment}_coord_net")
-    coord_ctr = ensure_container(client, f"{experiment}_coordination", coord_cfg, coord_net)
+    coord_ctr = ensure_container(
+        client, f"{experiment}_coordination", coord_cfg, coord_net
+    )
 
     pending = list(range(1, total + 1))
     active = {}
@@ -204,9 +206,13 @@ def run_config(config_path: str):
         interrupt_count += 1
         if interrupt_count == 1:
             pending.clear()
-            print("\nCtrl+C detected: cleared pending experiments. Next Ctrl+C will stop running ones.")
+            print(
+                "\nCtrl+C detected: cleared pending experiments. Next Ctrl+C will stop running ones."
+            )
         elif interrupt_count == 2:
-            print("\nSecond Ctrl+C: stopping all running experiments. Next Ctrl+C will exit immediately.")
+            print(
+                "\nSecond Ctrl+C: stopping all running experiments. Next Ctrl+C will exit immediately."
+            )
             for i, info in list(active.items()):
                 try:
                     info["ctr"].stop()
@@ -238,7 +244,9 @@ def run_config(config_path: str):
             for j in range(1, svc.get("count", 1) + 1):
                 cname = f"{experiment}_eval_{i}_{svc['name']}_{j}"
                 svc_ctr = ensure_container(client, cname, svc, net)
-                threading.Thread(target=stream_logs, args=(svc_ctr, logfile), daemon=True).start()
+                threading.Thread(
+                    target=stream_logs, args=(svc_ctr, logfile), daemon=True
+                ).start()
         name = f"{experiment}_eval_{i}"
         ctr = ensure_container(client, name, eval_cfg, net)
         try:
@@ -248,6 +256,8 @@ def run_config(config_path: str):
         threading.Thread(target=stream_logs, args=(ctr, logfile), daemon=True).start()
         active[i] = {"ctr": ctr, "start": datetime.now(timezone.utc)}
         print(f"Launched eval #{i}")
+
+    time.sleep(1)
 
     print(f"Starting up to {parallel} evals concurrently...")
     while pending and len(active) < parallel:
