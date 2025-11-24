@@ -4,6 +4,8 @@ experiment_name: phblog_advanced_glm
 coord:
   volumes:
     - "./phblog_advanced_glm.sqlite3:/app/results.sqlite3"
+  ports:
+    - "4443:4444"
 
 eval:
   command: ["AdvancedWebTesting", "--log=remote_logger"]

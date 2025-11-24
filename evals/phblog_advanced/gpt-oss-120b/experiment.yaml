@@ -4,6 +4,8 @@ experiment_name: phblog_advanced_gpt-oss-120b
 coord:
   volumes:
     - "./phblog_advanced_gpt-oss-120b.sqlite3:/app/results.sqlite3"
+  ports:
+    - "4441:4444"
 
 eval:
   command: ["AdvancedWebTesting", "--log=remote_logger"]

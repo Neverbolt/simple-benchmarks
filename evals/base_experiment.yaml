@@ -2,7 +2,7 @@ $secret_meta:
   salt: G0JC1iPxxkh+jbLDWB9zkw==
   verifier: gAAAAABpHxYCdDpf9d7BIZLI5qhC846k-LVj5TdWSR9wNJd7-HK9u27uze-oRtqgbjYW4_IFHDiHUDRYBXyMhYh017YLuO5WKw==
 
-eval_count: 1  # 40
+eval_count: 5  # 40
 parallel_evals: 5
 coord:
   image: ghcr.io/neverbolt/hackingbuddygpt/evals-thesis:20251120150727
@@ -26,7 +26,7 @@ eval:
     llm.context_size: 100000
     # limits
     limits.max_rounds: 100
-    limits.max_cost: 15
+    limits.max_cost: 10
     # logging
     log.log_server_address: viewer:4444
     log.local_output: false
