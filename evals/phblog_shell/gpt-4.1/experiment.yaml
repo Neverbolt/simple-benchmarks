@@ -1,0 +1,13 @@
+$base: ../phblog_shell.yaml
+experiment_name: phblog_shell_gpt-4.1
+
+coord:
+  volumes:
+    - "./phblog_shell_gpt-4.1.sqlite3:/app/results.sqlite3"
+  ports:
+    - "4445:4444"
+
+eval:
+  environment:
+    llm.model: openai/gpt-4.1-2025-04-14
+    llm.provider: openai

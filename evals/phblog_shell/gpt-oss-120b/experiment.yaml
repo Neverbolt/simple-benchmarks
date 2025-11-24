@@ -1,0 +1,13 @@
+$base: ../phblog_shell.yaml
+experiment_name: phblog_shell_gpt-oss-120b
+
+coord:
+  volumes:
+    - "./phblog_shell_gpt-oss-120b.sqlite3:/app/results.sqlite3"
+  ports:
+    - "4448:4444"
+
+eval:
+  environment:
+    llm.model: openai/gpt-oss-120b:exacto
+    llm.provider: novita/bf16

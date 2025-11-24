@@ -1,0 +1,13 @@
+$base: ../phblog_shell.yaml
+experiment_name: phblog_shell_claude
+
+coord:
+  volumes:
+    - "./phblog_shell_claude.sqlite3:/app/results.sqlite3"
+  ports:
+    - "4450:4444"
+
+eval:
+  environment:
+    llm.model: anthropic/claude-sonnet-4.5
+    llm.provider: anthropic
