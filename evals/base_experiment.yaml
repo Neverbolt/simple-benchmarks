@@ -5,7 +5,7 @@ $secret_meta:
 eval_count: 5  # 40
 parallel_evals: 5
 coord:
-  image: ghcr.io/neverbolt/hackingbuddygpt/evals-thesis:20251120150727
+  image: ghcr.io/neverbolt/hackingbuddygpt/evals-thesis:20251124212550
   hostname: viewer
   command: ["Viewer"]
   environment:
@@ -17,7 +17,7 @@ coord:
     - "4444:4444"
 
 eval:
-  image: ghcr.io/neverbolt/hackingbuddygpt/evals-thesis:20251120150727
+  image: ghcr.io/neverbolt/hackingbuddygpt/evals-thesis:20251124212550
   environment:
     # model to be defined in overriding config
     llm.api_url: "https://openrouter.ai/api/v1"
