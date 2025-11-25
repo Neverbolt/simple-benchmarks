@@ -1,93 +1,15 @@
 {% extends '_base.html' %}
 {% load form_tags %}
+{% load static %}
 
 {% block page_title %}View {{ event.name }}{% endblock %}
 
-{% block extra_css %}
-    main {
-        margin-top: 1rem;
-    }
-
-    main img {
-        width: 100%;
-        height: auto;
-    }
-
-    main h2 {
-        margin-bottom: 0;
-    }
-
-    aside {
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-    }
-
-    aside::last-child {
-        margin-right: 0;
-    }
-
-    .seating {
-        margin: 0 auto;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-    }
-
-    .stage-block {
-        text-align: center;
-        background-color: brown;
-        color: white;
-        font-weight: bold;
-        height: 40px;
-    }
-
-    .seating table {
-        border: 3px solid black;
-        margin-bottom: 2rem;
-    }
-
-    .seating .seat input {
-        display: none;
-    }
-
-    .seating .seat label {
-        cursor: pointer;
-        display: inline-block;
-        width: 30px; /* Width of the seat */
-        height: 30px; /* Height of the seat */
-        background-color: sienna;
-        margin: 5px;
-        border-radius: 8px 8px 0 0; /* Rounded corners for the seat */
-        box-shadow: 0 0 1px sienna; /* Add some shadow to create a 3D effect */
-        position: relative;
-        user-select: none;
-    }
-
-    .seating .seat label .seat-number {
-        text-align: center;
-        font-size: smaller;
-    }
-
-    .seating .seat input:disabled + label {
-        /* Occupied seat */
-        cursor: not-allowed;
-        background-color: gray;
-    }
-    .seating .seat input:not(:disabled):checked + label {
-        /* Selected, free seat */
-        background-color: greenyellow;
-        box-shadow: 0 0 1px greenyellow; /* Add some shadow to create a 3D effect */
-    }
-
-    .error {
-        color: red;
-        font-weight: bold;
-    }
+{% block extra_head %}
+<link rel="stylesheet" href="{% static 'css/event.css' %}">
 {% endblock %}
 
 {% block body_content %}
+{% spaceless %}
 {% if user.is_staff %}
     <h1>Administrative Actions</h1>
     <div>
@@ -130,24 +52,24 @@
             {% for i, row in seating.rows_for_display %}
                 <tr>
                 {% for _ in seating.seating_row_padding_left %}
-                    <th style="width: 30px; margin: 5px;">&nbsp;</th>
+                    <th class="rpl">&nbsp;</th>
                 {% endfor %}
-                    <th style="width: 30px; margin: 5px; text-align: right">{{i}}</th>
+                    <th class="rpl">{{i}}</th>
                 {% for field_name in row %}
-                    <td class="seat">
+                    <td class="s">
                     {% if field_name %}
                         {{ seating|get_field:field_name }}
                         <label for="{{ seating|get_field_id_for_label:field_name }}">
-                            <span class="seat-number">{{ forloop.counter }}</span>
+                            <span class="sn">{{ forloop.counter }}</span>
                         </label>
                     {% else %}
-                        <div class="seat-placeholder"></div>
+                        <div class="sp"></div>
                     {% endif %}
                     </td>
                 {% endfor %}
-                    <th style="width: 30px; margin: 5px; text-align: left">{{i}}</th>
+                    <th style="lpl">{{i}}</th>
                 {% for _ in seating.seating_row_padding_right %}
-                    <th style="width: 30px; margin: 5px;">&nbsp;</th>
+                    <th style="lpl">&nbsp;</th>
                 {% endfor %}
                 </tr>
             {% endfor %}
@@ -187,33 +109,6 @@
             <p>Please <a href="{% url 'login' %}?next={{ request.path }}">log in</a> or <a href="{% url 'register' %}?next={{ request.path }}">register</a> to reserve a seat.</p>
         {% endif %}
     </form>
-    <script>
-        document.querySelectorAll('.seat label').forEach(label => {
-            label.addEventListener('click', () => {
-                const input = label.previousElementSibling;
-                if (input.hasAttribute('disabled')) {
-                    return false;
-                }
-
-                const seats = document.getElementById('num_seats');
-                const count = parseInt(seats.value) + (input.checked ? -1 : 1);
-                seats.value = count;
-
-                const form = document.querySelector('form');
-                const submitButton = form.querySelector('button[type="submit"]');
-                const funds = parseFloat(document.getElementById('customer-balance').innerText);
-                const price = parseFloat(document.getElementById('event-price').innerText);
-                console.log("funds: " + funds + ", price: " + price + ", count: " + count + ", total: " + count * price);
-                if (count * price > funds) {
-                    document.getElementById('error').innerText = 'Insufficient funds.';
-                    submitButton.setAttribute("disabled", "true");
-                    form.setAttribute("disabled", "true");
-                } else {
-                    document.getElementById('error').innerText = '';
-                    submitButton.removeAttribute("disabled");
-                    form.removeAttribute("disabled");
-                }
-            });
-        });
-    </script>
+    <script src="{% static 'js/seat_picker.js' %}"></script>
+{% endspaceless %}
 {% endblock %}

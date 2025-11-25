@@ -3,13 +3,6 @@
 
 {% block page_title %}Ticket {{ ticket.id }}{% endblock %}
 
-{% block extra_css %}
-    svg {
-        width: 100%;
-        height: auto;
-    }
-{% endblock %}
-
 {% block body_content %}
     <h1><a href="{% url 'event' ticket.event.id %}">{{ ticket.event.name }}</a></h1>
     <p>Total: {{ ticket.total }}</p>

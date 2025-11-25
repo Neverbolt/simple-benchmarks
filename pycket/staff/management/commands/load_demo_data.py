@@ -67,7 +67,7 @@ class Command(BaseCommand):
         # PREPARE IMAGE PATHS
         # ---------------------------------------------------------------------
         media_root = Path(settings.MEDIA_ROOT)
-        demo1_path = media_root / "demo1.png"
+        demo1_path = media_root / "demo1.jpg"
         demo2_path = media_root / "demo2.jpg"
         image_paths = [demo1_path, demo2_path]
 
@@ -82,13 +82,13 @@ class Command(BaseCommand):
                 "date": today + datetime.timedelta(days=5),
                 "time": datetime.time(hour=20, minute=0),
                 "location": "City Club",
-                "description": "Local indie bands playing original songs. <a href='/event/1/resource/cm9jay5wbmc='>Preview</a>",
+                "description": "Local indie bands playing original songs. <a href='/event/1/resource/cm9jay5qcGc='>Preview</a>",
                 "public": True,
                 "price": Decimal("18.00"),
                 "vendor_note": "Standing area in the back.",
-                "rows": 8,
-                "cols": 15,
-                "stage_width": 12,
+                "rows": 4,
+                "cols": 3,
+                "stage_width": 3,
             },
             {
                 "name": "Acoustic Evening",
@@ -99,9 +99,9 @@ class Command(BaseCommand):
                 "public": True,
                 "price": Decimal("24.00"),
                 "vendor_note": "No late entry during performances.",
-                "rows": 10,
-                "cols": 18,
-                "stage_width": 14,
+                "rows": 4,
+                "cols": 3,
+                "stage_width": 3,
             },
             {
                 "name": "Saturday Comedy Special",
@@ -112,9 +112,9 @@ class Command(BaseCommand):
                 "public": True,
                 "price": Decimal("22.00"),
                 "vendor_note": "Two-drink minimum.",
-                "rows": 7,
-                "cols": 12,
-                "stage_width": 10,
+                "rows": 4,
+                "cols": 3,
+                "stage_width": 3,
             },
             {
                 "name": "Tech Conference 2025 - Day 1",
@@ -125,9 +125,9 @@ class Command(BaseCommand):
                 "public": True,
                 "price": Decimal("199.00"),
                 "vendor_note": "Registration opens at 8:00.",
-                "rows": 20,
-                "cols": 30,
-                "stage_width": 25,
+                "rows": 4,
+                "cols": 3,
+                "stage_width": 3,
             },
             {
                 "name": "Tech Conference 2025 - Day 2",
@@ -138,9 +138,9 @@ class Command(BaseCommand):
                 "public": True,
                 "price": Decimal("219.00"),
                 "vendor_note": "Workshop rooms announced on site.",
-                "rows": 20,
-                "cols": 30,
-                "stage_width": 25,
+                "rows": 4,
+                "cols": 3,
+                "stage_width": 3,
             },
             {
                 "name": "Shakespeare in the Park",
@@ -151,9 +151,9 @@ class Command(BaseCommand):
                 "public": True,
                 "price": Decimal("12.00"),
                 "vendor_note": "Bring blankets, limited seating.",
-                "rows": 12,
-                "cols": 20,
-                "stage_width": 16,
+                "rows": 4,
+                "cols": 3,
+                "stage_width": 3,
             },
             {
                 "name": "Sunday Jazz Brunch",
@@ -164,9 +164,9 @@ class Command(BaseCommand):
                 "public": True,
                 "price": Decimal("35.00"),
                 "vendor_note": "Buffet included in ticket price.",
-                "rows": 6,
-                "cols": 10,
-                "stage_width": 8,
+                "rows": 4,
+                "cols": 3,
+                "stage_width": 3,
             },
             {
                 "name": "Charity Gala Dinner",
@@ -178,9 +178,9 @@ class Command(BaseCommand):
                 "price": Decimal("500.00"),
                 "vendor_note": "Formal dress code, invitation only. "
                 + os.environ["FLAG_EVENT"],
-                "rows": 12,
-                "cols": 14,
-                "stage_width": 10,
+                "rows": 4,
+                "cols": 3,
+                "stage_width": 3,
             },
         ]
 
@@ -246,17 +246,8 @@ class Command(BaseCommand):
         for event, data in zip(events, events_data):
             rows = data["rows"]
             cols = data["cols"]
-
-            # Front row block
-            reserve_block(event, row=0, seat_start=2, seat_end=min(8, cols))
-
-            # Middle row block
-            mid_row = rows // 2
-            reserve_block(event, row=mid_row, seat_start=4, seat_end=min(12, cols))
-
-            # Back row block
-            last_row = rows - 1
-            reserve_block(event, row=last_row, seat_start=0, seat_end=min(5, cols))
+            reserve_block(event, row=0, seat_start=0, seat_end=min(2, cols))
+            reserve_block(event, row=3, seat_start=0, seat_end=min(2, cols))
 
         self.stdout.write(f"Created/loaded {len(all_reservations)} seat reservations.")
 
@@ -300,7 +291,7 @@ class Command(BaseCommand):
         t = create_ticket(
             customers[0],
             events[0],
-            [(0, [2, 3, 4])],
+            [(0, [0, 1, 2])],
             "Friends night out." + os.environ["FLAG_TICKET"],
         )
         if t:
@@ -309,7 +300,7 @@ class Command(BaseCommand):
         t = create_ticket(
             customers[1],
             events[0],
-            [(4, [6, 7])],
+            [(3, [0, 1])],
             "Date night.",
         )
         if t:
@@ -319,7 +310,7 @@ class Command(BaseCommand):
         t = create_ticket(
             customers[2],
             events[1],
-            [(0, [5, 6]), (5, [8, 9])],
+            [(0, [1, 2]), (3, [0, 1, 2])],
             "Booked early for best seats.",
         )
         if t:
@@ -329,7 +320,7 @@ class Command(BaseCommand):
         t = create_ticket(
             customers[3],
             events[2],
-            [(0, [2, 3, 4, 5])],
+            [(0, [0, 1, 2])],
             "Birthday celebration.",
         )
         if t:
@@ -338,7 +329,7 @@ class Command(BaseCommand):
         t = create_ticket(
             customers[4],
             events[2],
-            [(3, [4, 5])],
+            [(3, [2])],
             "Work colleagues.",
         )
         if t:
@@ -348,17 +339,8 @@ class Command(BaseCommand):
         t = create_ticket(
             customers[5],
             events[3],
-            [(10, [10, 11, 12])],
+            [(0, [1, 2])],
             "Company-sponsored attendance.",
-        )
-        if t:
-            tickets_created.append(t)
-
-        t = create_ticket(
-            customers[5],
-            events[4],
-            [(10, [10, 11, 12])],
-            "Same group, second day.",
         )
         if t:
             tickets_created.append(t)
@@ -366,8 +348,17 @@ class Command(BaseCommand):
         t = create_ticket(
             customers[6],
             events[3],
-            [(5, [14, 15])],
+            [(3, [0, 1])],
             "Interested in AI track.",
+        )
+        if t:
+            tickets_created.append(t)
+
+        t = create_ticket(
+            customers[5],
+            events[4],
+            [(0, [0, 1, 2])],
+            "Same group, second day.",
         )
         if t:
             tickets_created.append(t)
@@ -376,7 +367,7 @@ class Command(BaseCommand):
         t = create_ticket(
             customers[7],
             events[5],
-            [(0, [3, 4]), (6, [5, 6])],
+            [(0, [1, 2]), (3, [2, 3])],
             "Family outing.",
         )
         if t:
@@ -386,7 +377,7 @@ class Command(BaseCommand):
         t = create_ticket(
             customers[8],
             events[6],
-            [(0, [2, 3])],
+            [(0, [1, 2])],
             "Window seats.",
         )
         if t:
@@ -395,7 +386,7 @@ class Command(BaseCommand):
         t = create_ticket(
             customers[9],
             events[6],
-            [(2, [4, 5, 6])],
+            [(3, [0, 1, 2])],
             "Reserved for friends.",
         )
         if t:

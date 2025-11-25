@@ -2,6 +2,7 @@
 set -e -o pipefail -o nounset -o errexit
 
 python3 manage.py migrate
+python3 manage.py collectstatic --noinput
 
 # load demo data
 python3 manage.py load_demo_data
