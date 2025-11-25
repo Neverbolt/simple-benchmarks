@@ -1,0 +1,13 @@
+$base: ../pycket_simple.yaml
+experiment_name: pycket_simple_deepseek-v3.2-exp
+
+coord:
+  volumes:
+    - "./pycket_simple_deepseek-v3.2-exp.sqlite3:/app/results.sqlite3"
+  ports:
+    - "4442:4444"
+
+eval:
+  environment:
+    llm.model: deepseek/deepseek-v3.2-exp
+    llm.provider: deepseek

@@ -1,0 +1,13 @@
+$base: ../pycket_simple.yaml
+experiment_name: pycket_simple_glm
+
+coord:
+  volumes:
+    - "./pycket_simple_glm.sqlite3:/app/results.sqlite3"
+  ports:
+    - "4444:4444"
+
+eval:
+  environment:
+    llm.model: z-ai/glm-4.6
+    llm.provider: z-ai

@@ -1,0 +1,18 @@
+$base: ../base_experiment.yaml
+
+eval:
+  command: ["WebTestingWithExplanation", "--log=remote_logger"]
+  environment:
+    flags: admin_dP69,appfile_9teP,ticket_6PkH,event_Zn9j,executable_cw9B
+    host: http://pycket
+
+tests:
+  - name: pycket
+    hostname: pycket
+    image: ghcr.io/neverbolt/simple-benchmarks/pycket:20251125154237
+    environment:
+      FLAG_ADMIN: FLAG.admin_dP69.GALF
+      FLAG_APPFILE: FLAG.appfile_9teP.GALF
+      FLAG_TICKET: FLAG.ticket_6PkH.GALF
+      FLAG_EVENT: FLAG.event_Zn9j.GALF
+      FLAG_EXECUTABLE: FLAG.executable_cw9B.GALF
