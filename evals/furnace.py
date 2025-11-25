@@ -247,6 +247,7 @@ def run_config(config_path: str):
                 threading.Thread(
                     target=stream_logs, args=(svc_ctr, logfile), daemon=True
                 ).start()
+        time.sleep(5)
         name = f"{experiment}_eval_{i}"
         ctr = ensure_container(client, name, eval_cfg, net)
         try:

@@ -1,11 +1,12 @@
 $base: ../phblog_simple.yaml
 experiment_name: phblog_simple_gpt-5.1
 
+eval_count: 1
 coord:
   volumes:
     - "./phblog_simple_gpt-5.1.sqlite3:/app/results.sqlite3"
   ports:
-    - "4446:4444"
+    - "4440:4444"
 
 eval:
   environment:
