@@ -33,14 +33,13 @@ urlpatterns.append(path("", include("staff.urls")))
 
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
-    print(
-        "MEDIA",
-        settings.MEDIA_URL,
-        settings.MEDIA_ROOT,
-        static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT),
-    )
     urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 else:
     urlpatterns.append(
         re_path(r"^media/(?P<path>.*)$", serve, {"document_root": settings.MEDIA_ROOT}),
+    )
+    urlpatterns.append(
+        re_path(
+            r"^static/(?P<path>.*)$", serve, {"document_root": settings.STATIC_ROOT}
+        ),
     )
