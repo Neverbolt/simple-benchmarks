@@ -30,11 +30,11 @@ class SeatSelectionForm(forms.Form):
         for row_index, row in enumerate(seating_grid):
             field_names_row = []
             for seat_index, seat in enumerate(row):
-                field_name = f"seat_{row_index}_{seat_index}"
+                field_name = f"s_{row_index}_{seat_index}"
                 if seat is False:
                     self.fields[field_name] = forms.BooleanField(
                         required=False,
-                        widget=forms.CheckboxInput(attrs={"class": "seat-checkbox"}),
+                        widget=forms.CheckboxInput(),
                     )
                     field_names_row.append(field_name)
                 elif seat is True:
@@ -42,7 +42,6 @@ class SeatSelectionForm(forms.Form):
                         required=False,
                         widget=forms.CheckboxInput(
                             attrs={
-                                "class": "seat-checkbox",
                                 "disabled": True,
                                 "checked": True,
                             }
