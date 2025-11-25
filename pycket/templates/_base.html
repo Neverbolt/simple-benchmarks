@@ -112,6 +112,11 @@
                 <div>
                     <a href="{% url 'profile' %}">Profile</a>
                 </div>
+            {% if user.is_staff %}
+                <div>
+                    <a href="{% url 'home_staff' %}">Staff Dashboard</a>
+                </div>
+            {% endif %}
                 <div>
                     <form action="{% url 'logout' %}" method="post">
                         {% csrf_token %}

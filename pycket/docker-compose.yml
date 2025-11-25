@@ -9,6 +9,8 @@ services:
       - .env
     networks:
       - wintermute
+#   volumes:
+#     - "./:/app/"
 networks:
   wintermute:
     external: true

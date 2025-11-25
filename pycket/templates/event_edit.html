@@ -1,0 +1,18 @@
+{% extends '_base.html' %}
+
+{% block page_title %}Event {{ event.name }} Edit{% endblock %}
+
+{% block body_content %}
+  <h2>Edit Event {{event.name}}</h2>
+  <form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ form.as_p }}
+    {% if event.seating_plan %}
+      <p>
+        Current Seating Plan:
+        <a href="{% url 'event_seating_plan' event.id %}">Download</a>
+      </p>
+    {% endif %}
+    <button type="submit">Update</button>
+  </form>
+{% endblock %}

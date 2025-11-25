@@ -88,6 +88,12 @@
 {% endblock %}
 
 {% block body_content %}
+{% if user.is_staff %}
+    <h1>Administrative Actions</h1>
+    <div>
+        <a href="{% url 'edit_event' event.id %}">Edit Event</a>
+    </div>
+{% endif %}
     <img src="{{ event.image.url }}" alt="{{ event.name }}">
     <h2>{{ event.name }}</h2>
     <aside>
@@ -96,7 +102,7 @@
     </aside>
 
     <h3>Description</h3>
-    <p>{{ event.description }}</p>
+    <p>{{ event.description | safe }}</p>
 
     {% if tickets %}
         <h3>Your Tickets</h3>
@@ -161,12 +167,17 @@
                 <tr style="height: 10px;"> </tr>
             </tfoot>
         </table>
-    
+
         <div>
             <label for="num_seats">Number of Seats:</label>
             <input type="number" id="num_seats" readonly name="num_seats" value="0">
         </div>
-    
+
+        <div>
+            <label for="note">Note:</label>
+            <textarea id="note" name="note"></textarea>
+        </div>
+
         <p class="error" id="error">{{error}}</p>
 
         {% if user.is_authenticated %}

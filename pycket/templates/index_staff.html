@@ -3,6 +3,11 @@
 {% block page_title %}Pycket Shop{% endblock %}
 
 {% block body_content %}
+    <div>
+        <h1>Staff Actions</h1>
+        <a href="{% url 'new_event' %}">New Event</a>
+        <p>{{ admin_flag }}</p>
+    </div>
     <div class="event-list">
         <h1>Upcoming Events</h1>
     {% for event in events %}

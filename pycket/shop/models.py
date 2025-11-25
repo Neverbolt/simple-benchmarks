@@ -1,9 +1,8 @@
-from typing import Set, Optional
+from dataclasses import dataclass
+from typing import Optional, Set
 
 from django.contrib.auth.models import User
 from django.db import models
-
-from dataclasses import dataclass
 
 
 class Customer(models.Model):
@@ -21,9 +20,10 @@ class Event(models.Model):
     price = models.DecimalField(max_digits=5, decimal_places=2)
     seating_plan = models.BinaryField(null=True)
     image = models.ImageField(null=True)
+    vendor_note = models.TextField(blank=True)
 
     class Meta:
-        ordering = ['date', 'time']
+        ordering = ["date", "time"]
 
 
 class SeatReservation(models.Model):
@@ -38,9 +38,10 @@ class Ticket(models.Model):
     total = models.DecimalField(max_digits=10, decimal_places=2)
     order_date = models.DateTimeField(auto_now_add=True)
     seats = models.ManyToManyField(SeatReservation)
+    note = models.TextField(blank=True)
 
     class Meta:
-        ordering = ['order_date']
+        ordering = ["order_date"]
 
 
 @dataclass(frozen=True)

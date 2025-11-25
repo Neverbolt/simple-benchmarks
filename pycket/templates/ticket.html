@@ -22,5 +22,15 @@
         {% endfor %}
     </ul>
 
+    {% if ticket.event.vendor_note %}
+        <h2>Vendor Note</h2>
+        <p>{{ ticket.event.vendor_note | safe }}</p>
+    {% endif %}
+
+    {% if ticket.note %}
+        <h2>Note</h2>
+        <p>{{ ticket.note }}</p>
+    {% endif %}
+
     {% qr_from_text qr_content %}
 {% endblock %}
