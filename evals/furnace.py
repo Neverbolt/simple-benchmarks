@@ -189,9 +189,7 @@ def get_log_writer(log_name: str, log_dir: str = ".log"):
             print(f"Error streaming logs for '{container.name}': {e}", file=sys.stderr)
 
     def logger(container):
-        threading.Thread(
-            target=stream_logs, args=(container, logfile), daemon=True
-        ).start()
+        threading.Thread(target=stream_logs, args=(container,), daemon=True).start()
 
     return logger
 
