@@ -1,0 +1,203 @@
+[2025-11-26T21:38:08.936237+00:00] pycket_simple_tips_gemini-2.5_coordination: INFO:     Started server process [1]
+[2025-11-26T21:38:08.936367+00:00] pycket_simple_tips_gemini-2.5_coordination: INFO:     Waiting for application startup.
+[2025-11-26T21:38:08.936400+00:00] pycket_simple_tips_gemini-2.5_coordination: INFO:     Application startup complete.
+[2025-11-26T21:38:08.936472+00:00] pycket_simple_tips_gemini-2.5_coordination: INFO:     Uvicorn running on http://0.0.0.0:4444 (Press CTRL+C to quit)
+[2025-11-26T21:38:15.234193+00:00] pycket_simple_tips_gemini-2.5_coordination: INFO:     ('172.24.0.3', 36720) - "WebSocket /ingress" [accepted]
+[2025-11-26T21:38:15.234725+00:00] pycket_simple_tips_gemini-2.5_coordination: INFO:     connection open
+[2025-11-26T21:38:15.237014+00:00] pycket_simple_tips_gemini-2.5_coordination: /usr/local/lib/python3.13/site-packages/dataclasses_json/core.py:201: RuntimeWarning: 'NoneType' object value of non-optional type id detected when decoding Run.
+[2025-11-26T21:38:15.237061+00:00] pycket_simple_tips_gemini-2.5_coordination:   warnings.warn(
+[2025-11-26T21:38:15.237208+00:00] pycket_simple_tips_gemini-2.5_coordination: /usr/local/lib/python3.13/site-packages/dataclasses_json/core.py:201: RuntimeWarning: 'NoneType' object value of non-optional type state detected when decoding Run.
+[2025-11-26T21:38:15.237256+00:00] pycket_simple_tips_gemini-2.5_coordination:   warnings.warn(
+[2025-11-26T21:38:15.240983+00:00] pycket_simple_tips_gemini-2.5_coordination: /usr/local/lib/python3.13/site-packages/dataclasses_json/core.py:201: RuntimeWarning: 'NoneType' object value of non-optional type conversation detected when decoding Message.
+[2025-11-26T21:38:15.241092+00:00] pycket_simple_tips_gemini-2.5_coordination:   warnings.warn(
+[2025-11-26T21:38:15.242417+00:00] pycket_simple_tips_gemini-2.5_coordination: /usr/local/lib/python3.13/site-packages/dataclasses_json/core.py:201: RuntimeWarning: 'NoneType' object value of non-optional type to_message detected when decoding Section.
+[2025-11-26T21:38:15.242481+00:00] pycket_simple_tips_gemini-2.5_coordination:   warnings.warn(
+[2025-11-26T21:38:17.142911+00:00] pycket_simple_tips_gemini-2.5_coordination: /usr/local/lib/python3.13/site-packages/dataclasses_json/core.py:201: RuntimeWarning: 'NoneType' object value of non-optional type id detected when decoding MessageStreamPart.
+[2025-11-26T21:38:17.143037+00:00] pycket_simple_tips_gemini-2.5_coordination:   warnings.warn(
+[2025-11-26T21:38:20.582398+00:00] pycket_simple_tips_gemini-2.5_coordination: INFO:     ('172.24.0.4', 43856) - "WebSocket /ingress" [accepted]
+[2025-11-26T21:38:20.582526+00:00] pycket_simple_tips_gemini-2.5_coordination: INFO:     connection open
+[2025-11-26T21:38:25.837790+00:00] pycket_simple_tips_gemini-2.5_coordination: INFO:     ('172.24.0.5', 35034) - "WebSocket /ingress" [accepted]
+[2025-11-26T21:38:25.837913+00:00] pycket_simple_tips_gemini-2.5_coordination: INFO:     connection open
+[2025-11-26T21:38:31.441591+00:00] pycket_simple_tips_gemini-2.5_coordination: INFO:     ('172.24.0.6', 58330) - "WebSocket /ingress" [accepted]
+[2025-11-26T21:38:31.441804+00:00] pycket_simple_tips_gemini-2.5_coordination: INFO:     connection open
+[2025-11-26T21:38:36.781847+00:00] pycket_simple_tips_gemini-2.5_coordination: INFO:     ('172.24.0.7', 59876) - "WebSocket /ingress" [accepted]
+[2025-11-26T21:38:36.781971+00:00] pycket_simple_tips_gemini-2.5_coordination: INFO:     connection open
+[2025-11-26T21:39:34.836484+00:00] pycket_simple_tips_gemini-2.5_coordination: INFO:     172.24.0.1:59884 - "GET / HTTP/1.1" 200 OK
+[2025-11-26T21:39:34.881553+00:00] pycket_simple_tips_gemini-2.5_coordination: INFO:     172.24.0.1:59884 - "GET /static/style.css HTTP/1.1" 200 OK
+[2025-11-26T21:39:34.894979+00:00] pycket_simple_tips_gemini-2.5_coordination: INFO:     172.24.0.1:59894 - "GET /static/client.js HTTP/1.1" 200 OK
+[2025-11-26T21:39:34.944447+00:00] pycket_simple_tips_gemini-2.5_coordination: INFO:     172.24.0.1:59894 - "GET /favicon.ico HTTP/1.1" 200 OK
+[2025-11-26T21:39:34.964686+00:00] pycket_simple_tips_gemini-2.5_coordination: INFO:     ('172.24.0.1', 59910) - "WebSocket /client" [accepted]
+[2025-11-26T21:39:34.964785+00:00] pycket_simple_tips_gemini-2.5_coordination: INFO:     connection open
+[2025-11-26T21:39:39.419357+00:00] pycket_simple_tips_gemini-2.5_coordination: INFO:     connection closed
+[2025-11-26T21:39:39.420228+00:00] pycket_simple_tips_gemini-2.5_coordination: Task exception was never retrieved
+[2025-11-26T21:39:39.420293+00:00] pycket_simple_tips_gemini-2.5_coordination: future: <Task finished name='Task-47' coro=<Client.receive_messages() done, defined at /app/src/hackingBuddyGPT/usecases/viewer.py:137> exception=WebSocketDisconnect(1001, '')>
+[2025-11-26T21:39:39.420329+00:00] pycket_simple_tips_gemini-2.5_coordination: Traceback (most recent call last):
+[2025-11-26T21:39:39.420361+00:00] pycket_simple_tips_gemini-2.5_coordination:   File "/app/src/hackingBuddyGPT/usecases/viewer.py", line 165, in receive_messages
+[2025-11-26T21:39:39.420391+00:00] pycket_simple_tips_gemini-2.5_coordination:     raise e
+[2025-11-26T21:39:39.420421+00:00] pycket_simple_tips_gemini-2.5_coordination:   File "/app/src/hackingBuddyGPT/usecases/viewer.py", line 140, in receive_messages
+[2025-11-26T21:39:39.420442+00:00] pycket_simple_tips_gemini-2.5_coordination:     msg = await self.websocket.receive_json()
+[2025-11-26T21:39:39.420463+00:00] pycket_simple_tips_gemini-2.5_coordination:           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[2025-11-26T21:39:39.420490+00:00] pycket_simple_tips_gemini-2.5_coordination:   File "/usr/local/lib/python3.13/site-packages/starlette/websockets.py", line 135, in receive_json
+[2025-11-26T21:39:39.420516+00:00] pycket_simple_tips_gemini-2.5_coordination:     self._raise_on_disconnect(message)
+[2025-11-26T21:39:39.420546+00:00] pycket_simple_tips_gemini-2.5_coordination:     ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+[2025-11-26T21:39:39.420567+00:00] pycket_simple_tips_gemini-2.5_coordination:   File "/usr/local/lib/python3.13/site-packages/starlette/websockets.py", line 113, in _raise_on_disconnect
+[2025-11-26T21:39:39.420587+00:00] pycket_simple_tips_gemini-2.5_coordination:     raise WebSocketDisconnect(message["code"], message.get("reason"))
+[2025-11-26T21:39:39.420607+00:00] pycket_simple_tips_gemini-2.5_coordination: starlette.websockets.WebSocketDisconnect: (1001, '')
+[2025-11-26T21:39:39.439381+00:00] pycket_simple_tips_gemini-2.5_coordination: INFO:     ('172.24.0.1', 59914) - "WebSocket /client" [accepted]
+[2025-11-26T21:39:39.439621+00:00] pycket_simple_tips_gemini-2.5_coordination: INFO:     connection open
+[2025-11-26T21:39:39.465223+00:00] pycket_simple_tips_gemini-2.5_coordination: INFO:     connection closed
+[2025-11-26T21:39:39.465314+00:00] pycket_simple_tips_gemini-2.5_coordination: Task exception was never retrieved
+[2025-11-26T21:39:39.465346+00:00] pycket_simple_tips_gemini-2.5_coordination: future: <Task finished name='Task-55' coro=<Client.receive_messages() done, defined at /app/src/hackingBuddyGPT/usecases/viewer.py:137> exception=WebSocketDisconnect(<CloseCode.ABNORMAL_CLOSURE: 1006>, '')>
+[2025-11-26T21:39:39.465371+00:00] pycket_simple_tips_gemini-2.5_coordination: Traceback (most recent call last):
+[2025-11-26T21:39:39.465393+00:00] pycket_simple_tips_gemini-2.5_coordination:   File "/app/src/hackingBuddyGPT/usecases/viewer.py", line 165, in receive_messages
+[2025-11-26T21:39:39.465414+00:00] pycket_simple_tips_gemini-2.5_coordination:     raise e
+[2025-11-26T21:39:39.465435+00:00] pycket_simple_tips_gemini-2.5_coordination:   File "/app/src/hackingBuddyGPT/usecases/viewer.py", line 140, in receive_messages
+[2025-11-26T21:39:39.465456+00:00] pycket_simple_tips_gemini-2.5_coordination:     msg = await self.websocket.receive_json()
+[2025-11-26T21:39:39.465483+00:00] pycket_simple_tips_gemini-2.5_coordination:           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[2025-11-26T21:39:39.465511+00:00] pycket_simple_tips_gemini-2.5_coordination:   File "/usr/local/lib/python3.13/site-packages/starlette/websockets.py", line 135, in receive_json
+[2025-11-26T21:39:39.465534+00:00] pycket_simple_tips_gemini-2.5_coordination:     self._raise_on_disconnect(message)
+[2025-11-26T21:39:39.465561+00:00] pycket_simple_tips_gemini-2.5_coordination:     ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+[2025-11-26T21:39:39.465580+00:00] pycket_simple_tips_gemini-2.5_coordination:   File "/usr/local/lib/python3.13/site-packages/starlette/websockets.py", line 113, in _raise_on_disconnect
+[2025-11-26T21:39:39.465604+00:00] pycket_simple_tips_gemini-2.5_coordination:     raise WebSocketDisconnect(message["code"], message.get("reason"))
+[2025-11-26T21:39:39.465623+00:00] pycket_simple_tips_gemini-2.5_coordination: starlette.websockets.WebSocketDisconnect: (<CloseCode.ABNORMAL_CLOSURE: 1006>, '')
+[2025-11-26T21:39:39.499334+00:00] pycket_simple_tips_gemini-2.5_coordination: Task exception was never retrieved
+[2025-11-26T21:39:39.499413+00:00] pycket_simple_tips_gemini-2.5_coordination: future: <Task finished name='Task-46' coro=<Client.send_messages() done, defined at /app/src/hackingBuddyGPT/usecases/viewer.py:105> exception=RuntimeError("Unexpected ASGI message 'websocket.send', after sending 'websocket.close' or response already completed.")>
+[2025-11-26T21:39:39.499447+00:00] pycket_simple_tips_gemini-2.5_coordination: Traceback (most recent call last):
+[2025-11-26T21:39:39.499473+00:00] pycket_simple_tips_gemini-2.5_coordination:   File "/app/src/hackingBuddyGPT/usecases/viewer.py", line 135, in send_messages
+[2025-11-26T21:39:39.499494+00:00] pycket_simple_tips_gemini-2.5_coordination:     raise e
+[2025-11-26T21:39:39.499515+00:00] pycket_simple_tips_gemini-2.5_coordination:   File "/app/src/hackingBuddyGPT/usecases/viewer.py", line 125, in send_messages
+[2025-11-26T21:39:39.499534+00:00] pycket_simple_tips_gemini-2.5_coordination:     await self.send_message(msg)
+[2025-11-26T21:39:39.499554+00:00] pycket_simple_tips_gemini-2.5_coordination:   File "/app/src/hackingBuddyGPT/usecases/viewer.py", line 100, in send_message
+[2025-11-26T21:39:39.499574+00:00] pycket_simple_tips_gemini-2.5_coordination:     await self.websocket.send_text(message.to_json())
+[2025-11-26T21:39:39.499593+00:00] pycket_simple_tips_gemini-2.5_coordination:   File "/usr/local/lib/python3.13/site-packages/starlette/websockets.py", line 165, in send_text
+[2025-11-26T21:39:39.499626+00:00] pycket_simple_tips_gemini-2.5_coordination:     await self.send({"type": "websocket.send", "text": data})
+[2025-11-26T21:39:39.499647+00:00] pycket_simple_tips_gemini-2.5_coordination:   File "/usr/local/lib/python3.13/site-packages/starlette/websockets.py", line 85, in send
+[2025-11-26T21:39:39.499666+00:00] pycket_simple_tips_gemini-2.5_coordination:     await self._send(message)
+[2025-11-26T21:39:39.499685+00:00] pycket_simple_tips_gemini-2.5_coordination:   File "/usr/local/lib/python3.13/site-packages/starlette/_exception_handler.py", line 48, in sender
+[2025-11-26T21:39:39.499704+00:00] pycket_simple_tips_gemini-2.5_coordination:     await send(message)
+[2025-11-26T21:39:39.499723+00:00] pycket_simple_tips_gemini-2.5_coordination:   File "/usr/local/lib/python3.13/site-packages/uvicorn/protocols/websockets/websockets_impl.py", line 360, in asgi_send
+[2025-11-26T21:39:39.499742+00:00] pycket_simple_tips_gemini-2.5_coordination:     raise RuntimeError(msg % message_type)
+[2025-11-26T21:39:39.499761+00:00] pycket_simple_tips_gemini-2.5_coordination: RuntimeError: Unexpected ASGI message 'websocket.send', after sending 'websocket.close' or response already completed.
+[2025-11-26T21:39:56.005689+00:00] pycket_simple_tips_gemini-2.5_coordination: Task exception was never retrieved
+[2025-11-26T21:39:56.005794+00:00] pycket_simple_tips_gemini-2.5_coordination: future: <Task finished name='Task-54' coro=<Client.send_messages() done, defined at /app/src/hackingBuddyGPT/usecases/viewer.py:105> exception=RuntimeError("Unexpected ASGI message 'websocket.send', after sending 'websocket.close' or response already completed.")>
+[2025-11-26T21:39:56.005830+00:00] pycket_simple_tips_gemini-2.5_coordination: Traceback (most recent call last):
+[2025-11-26T21:39:56.005855+00:00] pycket_simple_tips_gemini-2.5_coordination:   File "/app/src/hackingBuddyGPT/usecases/viewer.py", line 135, in send_messages
+[2025-11-26T21:39:56.005886+00:00] pycket_simple_tips_gemini-2.5_coordination:     raise e
+[2025-11-26T21:39:56.005914+00:00] pycket_simple_tips_gemini-2.5_coordination:   File "/app/src/hackingBuddyGPT/usecases/viewer.py", line 119, in send_messages
+[2025-11-26T21:39:56.005935+00:00] pycket_simple_tips_gemini-2.5_coordination:     await self.send_message(msg)
+[2025-11-26T21:39:56.005976+00:00] pycket_simple_tips_gemini-2.5_coordination:   File "/app/src/hackingBuddyGPT/usecases/viewer.py", line 100, in send_message
+[2025-11-26T21:39:56.005996+00:00] pycket_simple_tips_gemini-2.5_coordination:     await self.websocket.send_text(message.to_json())
+[2025-11-26T21:39:56.006017+00:00] pycket_simple_tips_gemini-2.5_coordination:   File "/usr/local/lib/python3.13/site-packages/starlette/websockets.py", line 165, in send_text
+[2025-11-26T21:39:56.006038+00:00] pycket_simple_tips_gemini-2.5_coordination:     await self.send({"type": "websocket.send", "text": data})
+[2025-11-26T21:39:56.006057+00:00] pycket_simple_tips_gemini-2.5_coordination:   File "/usr/local/lib/python3.13/site-packages/starlette/websockets.py", line 85, in send
+[2025-11-26T21:39:56.006077+00:00] pycket_simple_tips_gemini-2.5_coordination:     await self._send(message)
+[2025-11-26T21:39:56.006096+00:00] pycket_simple_tips_gemini-2.5_coordination:   File "/usr/local/lib/python3.13/site-packages/starlette/_exception_handler.py", line 48, in sender
+[2025-11-26T21:39:56.006115+00:00] pycket_simple_tips_gemini-2.5_coordination:     await send(message)
+[2025-11-26T21:39:56.006134+00:00] pycket_simple_tips_gemini-2.5_coordination:   File "/usr/local/lib/python3.13/site-packages/uvicorn/protocols/websockets/websockets_impl.py", line 360, in asgi_send
+[2025-11-26T21:39:56.006153+00:00] pycket_simple_tips_gemini-2.5_coordination:     raise RuntimeError(msg % message_type)
+[2025-11-26T21:39:56.006173+00:00] pycket_simple_tips_gemini-2.5_coordination: RuntimeError: Unexpected ASGI message 'websocket.send', after sending 'websocket.close' or response already completed.
+[2025-11-26T21:39:56.006386+00:00] pycket_simple_tips_gemini-2.5_coordination: Traceback (most recent call last):
+[2025-11-26T21:39:56.006415+00:00] pycket_simple_tips_gemini-2.5_coordination:   File "/app/src/hackingBuddyGPT/usecases/viewer.py", line 278, in ingress_endpoint
+[2025-11-26T21:39:56.006437+00:00] pycket_simple_tips_gemini-2.5_coordination:     data = await websocket.receive_json()
+[2025-11-26T21:39:56.006456+00:00] pycket_simple_tips_gemini-2.5_coordination:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[2025-11-26T21:39:56.006477+00:00] pycket_simple_tips_gemini-2.5_coordination:   File "/usr/local/lib/python3.13/site-packages/starlette/websockets.py", line 135, in receive_json
+[2025-11-26T21:39:56.006496+00:00] pycket_simple_tips_gemini-2.5_coordination:     self._raise_on_disconnect(message)
+[2025-11-26T21:39:56.006515+00:00] pycket_simple_tips_gemini-2.5_coordination:     ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+[2025-11-26T21:39:56.006534+00:00] pycket_simple_tips_gemini-2.5_coordination:   File "/usr/local/lib/python3.13/site-packages/starlette/websockets.py", line 113, in _raise_on_disconnect
+[2025-11-26T21:39:56.006553+00:00] pycket_simple_tips_gemini-2.5_coordination:     raise WebSocketDisconnect(message["code"], message.get("reason"))
+[2025-11-26T21:39:56.006573+00:00] pycket_simple_tips_gemini-2.5_coordination: starlette.websockets.WebSocketDisconnect: (1000, '')
+[2025-11-26T21:39:56.006592+00:00] pycket_simple_tips_gemini-2.5_coordination: INFO:     connection closed
+[2025-11-26T21:40:03.484150+00:00] pycket_simple_tips_gemini-2.5_coordination: Traceback (most recent call last):
+[2025-11-26T21:40:03.484261+00:00] pycket_simple_tips_gemini-2.5_coordination:   File "/app/src/hackingBuddyGPT/usecases/viewer.py", line 278, in ingress_endpoint
+[2025-11-26T21:40:03.484293+00:00] pycket_simple_tips_gemini-2.5_coordination:     data = await websocket.receive_json()
+[2025-11-26T21:40:03.484326+00:00] pycket_simple_tips_gemini-2.5_coordination:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[2025-11-26T21:40:03.484356+00:00] pycket_simple_tips_gemini-2.5_coordination:   File "/usr/local/lib/python3.13/site-packages/starlette/websockets.py", line 135, in receive_json
+[2025-11-26T21:40:03.484377+00:00] pycket_simple_tips_gemini-2.5_coordination:     self._raise_on_disconnect(message)
+[2025-11-26T21:40:03.484397+00:00] pycket_simple_tips_gemini-2.5_coordination:     ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+[2025-11-26T21:40:03.484416+00:00] pycket_simple_tips_gemini-2.5_coordination:   File "/usr/local/lib/python3.13/site-packages/starlette/websockets.py", line 113, in _raise_on_disconnect
+[2025-11-26T21:40:03.484436+00:00] pycket_simple_tips_gemini-2.5_coordination:     raise WebSocketDisconnect(message["code"], message.get("reason"))
+[2025-11-26T21:40:03.484457+00:00] pycket_simple_tips_gemini-2.5_coordination: starlette.websockets.WebSocketDisconnect: (1000, '')
+[2025-11-26T21:40:03.484482+00:00] pycket_simple_tips_gemini-2.5_coordination: INFO:     connection closed
+[2025-11-26T21:40:05.256576+00:00] pycket_simple_tips_gemini-2.5_coordination: Traceback (most recent call last):
+[2025-11-26T21:40:05.257527+00:00] pycket_simple_tips_gemini-2.5_coordination:   File "/app/src/hackingBuddyGPT/usecases/viewer.py", line 278, in ingress_endpoint
+[2025-11-26T21:40:05.257606+00:00] pycket_simple_tips_gemini-2.5_coordination:     data = await websocket.receive_json()
+[2025-11-26T21:40:05.257638+00:00] pycket_simple_tips_gemini-2.5_coordination:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[2025-11-26T21:40:05.257665+00:00] pycket_simple_tips_gemini-2.5_coordination:   File "/usr/local/lib/python3.13/site-packages/starlette/websockets.py", line 135, in receive_json
+[2025-11-26T21:40:05.257688+00:00] pycket_simple_tips_gemini-2.5_coordination:     self._raise_on_disconnect(message)
+[2025-11-26T21:40:05.257710+00:00] pycket_simple_tips_gemini-2.5_coordination:     ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+[2025-11-26T21:40:05.257732+00:00] pycket_simple_tips_gemini-2.5_coordination:   File "/usr/local/lib/python3.13/site-packages/starlette/websockets.py", line 113, in _raise_on_disconnect
+[2025-11-26T21:40:05.257753+00:00] pycket_simple_tips_gemini-2.5_coordination:     raise WebSocketDisconnect(message["code"], message.get("reason"))
+[2025-11-26T21:40:05.257774+00:00] pycket_simple_tips_gemini-2.5_coordination: starlette.websockets.WebSocketDisconnect: (1000, '')
+[2025-11-26T21:40:05.257795+00:00] pycket_simple_tips_gemini-2.5_coordination: INFO:     connection closed
+[2025-11-26T21:40:20.957522+00:00] pycket_simple_tips_gemini-2.5_coordination: Traceback (most recent call last):
+[2025-11-26T21:40:20.957604+00:00] pycket_simple_tips_gemini-2.5_coordination:   File "/app/src/hackingBuddyGPT/usecases/viewer.py", line 278, in ingress_endpoint
+[2025-11-26T21:40:20.957634+00:00] pycket_simple_tips_gemini-2.5_coordination:     data = await websocket.receive_json()
+[2025-11-26T21:40:20.957658+00:00] pycket_simple_tips_gemini-2.5_coordination:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[2025-11-26T21:40:20.957682+00:00] pycket_simple_tips_gemini-2.5_coordination:   File "/usr/local/lib/python3.13/site-packages/starlette/websockets.py", line 135, in receive_json
+[2025-11-26T21:40:20.957703+00:00] pycket_simple_tips_gemini-2.5_coordination:     self._raise_on_disconnect(message)
+[2025-11-26T21:40:20.957723+00:00] pycket_simple_tips_gemini-2.5_coordination:     ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+[2025-11-26T21:40:20.957743+00:00] pycket_simple_tips_gemini-2.5_coordination:   File "/usr/local/lib/python3.13/site-packages/starlette/websockets.py", line 113, in _raise_on_disconnect
+[2025-11-26T21:40:20.957764+00:00] pycket_simple_tips_gemini-2.5_coordination:     raise WebSocketDisconnect(message["code"], message.get("reason"))
+[2025-11-26T21:40:20.957784+00:00] pycket_simple_tips_gemini-2.5_coordination: starlette.websockets.WebSocketDisconnect: (<CloseCode.ABNORMAL_CLOSURE: 1006>, '')
+[2025-11-26T21:40:20.957804+00:00] pycket_simple_tips_gemini-2.5_coordination: INFO:     connection closed
+[2025-11-26T21:40:55.500353+00:00] pycket_simple_tips_gemini-2.5_coordination: Error receiving message: (1001, '')
+[2025-11-26T21:40:55.500471+00:00] pycket_simple_tips_gemini-2.5_coordination: Error receiving message: (<CloseCode.ABNORMAL_CLOSURE: 1006>, '')
+[2025-11-26T21:40:55.500513+00:00] pycket_simple_tips_gemini-2.5_coordination: Error sending message: Unexpected ASGI message 'websocket.send', after sending 'websocket.close' or response already completed.
+[2025-11-26T21:40:55.500548+00:00] pycket_simple_tips_gemini-2.5_coordination: Error sending message: Unexpected ASGI message 'websocket.send', after sending 'websocket.close' or response already completed.
+[2025-11-26T21:40:55.500579+00:00] pycket_simple_tips_gemini-2.5_coordination: Ingress WebSocket disconnected
+[2025-11-26T21:40:55.500609+00:00] pycket_simple_tips_gemini-2.5_coordination: Ingress WebSocket disconnected
+[2025-11-26T21:40:55.500639+00:00] pycket_simple_tips_gemini-2.5_coordination: Ingress WebSocket disconnected
+[2025-11-26T21:40:55.500669+00:00] pycket_simple_tips_gemini-2.5_coordination: Ingress WebSocket disconnected
+[2025-11-26T21:40:55.500699+00:00] pycket_simple_tips_gemini-2.5_coordination: INFO:     172.24.0.1:60092 - "GET / HTTP/1.1" 200 OK
+[2025-11-26T21:40:55.604685+00:00] pycket_simple_tips_gemini-2.5_coordination: INFO:     ('172.24.0.1', 60094) - "WebSocket /client" [accepted]
+[2025-11-26T21:40:55.604876+00:00] pycket_simple_tips_gemini-2.5_coordination: INFO:     connection open
+[2025-11-26T21:41:36.100264+00:00] pycket_simple_tips_gemini-2.5_coordination: Traceback (most recent call last):
+[2025-11-26T21:41:36.100488+00:00] pycket_simple_tips_gemini-2.5_coordination:   File "/app/src/hackingBuddyGPT/usecases/viewer.py", line 278, in ingress_endpoint
+[2025-11-26T21:41:36.100535+00:00] pycket_simple_tips_gemini-2.5_coordination:     data = await websocket.receive_json()
+[2025-11-26T21:41:36.100563+00:00] pycket_simple_tips_gemini-2.5_coordination:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[2025-11-26T21:41:36.100585+00:00] pycket_simple_tips_gemini-2.5_coordination:   File "/usr/local/lib/python3.13/site-packages/starlette/websockets.py", line 135, in receive_json
+[2025-11-26T21:41:36.100617+00:00] pycket_simple_tips_gemini-2.5_coordination:     self._raise_on_disconnect(message)
+[2025-11-26T21:41:36.100639+00:00] pycket_simple_tips_gemini-2.5_coordination:     ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+[2025-11-26T21:41:36.100659+00:00] pycket_simple_tips_gemini-2.5_coordination:   File "/usr/local/lib/python3.13/site-packages/starlette/websockets.py", line 113, in _raise_on_disconnect
+[2025-11-26T21:41:36.100680+00:00] pycket_simple_tips_gemini-2.5_coordination:     raise WebSocketDisconnect(message["code"], message.get("reason"))
+[2025-11-26T21:41:36.100700+00:00] pycket_simple_tips_gemini-2.5_coordination: starlette.websockets.WebSocketDisconnect: (1000, '')
+[2025-11-26T21:41:36.100721+00:00] pycket_simple_tips_gemini-2.5_coordination: INFO:     connection closed
+[2025-11-26T21:42:17.859450+00:00] pycket_simple_tips_gemini-2.5_coordination: INFO:     Shutting down
+[2025-11-26T21:42:17.859730+00:00] pycket_simple_tips_gemini-2.5_coordination: INFO:     connection closed
+[2025-11-26T21:42:17.860458+00:00] pycket_simple_tips_gemini-2.5_coordination: Task exception was never retrieved
+[2025-11-26T21:42:17.860546+00:00] pycket_simple_tips_gemini-2.5_coordination: future: <Task finished name='Task-65' coro=<Client.receive_messages() done, defined at /app/src/hackingBuddyGPT/usecases/viewer.py:137> exception=WebSocketDisconnect(1012, None)>
+[2025-11-26T21:42:17.860578+00:00] pycket_simple_tips_gemini-2.5_coordination: Traceback (most recent call last):
+[2025-11-26T21:42:17.860601+00:00] pycket_simple_tips_gemini-2.5_coordination:   File "/app/src/hackingBuddyGPT/usecases/viewer.py", line 165, in receive_messages
+[2025-11-26T21:42:17.860623+00:00] pycket_simple_tips_gemini-2.5_coordination:     raise e
+[2025-11-26T21:42:17.860644+00:00] pycket_simple_tips_gemini-2.5_coordination:   File "/app/src/hackingBuddyGPT/usecases/viewer.py", line 140, in receive_messages
+[2025-11-26T21:42:17.860670+00:00] pycket_simple_tips_gemini-2.5_coordination:     msg = await self.websocket.receive_json()
+[2025-11-26T21:42:17.860690+00:00] pycket_simple_tips_gemini-2.5_coordination:           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[2025-11-26T21:42:17.860708+00:00] pycket_simple_tips_gemini-2.5_coordination:   File "/usr/local/lib/python3.13/site-packages/starlette/websockets.py", line 135, in receive_json
+[2025-11-26T21:42:17.860732+00:00] pycket_simple_tips_gemini-2.5_coordination:     self._raise_on_disconnect(message)
+[2025-11-26T21:42:17.860756+00:00] pycket_simple_tips_gemini-2.5_coordination:     ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+[2025-11-26T21:42:17.860775+00:00] pycket_simple_tips_gemini-2.5_coordination:   File "/usr/local/lib/python3.13/site-packages/starlette/websockets.py", line 113, in _raise_on_disconnect
+[2025-11-26T21:42:17.860804+00:00] pycket_simple_tips_gemini-2.5_coordination:     raise WebSocketDisconnect(message["code"], message.get("reason"))
+[2025-11-26T21:42:17.860826+00:00] pycket_simple_tips_gemini-2.5_coordination: starlette.websockets.WebSocketDisconnect: (1012, None)
+[2025-11-26T21:42:17.960813+00:00] pycket_simple_tips_gemini-2.5_coordination: INFO:     Waiting for application shutdown.
+[2025-11-26T21:42:17.962054+00:00] pycket_simple_tips_gemini-2.5_coordination: ERROR:    Traceback (most recent call last):
+[2025-11-26T21:42:17.962106+00:00] pycket_simple_tips_gemini-2.5_coordination:   File "/usr/local/lib/python3.13/site-packages/starlette/routing.py", line 693, in lifespan
+[2025-11-26T21:42:17.962132+00:00] pycket_simple_tips_gemini-2.5_coordination:     async with self.lifespan_context(app) as maybe_state:
+[2025-11-26T21:42:17.962155+00:00] pycket_simple_tips_gemini-2.5_coordination:                ~~~~~~~~~~~~~~~~~~~~~^^^^^
+[2025-11-26T21:42:17.962175+00:00] pycket_simple_tips_gemini-2.5_coordination:   File "/usr/local/lib/python3.13/contextlib.py", line 221, in __aexit__
+[2025-11-26T21:42:17.962195+00:00] pycket_simple_tips_gemini-2.5_coordination:     await anext(self.gen)
+[2025-11-26T21:42:17.962230+00:00] pycket_simple_tips_gemini-2.5_coordination:   File "/app/src/hackingBuddyGPT/usecases/viewer.py", line 246, in lifespan
+[2025-11-26T21:42:17.962251+00:00] pycket_simple_tips_gemini-2.5_coordination:     await client.websocket.close()
+[2025-11-26T21:42:17.962271+00:00] pycket_simple_tips_gemini-2.5_coordination:   File "/usr/local/lib/python3.13/site-packages/starlette/websockets.py", line 180, in close
+[2025-11-26T21:42:17.962290+00:00] pycket_simple_tips_gemini-2.5_coordination:     await self.send({"type": "websocket.close", "code": code, "reason": reason or ""})
+[2025-11-26T21:42:17.962308+00:00] pycket_simple_tips_gemini-2.5_coordination:   File "/usr/local/lib/python3.13/site-packages/starlette/websockets.py", line 85, in send
+[2025-11-26T21:42:17.962327+00:00] pycket_simple_tips_gemini-2.5_coordination:     await self._send(message)
+[2025-11-26T21:42:17.962347+00:00] pycket_simple_tips_gemini-2.5_coordination:   File "/usr/local/lib/python3.13/site-packages/starlette/_exception_handler.py", line 48, in sender
+[2025-11-26T21:42:17.962366+00:00] pycket_simple_tips_gemini-2.5_coordination:     await send(message)
+[2025-11-26T21:42:17.962384+00:00] pycket_simple_tips_gemini-2.5_coordination:   File "/usr/local/lib/python3.13/site-packages/uvicorn/protocols/websockets/websockets_impl.py", line 360, in asgi_send
+[2025-11-26T21:42:17.962403+00:00] pycket_simple_tips_gemini-2.5_coordination:     raise RuntimeError(msg % message_type)
+[2025-11-26T21:42:17.962422+00:00] pycket_simple_tips_gemini-2.5_coordination: RuntimeError: Unexpected ASGI message 'websocket.close', after sending 'websocket.close' or response already completed.
+[2025-11-26T21:42:17.962443+00:00] pycket_simple_tips_gemini-2.5_coordination: 
+[2025-11-26T21:42:17.962463+00:00] pycket_simple_tips_gemini-2.5_coordination: ERROR:    Application shutdown failed. Exiting.
+[2025-11-26T21:42:17.962483+00:00] pycket_simple_tips_gemini-2.5_coordination: INFO:     Finished server process [1]
+[2025-11-26T21:42:17.962514+00:00] pycket_simple_tips_gemini-2.5_coordination: Ingress WebSocket disconnected
+[2025-11-26T21:42:17.962535+00:00] pycket_simple_tips_gemini-2.5_coordination: Error receiving message: (1012, None)

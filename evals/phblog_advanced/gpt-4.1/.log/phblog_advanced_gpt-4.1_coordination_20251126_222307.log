@@ -1,0 +1,72 @@
+[2025-11-26T22:23:09.888807+00:00] phblog_advanced_gpt-4.1_coordination: INFO:     Started server process [1]
+[2025-11-26T22:23:09.888932+00:00] phblog_advanced_gpt-4.1_coordination: INFO:     Waiting for application startup.
+[2025-11-26T22:23:09.889000+00:00] phblog_advanced_gpt-4.1_coordination: INFO:     Application startup complete.
+[2025-11-26T22:23:09.889030+00:00] phblog_advanced_gpt-4.1_coordination: INFO:     Uvicorn running on http://0.0.0.0:4444 (Press CTRL+C to quit)
+[2025-11-26T22:23:16.046901+00:00] phblog_advanced_gpt-4.1_coordination: INFO:     ('172.19.0.3', 54082) - "WebSocket /ingress" [accepted]
+[2025-11-26T22:23:16.047247+00:00] phblog_advanced_gpt-4.1_coordination: INFO:     connection open
+[2025-11-26T22:23:16.049805+00:00] phblog_advanced_gpt-4.1_coordination: /usr/local/lib/python3.13/site-packages/dataclasses_json/core.py:201: RuntimeWarning: 'NoneType' object value of non-optional type id detected when decoding Run.
+[2025-11-26T22:23:16.049881+00:00] phblog_advanced_gpt-4.1_coordination:   warnings.warn(
+[2025-11-26T22:23:16.049910+00:00] phblog_advanced_gpt-4.1_coordination: /usr/local/lib/python3.13/site-packages/dataclasses_json/core.py:201: RuntimeWarning: 'NoneType' object value of non-optional type state detected when decoding Run.
+[2025-11-26T22:23:16.049934+00:00] phblog_advanced_gpt-4.1_coordination:   warnings.warn(
+[2025-11-26T22:23:16.053128+00:00] phblog_advanced_gpt-4.1_coordination: /usr/local/lib/python3.13/site-packages/dataclasses_json/core.py:201: RuntimeWarning: 'NoneType' object value of non-optional type conversation detected when decoding Message.
+[2025-11-26T22:23:16.053175+00:00] phblog_advanced_gpt-4.1_coordination:   warnings.warn(
+[2025-11-26T22:23:16.054525+00:00] phblog_advanced_gpt-4.1_coordination: /usr/local/lib/python3.13/site-packages/dataclasses_json/core.py:201: RuntimeWarning: 'NoneType' object value of non-optional type to_message detected when decoding Section.
+[2025-11-26T22:23:16.054578+00:00] phblog_advanced_gpt-4.1_coordination:   warnings.warn(
+[2025-11-26T22:23:16.414396+00:00] phblog_advanced_gpt-4.1_coordination: /usr/local/lib/python3.13/site-packages/dataclasses_json/core.py:201: RuntimeWarning: 'NoneType' object value of non-optional type id detected when decoding MessageStreamPart.
+[2025-11-26T22:23:16.414538+00:00] phblog_advanced_gpt-4.1_coordination:   warnings.warn(
+[2025-11-26T22:33:56.847511+00:00] phblog_advanced_gpt-4.1_coordination: Traceback (most recent call last):
+[2025-11-26T22:33:56.848044+00:00] phblog_advanced_gpt-4.1_coordination:   File "/app/src/hackingBuddyGPT/usecases/viewer.py", line 278, in ingress_endpoint
+[2025-11-26T22:33:56.848248+00:00] phblog_advanced_gpt-4.1_coordination:     data = await websocket.receive_json()
+[2025-11-26T22:33:56.848289+00:00] phblog_advanced_gpt-4.1_coordination:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[2025-11-26T22:33:56.849156+00:00] phblog_advanced_gpt-4.1_coordination:   File "/usr/local/lib/python3.13/site-packages/starlette/websockets.py", line 135, in receive_json
+[2025-11-26T22:33:56.849302+00:00] phblog_advanced_gpt-4.1_coordination:     self._raise_on_disconnect(message)
+[2025-11-26T22:33:56.849376+00:00] phblog_advanced_gpt-4.1_coordination:     ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+[2025-11-26T22:33:56.849412+00:00] phblog_advanced_gpt-4.1_coordination:   File "/usr/local/lib/python3.13/site-packages/starlette/websockets.py", line 113, in _raise_on_disconnect
+[2025-11-26T22:33:56.849465+00:00] phblog_advanced_gpt-4.1_coordination:     raise WebSocketDisconnect(message["code"], message.get("reason"))
+[2025-11-26T22:33:56.849516+00:00] phblog_advanced_gpt-4.1_coordination: starlette.websockets.WebSocketDisconnect: (<CloseCode.ABNORMAL_CLOSURE: 1006>, '')
+[2025-11-26T22:33:56.849551+00:00] phblog_advanced_gpt-4.1_coordination: INFO:     connection closed
+[2025-11-26T22:34:35.281265+00:00] phblog_advanced_gpt-4.1_coordination: Ingress WebSocket disconnected
+[2025-11-26T22:34:35.281364+00:00] phblog_advanced_gpt-4.1_coordination: INFO:     172.19.0.1:50734 - "GET / HTTP/1.1" 200 OK
+[2025-11-26T22:34:35.329264+00:00] phblog_advanced_gpt-4.1_coordination: INFO:     172.19.0.1:50734 - "GET /static/style.css HTTP/1.1" 200 OK
+[2025-11-26T22:34:35.344480+00:00] phblog_advanced_gpt-4.1_coordination: INFO:     172.19.0.1:50738 - "GET /static/client.js HTTP/1.1" 200 OK
+[2025-11-26T22:34:35.369934+00:00] phblog_advanced_gpt-4.1_coordination: INFO:     172.19.0.1:50738 - "GET /favicon.ico HTTP/1.1" 200 OK
+[2025-11-26T22:34:35.399637+00:00] phblog_advanced_gpt-4.1_coordination: INFO:     ('172.19.0.1', 50752) - "WebSocket /client" [accepted]
+[2025-11-26T22:34:35.402261+00:00] phblog_advanced_gpt-4.1_coordination: INFO:     connection open
+[2025-11-26T22:34:43.039822+00:00] phblog_advanced_gpt-4.1_coordination: INFO:     Shutting down
+[2025-11-26T22:34:43.040070+00:00] phblog_advanced_gpt-4.1_coordination: INFO:     connection closed
+[2025-11-26T22:34:43.040831+00:00] phblog_advanced_gpt-4.1_coordination: Task exception was never retrieved
+[2025-11-26T22:34:43.040917+00:00] phblog_advanced_gpt-4.1_coordination: future: <Task finished name='Task-23' coro=<Client.receive_messages() done, defined at /app/src/hackingBuddyGPT/usecases/viewer.py:137> exception=WebSocketDisconnect(1012, None)>
+[2025-11-26T22:34:43.040959+00:00] phblog_advanced_gpt-4.1_coordination: Traceback (most recent call last):
+[2025-11-26T22:34:43.040987+00:00] phblog_advanced_gpt-4.1_coordination:   File "/app/src/hackingBuddyGPT/usecases/viewer.py", line 165, in receive_messages
+[2025-11-26T22:34:43.041007+00:00] phblog_advanced_gpt-4.1_coordination:     raise e
+[2025-11-26T22:34:43.041027+00:00] phblog_advanced_gpt-4.1_coordination:   File "/app/src/hackingBuddyGPT/usecases/viewer.py", line 140, in receive_messages
+[2025-11-26T22:34:43.041047+00:00] phblog_advanced_gpt-4.1_coordination:     msg = await self.websocket.receive_json()
+[2025-11-26T22:34:43.041067+00:00] phblog_advanced_gpt-4.1_coordination:           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[2025-11-26T22:34:43.041086+00:00] phblog_advanced_gpt-4.1_coordination:   File "/usr/local/lib/python3.13/site-packages/starlette/websockets.py", line 135, in receive_json
+[2025-11-26T22:34:43.041117+00:00] phblog_advanced_gpt-4.1_coordination:     self._raise_on_disconnect(message)
+[2025-11-26T22:34:43.041138+00:00] phblog_advanced_gpt-4.1_coordination:     ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+[2025-11-26T22:34:43.041157+00:00] phblog_advanced_gpt-4.1_coordination:   File "/usr/local/lib/python3.13/site-packages/starlette/websockets.py", line 113, in _raise_on_disconnect
+[2025-11-26T22:34:43.041175+00:00] phblog_advanced_gpt-4.1_coordination:     raise WebSocketDisconnect(message["code"], message.get("reason"))
+[2025-11-26T22:34:43.041195+00:00] phblog_advanced_gpt-4.1_coordination: starlette.websockets.WebSocketDisconnect: (1012, None)
+[2025-11-26T22:34:43.141123+00:00] phblog_advanced_gpt-4.1_coordination: INFO:     Waiting for application shutdown.
+[2025-11-26T22:34:43.142559+00:00] phblog_advanced_gpt-4.1_coordination: ERROR:    Traceback (most recent call last):
+[2025-11-26T22:34:43.142635+00:00] phblog_advanced_gpt-4.1_coordination:   File "/usr/local/lib/python3.13/site-packages/starlette/routing.py", line 693, in lifespan
+[2025-11-26T22:34:43.142665+00:00] phblog_advanced_gpt-4.1_coordination:     async with self.lifespan_context(app) as maybe_state:
+[2025-11-26T22:34:43.142689+00:00] phblog_advanced_gpt-4.1_coordination:                ~~~~~~~~~~~~~~~~~~~~~^^^^^
+[2025-11-26T22:34:43.142710+00:00] phblog_advanced_gpt-4.1_coordination:   File "/usr/local/lib/python3.13/contextlib.py", line 221, in __aexit__
+[2025-11-26T22:34:43.142731+00:00] phblog_advanced_gpt-4.1_coordination:     await anext(self.gen)
+[2025-11-26T22:34:43.142795+00:00] phblog_advanced_gpt-4.1_coordination:   File "/app/src/hackingBuddyGPT/usecases/viewer.py", line 246, in lifespan
+[2025-11-26T22:34:43.142834+00:00] phblog_advanced_gpt-4.1_coordination:     await client.websocket.close()
+[2025-11-26T22:34:43.142855+00:00] phblog_advanced_gpt-4.1_coordination:   File "/usr/local/lib/python3.13/site-packages/starlette/websockets.py", line 180, in close
+[2025-11-26T22:34:43.142880+00:00] phblog_advanced_gpt-4.1_coordination:     await self.send({"type": "websocket.close", "code": code, "reason": reason or ""})
+[2025-11-26T22:34:43.142899+00:00] phblog_advanced_gpt-4.1_coordination:   File "/usr/local/lib/python3.13/site-packages/starlette/websockets.py", line 85, in send
+[2025-11-26T22:34:43.142918+00:00] phblog_advanced_gpt-4.1_coordination:     await self._send(message)
+[2025-11-26T22:34:43.142937+00:00] phblog_advanced_gpt-4.1_coordination:   File "/usr/local/lib/python3.13/site-packages/starlette/_exception_handler.py", line 48, in sender
+[2025-11-26T22:34:43.142978+00:00] phblog_advanced_gpt-4.1_coordination:     await send(message)
+[2025-11-26T22:34:43.142998+00:00] phblog_advanced_gpt-4.1_coordination:   File "/usr/local/lib/python3.13/site-packages/uvicorn/protocols/websockets/websockets_impl.py", line 360, in asgi_send
+[2025-11-26T22:34:43.143017+00:00] phblog_advanced_gpt-4.1_coordination:     raise RuntimeError(msg % message_type)
+[2025-11-26T22:34:43.143036+00:00] phblog_advanced_gpt-4.1_coordination: RuntimeError: Unexpected ASGI message 'websocket.close', after sending 'websocket.close' or response already completed.
+[2025-11-26T22:34:43.143057+00:00] phblog_advanced_gpt-4.1_coordination: 
+[2025-11-26T22:34:43.143076+00:00] phblog_advanced_gpt-4.1_coordination: ERROR:    Application shutdown failed. Exiting.
+[2025-11-26T22:34:43.143095+00:00] phblog_advanced_gpt-4.1_coordination: INFO:     Finished server process [1]
+[2025-11-26T22:34:43.143119+00:00] phblog_advanced_gpt-4.1_coordination: Error receiving message: (1012, None)

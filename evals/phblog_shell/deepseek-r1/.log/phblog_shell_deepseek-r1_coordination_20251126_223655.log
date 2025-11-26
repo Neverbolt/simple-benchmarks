@@ -1,0 +1,86 @@
+[2025-11-26T22:36:57.549656+00:00] phblog_shell_deepseek-r1_coordination: INFO:     Started server process [1]
+[2025-11-26T22:36:57.549783+00:00] phblog_shell_deepseek-r1_coordination: INFO:     Waiting for application startup.
+[2025-11-26T22:36:57.549823+00:00] phblog_shell_deepseek-r1_coordination: INFO:     Application startup complete.
+[2025-11-26T22:36:57.549868+00:00] phblog_shell_deepseek-r1_coordination: INFO:     Uvicorn running on http://0.0.0.0:4444 (Press CTRL+C to quit)
+[2025-11-26T22:37:04.021843+00:00] phblog_shell_deepseek-r1_coordination: INFO:     ('172.26.0.3', 48238) - "WebSocket /ingress" [accepted]
+[2025-11-26T22:37:04.022313+00:00] phblog_shell_deepseek-r1_coordination: INFO:     connection open
+[2025-11-26T22:37:04.024348+00:00] phblog_shell_deepseek-r1_coordination: /usr/local/lib/python3.13/site-packages/dataclasses_json/core.py:201: RuntimeWarning: 'NoneType' object value of non-optional type id detected when decoding Run.
+[2025-11-26T22:37:04.024426+00:00] phblog_shell_deepseek-r1_coordination:   warnings.warn(
+[2025-11-26T22:37:04.024458+00:00] phblog_shell_deepseek-r1_coordination: /usr/local/lib/python3.13/site-packages/dataclasses_json/core.py:201: RuntimeWarning: 'NoneType' object value of non-optional type state detected when decoding Run.
+[2025-11-26T22:37:04.024482+00:00] phblog_shell_deepseek-r1_coordination:   warnings.warn(
+[2025-11-26T22:37:04.027984+00:00] phblog_shell_deepseek-r1_coordination: /usr/local/lib/python3.13/site-packages/dataclasses_json/core.py:201: RuntimeWarning: 'NoneType' object value of non-optional type conversation detected when decoding Message.
+[2025-11-26T22:37:04.028061+00:00] phblog_shell_deepseek-r1_coordination:   warnings.warn(
+[2025-11-26T22:37:04.029937+00:00] phblog_shell_deepseek-r1_coordination: /usr/local/lib/python3.13/site-packages/dataclasses_json/core.py:201: RuntimeWarning: 'NoneType' object value of non-optional type to_message detected when decoding Section.
+[2025-11-26T22:37:04.030026+00:00] phblog_shell_deepseek-r1_coordination:   warnings.warn(
+[2025-11-26T22:37:05.404924+00:00] phblog_shell_deepseek-r1_coordination: /usr/local/lib/python3.13/site-packages/dataclasses_json/core.py:201: RuntimeWarning: 'NoneType' object value of non-optional type id detected when decoding MessageStreamPart.
+[2025-11-26T22:37:05.405030+00:00] phblog_shell_deepseek-r1_coordination:   warnings.warn(
+[2025-11-26T22:37:09.581659+00:00] phblog_shell_deepseek-r1_coordination: INFO:     ('172.26.0.4', 60334) - "WebSocket /ingress" [accepted]
+[2025-11-26T22:37:09.583227+00:00] phblog_shell_deepseek-r1_coordination: INFO:     connection open
+[2025-11-26T22:44:35.624338+00:00] phblog_shell_deepseek-r1_coordination: Traceback (most recent call last):
+[2025-11-26T22:44:35.624423+00:00] phblog_shell_deepseek-r1_coordination:   File "/app/src/hackingBuddyGPT/usecases/viewer.py", line 278, in ingress_endpoint
+[2025-11-26T22:44:35.624460+00:00] phblog_shell_deepseek-r1_coordination:     data = await websocket.receive_json()
+[2025-11-26T22:44:35.624495+00:00] phblog_shell_deepseek-r1_coordination:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[2025-11-26T22:44:35.624517+00:00] phblog_shell_deepseek-r1_coordination:   File "/usr/local/lib/python3.13/site-packages/starlette/websockets.py", line 135, in receive_json
+[2025-11-26T22:44:35.624539+00:00] phblog_shell_deepseek-r1_coordination:     self._raise_on_disconnect(message)
+[2025-11-26T22:44:35.624561+00:00] phblog_shell_deepseek-r1_coordination:     ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+[2025-11-26T22:44:35.624581+00:00] phblog_shell_deepseek-r1_coordination:   File "/usr/local/lib/python3.13/site-packages/starlette/websockets.py", line 113, in _raise_on_disconnect
+[2025-11-26T22:44:35.624602+00:00] phblog_shell_deepseek-r1_coordination:     raise WebSocketDisconnect(message["code"], message.get("reason"))
+[2025-11-26T22:44:35.624623+00:00] phblog_shell_deepseek-r1_coordination: starlette.websockets.WebSocketDisconnect: (<CloseCode.ABNORMAL_CLOSURE: 1006>, '')
+[2025-11-26T22:44:35.624642+00:00] phblog_shell_deepseek-r1_coordination: INFO:     connection closed
+[2025-11-26T22:51:55.181488+00:00] phblog_shell_deepseek-r1_coordination: Ingress WebSocket disconnected
+[2025-11-26T22:51:55.181599+00:00] phblog_shell_deepseek-r1_coordination: INFO:     172.26.0.1:51514 - "GET / HTTP/1.1" 200 OK
+[2025-11-26T22:51:55.234349+00:00] phblog_shell_deepseek-r1_coordination: INFO:     172.26.0.1:51514 - "GET /static/style.css HTTP/1.1" 200 OK
+[2025-11-26T22:51:55.249669+00:00] phblog_shell_deepseek-r1_coordination: INFO:     172.26.0.1:51528 - "GET /static/client.js HTTP/1.1" 200 OK
+[2025-11-26T22:51:55.295005+00:00] phblog_shell_deepseek-r1_coordination: INFO:     172.26.0.1:51528 - "GET /favicon.ico HTTP/1.1" 200 OK
+[2025-11-26T22:51:55.314631+00:00] phblog_shell_deepseek-r1_coordination: INFO:     ('172.26.0.1', 51532) - "WebSocket /client" [accepted]
+[2025-11-26T22:51:55.314838+00:00] phblog_shell_deepseek-r1_coordination: INFO:     connection open
+[2025-11-26T23:12:39.713617+00:00] phblog_shell_deepseek-r1_coordination: Traceback (most recent call last):
+[2025-11-26T23:12:39.713698+00:00] phblog_shell_deepseek-r1_coordination:   File "/app/src/hackingBuddyGPT/usecases/viewer.py", line 278, in ingress_endpoint
+[2025-11-26T23:12:39.713728+00:00] phblog_shell_deepseek-r1_coordination:     data = await websocket.receive_json()
+[2025-11-26T23:12:39.713753+00:00] phblog_shell_deepseek-r1_coordination:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[2025-11-26T23:12:39.713775+00:00] phblog_shell_deepseek-r1_coordination:   File "/usr/local/lib/python3.13/site-packages/starlette/websockets.py", line 135, in receive_json
+[2025-11-26T23:12:39.713795+00:00] phblog_shell_deepseek-r1_coordination:     self._raise_on_disconnect(message)
+[2025-11-26T23:12:39.713816+00:00] phblog_shell_deepseek-r1_coordination:     ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+[2025-11-26T23:12:39.713836+00:00] phblog_shell_deepseek-r1_coordination:   File "/usr/local/lib/python3.13/site-packages/starlette/websockets.py", line 113, in _raise_on_disconnect
+[2025-11-26T23:12:39.713856+00:00] phblog_shell_deepseek-r1_coordination:     raise WebSocketDisconnect(message["code"], message.get("reason"))
+[2025-11-26T23:12:39.713878+00:00] phblog_shell_deepseek-r1_coordination: starlette.websockets.WebSocketDisconnect: (<CloseCode.ABNORMAL_CLOSURE: 1006>, '')
+[2025-11-26T23:12:39.713905+00:00] phblog_shell_deepseek-r1_coordination: INFO:     connection closed
+[2025-11-26T23:17:35.700628+00:00] phblog_shell_deepseek-r1_coordination: INFO:     Shutting down
+[2025-11-26T23:17:35.701073+00:00] phblog_shell_deepseek-r1_coordination: INFO:     connection closed
+[2025-11-26T23:17:35.701985+00:00] phblog_shell_deepseek-r1_coordination: Task exception was never retrieved
+[2025-11-26T23:17:35.702029+00:00] phblog_shell_deepseek-r1_coordination: future: <Task finished name='Task-29' coro=<Client.receive_messages() done, defined at /app/src/hackingBuddyGPT/usecases/viewer.py:137> exception=WebSocketDisconnect(1012, None)>
+[2025-11-26T23:17:35.702055+00:00] phblog_shell_deepseek-r1_coordination: Traceback (most recent call last):
+[2025-11-26T23:17:35.702077+00:00] phblog_shell_deepseek-r1_coordination:   File "/app/src/hackingBuddyGPT/usecases/viewer.py", line 165, in receive_messages
+[2025-11-26T23:17:35.702111+00:00] phblog_shell_deepseek-r1_coordination:     raise e
+[2025-11-26T23:17:35.702132+00:00] phblog_shell_deepseek-r1_coordination:   File "/app/src/hackingBuddyGPT/usecases/viewer.py", line 140, in receive_messages
+[2025-11-26T23:17:35.702152+00:00] phblog_shell_deepseek-r1_coordination:     msg = await self.websocket.receive_json()
+[2025-11-26T23:17:35.702171+00:00] phblog_shell_deepseek-r1_coordination:           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[2025-11-26T23:17:35.702191+00:00] phblog_shell_deepseek-r1_coordination:   File "/usr/local/lib/python3.13/site-packages/starlette/websockets.py", line 135, in receive_json
+[2025-11-26T23:17:35.702211+00:00] phblog_shell_deepseek-r1_coordination:     self._raise_on_disconnect(message)
+[2025-11-26T23:17:35.702231+00:00] phblog_shell_deepseek-r1_coordination:     ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+[2025-11-26T23:17:35.702255+00:00] phblog_shell_deepseek-r1_coordination:   File "/usr/local/lib/python3.13/site-packages/starlette/websockets.py", line 113, in _raise_on_disconnect
+[2025-11-26T23:17:35.702275+00:00] phblog_shell_deepseek-r1_coordination:     raise WebSocketDisconnect(message["code"], message.get("reason"))
+[2025-11-26T23:17:35.702293+00:00] phblog_shell_deepseek-r1_coordination: starlette.websockets.WebSocketDisconnect: (1012, None)
+[2025-11-26T23:17:35.801464+00:00] phblog_shell_deepseek-r1_coordination: INFO:     Waiting for application shutdown.
+[2025-11-26T23:17:35.802681+00:00] phblog_shell_deepseek-r1_coordination: ERROR:    Traceback (most recent call last):
+[2025-11-26T23:17:35.802724+00:00] phblog_shell_deepseek-r1_coordination:   File "/usr/local/lib/python3.13/site-packages/starlette/routing.py", line 693, in lifespan
+[2025-11-26T23:17:35.802750+00:00] phblog_shell_deepseek-r1_coordination:     async with self.lifespan_context(app) as maybe_state:
+[2025-11-26T23:17:35.802773+00:00] phblog_shell_deepseek-r1_coordination:                ~~~~~~~~~~~~~~~~~~~~~^^^^^
+[2025-11-26T23:17:35.802809+00:00] phblog_shell_deepseek-r1_coordination:   File "/usr/local/lib/python3.13/contextlib.py", line 221, in __aexit__
+[2025-11-26T23:17:35.802830+00:00] phblog_shell_deepseek-r1_coordination:     await anext(self.gen)
+[2025-11-26T23:17:35.802850+00:00] phblog_shell_deepseek-r1_coordination:   File "/app/src/hackingBuddyGPT/usecases/viewer.py", line 246, in lifespan
+[2025-11-26T23:17:35.802871+00:00] phblog_shell_deepseek-r1_coordination:     await client.websocket.close()
+[2025-11-26T23:17:35.802891+00:00] phblog_shell_deepseek-r1_coordination:   File "/usr/local/lib/python3.13/site-packages/starlette/websockets.py", line 180, in close
+[2025-11-26T23:17:35.802909+00:00] phblog_shell_deepseek-r1_coordination:     await self.send({"type": "websocket.close", "code": code, "reason": reason or ""})
+[2025-11-26T23:17:35.802929+00:00] phblog_shell_deepseek-r1_coordination:   File "/usr/local/lib/python3.13/site-packages/starlette/websockets.py", line 85, in send
+[2025-11-26T23:17:35.802963+00:00] phblog_shell_deepseek-r1_coordination:     await self._send(message)
+[2025-11-26T23:17:35.802986+00:00] phblog_shell_deepseek-r1_coordination:   File "/usr/local/lib/python3.13/site-packages/starlette/_exception_handler.py", line 48, in sender
+[2025-11-26T23:17:35.803005+00:00] phblog_shell_deepseek-r1_coordination:     await send(message)
+[2025-11-26T23:17:35.803024+00:00] phblog_shell_deepseek-r1_coordination:   File "/usr/local/lib/python3.13/site-packages/uvicorn/protocols/websockets/websockets_impl.py", line 360, in asgi_send
+[2025-11-26T23:17:35.803043+00:00] phblog_shell_deepseek-r1_coordination:     raise RuntimeError(msg % message_type)
+[2025-11-26T23:17:35.803061+00:00] phblog_shell_deepseek-r1_coordination: RuntimeError: Unexpected ASGI message 'websocket.close', after sending 'websocket.close' or response already completed.
+[2025-11-26T23:17:35.803082+00:00] phblog_shell_deepseek-r1_coordination: 
+[2025-11-26T23:17:35.803103+00:00] phblog_shell_deepseek-r1_coordination: ERROR:    Application shutdown failed. Exiting.
+[2025-11-26T23:17:35.803121+00:00] phblog_shell_deepseek-r1_coordination: INFO:     Finished server process [1]
+[2025-11-26T23:17:35.803147+00:00] phblog_shell_deepseek-r1_coordination: Ingress WebSocket disconnected
+[2025-11-26T23:17:35.803167+00:00] phblog_shell_deepseek-r1_coordination: Error receiving message: (1012, None)
