@@ -1,0 +1,14 @@
+$base: ../pycket_shell.yaml
+experiment_name: pycket_shell_deepseek-r1
+
+eval_count: 0
+coord:
+  volumes:
+    - "./pycket_shell_deepseek-r1.sqlite3:/app/results.sqlite3"
+  ports:
+    - "4441:4444"
+
+eval:
+  environment:
+    llm.model: deepseek/deepseek-r1-0528
+    llm.provider: chutes
