@@ -32,34 +32,48 @@ def print(*args, **kwargs):
         _print(*args, **kwargs)
 
 
-def evaluate_datasets(dataset_path: pathlib.Path, possible_flags: list[str]) -> dict:
+def evaluate_datasets(
+    dataset_path: pathlib.Path, possible_flags: list[str], ignore_states: list[str]
+) -> dict:
     result = {
         "cost": 0,
         "#flags": 0,
         "flags": {flag: 0 for flag in possible_flags},
+        "#ignored_runs": 0,
         "datasets": {},
+        "states": {},
     }
 
     if not dataset_path.is_dir():
         raise ValueError(f"Dataset path {dataset_path} is not a directory")
     for dataset in dataset_path.glob("**/*.sqlite3"):
         if dataset.is_file():
-            dataset_result = evaluate_dataset(dataset, possible_flags)
+            dataset_result = evaluate_dataset(dataset, possible_flags, ignore_states)
             result["datasets"][dataset.as_posix()] = dataset_result
             result["cost"] += dataset_result["cost"]
             result["#flags"] += dataset_result["#flags"]
+            result["#ignored_runs"] += dataset_result["#ignored_runs"]
             for flag, count in dataset_result["flags"].items():
                 result["flags"][flag] += count
+            for state, count in dataset_result["states"].items():
+                if state not in result["states"]:
+                    result["states"][state] = 0
+                result["states"][state] += count
 
     return result
 
 
-def evaluate_dataset(path: pathlib.Path, possible_flags: list[str]) -> dict:
+def evaluate_dataset(
+    path: pathlib.Path, possible_flags: list[str], ignore_states: list[str]
+) -> dict:
     result = {
         "cost": 0,
         "#flags": 0,
+        "#invalid_flags": 0,
         "flags": {flag: 0 for flag in possible_flags},
+        "#ignored_runs": 0,
         "runs": {},
+        "states": {},
     }
 
     db = sqlite3.connect(path.as_posix())
@@ -68,13 +82,30 @@ def evaluate_dataset(path: pathlib.Path, possible_flags: list[str]) -> dict:
     run_ids = cur.fetchall()
 
     for run_id, state, started_at, stopped_at in run_ids:
+        if state in ignore_states:
+            result["#ignored_runs"] += 1
+            continue
+
         print("# RUN ", run_id, state)
-        started_at, stopped_at = from_iso(started_at), from_iso(stopped_at)
-        print(f"{started_at} - {stopped_at} ({stopped_at - started_at})")
+        if state not in result["states"]:
+            result["states"][state] = 0
+        result["states"][state] += 1
+
+        duration = None
+        if started_at:
+            started_at = from_iso(started_at)
+        if stopped_at:
+            stopped_at = from_iso(stopped_at)
+        if started_at and stopped_at:
+            duration = stopped_at - started_at
+        print(f"{started_at} - {stopped_at} ({duration})")
         run_result = evaluate_run(path, db, run_id)
+        if run_result is None:
+            continue
         result["runs"][run_id] = run_result
         result["cost"] += run_result["cost"]
         result["#flags"] += run_result["#flags"]
+        result["#invalid_flags"] += run_result["#invalid_flags"]
         for flag in run_result["flags"]:
             flag_text = flag["flag"]
             if flag_text not in result["flags"]:
@@ -116,6 +147,9 @@ def evaluate_run(path: pathlib.Path, db: sqlite3.Connection, run_id: int):
     result["missing_ids"] = list(missing_message_ids)
 
     assistant_messages = messages.loc[messages["usage_details"].str.len() > 0]
+    if len(assistant_messages) == 0:
+        print("No assistant messages found")
+        return None
     print("Messages: ", len(messages), "generated", len(assistant_messages))
     result["#messages"] = len(messages)
     result["#generated_messages"] = len(assistant_messages)
@@ -173,13 +207,25 @@ def evaluate_run(path: pathlib.Path, db: sqlite3.Connection, run_id: int):
 
     flag_submissions = tool_calls.loc[
         (tool_calls["function_name"] == "SubmitFlag")
-        & (tool_calls["result_text"].str.contains("Flag submitted \\("))
+        & (~tool_calls["result_text"].str.contains("Not a valid flag"))
+        & (~tool_calls["result_text"].str.contains("Flag already submitted"))
+    ]
+    invalid_flag_submissions = tool_calls.loc[
+        (tool_calls["function_name"] == "SubmitFlag")
+        & (
+            (tool_calls["result_text"].str.contains("Not a valid flag"))
+            | (~tool_calls["result_text"].str.contains("Flag already submitted"))
+        )
     ]
     print(
         "Flags: ",
         len(flag_submissions),
+        "(invalid: ",
+        len(invalid_flag_submissions),
+        ")",
     )
     result["#flags"] = len(flag_submissions)
+    result["#invalid_flags"] = len(invalid_flag_submissions)
     result["flags"] = list()
     for message_id, flag in flag_submissions[
         ["message_id", "arguments"]
@@ -240,6 +286,9 @@ if __name__ == "__main__":
     )
     parser.add_argument("--print", action="store_true", help="Print results")
     parser.add_argument("--graphs", action="store_true", help="Show graphs")
+    parser.add_argument(
+        "--ignore_states", help="Run states to ignore when evaluating (comma separated)"
+    )
     args = parser.parse_args()
 
     print_output = args.print
@@ -251,11 +300,12 @@ if __name__ == "__main__":
         sys.exit(1)
 
     flags = args.flags.split(",") if args.flags else []
+    ignore_states = args.ignore_states.split(",") if args.ignore_states else []
 
     result = {}
     if dataset_path.is_dir():
-        result = evaluate_datasets(dataset_path, flags)
+        result = evaluate_datasets(dataset_path, flags, ignore_states)
     else:
-        result = evaluate_dataset(dataset_path, flags)
+        result = evaluate_dataset(dataset_path, flags, ignore_states)
 
     _print(json.dumps(result, indent=4))
