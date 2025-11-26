@@ -1,0 +1,14 @@
+$base: ../pycket_advanced.yaml
+experiment_name: pycket_advanced_deepseek-v3.2-exp
+
+eval_count: 0
+coord:
+  volumes:
+    - "./pycket_advanced_deepseek-v3.2-exp.sqlite3:/app/results.sqlite3"
+  ports:
+    - "4442:4444"
+
+eval:
+  environment:
+    llm.model: deepseek/deepseek-v3.2-exp
+    llm.provider: deepseek

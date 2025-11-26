@@ -102,6 +102,7 @@ def evaluate_dataset(
         run_result = evaluate_run(path, db, run_id)
         if run_result is None:
             continue
+        run_result["state"] = state
         result["runs"][run_id] = run_result
         result["cost"] += run_result["cost"]
         result["#flags"] += run_result["#flags"]
@@ -112,7 +113,9 @@ def evaluate_dataset(
                 raise ValueError(f"Flag {flag_text} not found in possible flags")
             result["flags"][flag_text] += 1
 
-    result["avg_flags"] = result["#flags"] / len(result["runs"])
+    result["avg_flags"] = (
+        (result["#flags"] / len(result["runs"])) if len(result["runs"]) > 0 else 0
+    )
     print(json.dumps(result, indent=4))
     return result
 
