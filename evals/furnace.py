@@ -138,16 +138,6 @@ def ensure_container(client, name, cfg, network):
         sys.exit(1)
 
 
-def stream_logs(container, logfile):
-    try:
-        for line in container.logs(stream=True, follow=True):
-            ts = datetime.now(timezone.utc).isoformat()
-            with open(logfile, "a") as f:
-                f.write(f"[{ts}] {container.name}: {line.decode(errors='replace')}")
-    except APIError as e:
-        print(f"Error streaming logs for '{container.name}': {e}", file=sys.stderr)
-
-
 def cleanup_instance(client, experiment, idx, services):
     prefix = f"{experiment}_eval_{idx}"
     for svc in services:
@@ -181,6 +171,31 @@ def cleanup_instance(client, experiment, idx, services):
         print(f"Error removing network '{netname}': {e}", file=sys.stderr)
 
 
+def get_log_writer(log_name: str, log_dir: str = ".log"):
+    if not os.path.exists(log_dir):
+        os.makedirs(log_dir)
+
+    ts = datetime.now().strftime("%Y%m%d_%H%M%S")
+    logfile = f"{log_dir}/{log_name}_{ts}.log"
+    open(logfile, "w").close()
+
+    def stream_logs(container):
+        try:
+            for line in container.logs(stream=True, follow=True):
+                ts = datetime.now(timezone.utc).isoformat()
+                with open(logfile, "a") as f:
+                    f.write(f"[{ts}] {container.name}: {line.decode(errors='replace')}")
+        except APIError as e:
+            print(f"Error streaming logs for '{container.name}': {e}", file=sys.stderr)
+
+    def logger(container):
+        threading.Thread(
+            target=stream_logs, args=(container, logfile), daemon=True
+        ).start()
+
+    return logger
+
+
 def run_config(config_path: str):
     cfg = load_config(config_path)
 
@@ -196,6 +211,7 @@ def run_config(config_path: str):
     coord_ctr = ensure_container(
         client, f"{experiment}_coordination", coord_cfg, coord_net
     )
+    get_log_writer(f"{experiment}_coordination")(coord_ctr)
 
     pending = list(range(1, total + 1))
     active = {}
@@ -229,24 +245,16 @@ def run_config(config_path: str):
 
     def start_instance(i):
         nonlocal pending, active
+
+        eval_logger = get_log_writer(f"{experiment}_eval_{i}")
+
         net = ensure_network(client, f"{experiment}_eval_net_{i}")
-        logdir = ".log"
-        if not os.path.exists(logdir):
-            os.makedirs(logdir)
-        logfile = f"{logdir}/{experiment}_eval_{i}.log"
-        if os.path.exists(logfile):
-            mtime = os.path.getmtime(logfile)
-            ts = datetime.fromtimestamp(mtime).strftime("%Y%m%d_%H%M%S")
-            archive = f"{logdir}/{experiment}_eval_{i}_{ts}.log"
-            os.rename(logfile, archive)
-        open(logfile, "w").close()
         for svc in services:
             for j in range(1, svc.get("count", 1) + 1):
                 cname = f"{experiment}_eval_{i}_{svc['name']}_{j}"
                 svc_ctr = ensure_container(client, cname, svc, net)
-                threading.Thread(
-                    target=stream_logs, args=(svc_ctr, logfile), daemon=True
-                ).start()
+                eval_logger(svc_ctr)
+
         time.sleep(5)
         name = f"{experiment}_eval_{i}"
         ctr = ensure_container(client, name, eval_cfg, net)
@@ -254,7 +262,7 @@ def run_config(config_path: str):
             coord_net.connect(ctr)
         except APIError as e:
             print(f"Error connecting '{name}' to network: {e}", file=sys.stderr)
-        threading.Thread(target=stream_logs, args=(ctr, logfile), daemon=True).start()
+        eval_logger(ctr)
         active[i] = {"ctr": ctr, "start": datetime.now(timezone.utc)}
         print(f"Launched eval #{i}")
 
