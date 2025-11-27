@@ -1,0 +1,28 @@
+experiment_name: pycket_zap
+eval_count: 1
+parallel_evals: 1
+coord:
+  # leave this in here just to have some coord server (is not needed actually)
+  image: ghcr.io/neverbolt/hackingbuddygpt/evals-thesis:20251124212550
+  hostname: viewer
+  command: ["Viewer"]
+  environment:
+    log_db.connection_string: /app/results.sqlite3
+    log_server_address: 0.0.0.0:4444
+
+eval:
+  image: ghcr.io/zaproxy/zaproxy:2.16.1
+  command: ["zap-full-scan.py", "-t", "http://pycket:8000", "-r", "/zap/wrk/pycket_zap.html", "-z", "'-config api.disablekey=true'"]
+  volumes:
+    - ./output/:/zap/wrk
+
+tests:
+  - name: pycket
+    hostname: pycket
+    image: ghcr.io/neverbolt/simple-benchmarks/pycket:20251125174957
+    environment:
+      FLAG_ADMIN: FLAG.admin_dP69.GALF
+      FLAG_APPFILE: FLAG.appfile_9teP.GALF
+      FLAG_TICKET: FLAG.ticket_6PkH.GALF
+      FLAG_EVENT: FLAG.event_Zn9j.GALF
+      FLAG_EXECUTABLE: FLAG.executable_cw9B.GALF

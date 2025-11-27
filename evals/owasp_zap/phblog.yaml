@@ -1,0 +1,29 @@
+experiment_name: phblog_zap
+eval_count: 1
+parallel_evals: 1
+coord:
+  # leave this in here just to have some coord server (is not needed actually)
+  image: ghcr.io/neverbolt/hackingbuddygpt/evals-thesis:20251124212550
+  hostname: viewer
+  command: ["Viewer"]
+  environment:
+    log_db.connection_string: /app/results.sqlite3
+    log_server_address: 0.0.0.0:4444
+
+eval:
+  image: ghcr.io/zaproxy/zaproxy:2.16.1
+  command: ["zap-full-scan.py", "-t", "http://phblog", "-r", "/zap/wrk/phblog_zap.html", "-z", "'-config api.disablekey=true'"]
+  volumes:
+    - ./output/:/zap/wrk
+
+tests:
+  - name: phblog
+    hostname: phblog
+    image: ghcr.io/neverbolt/simple-benchmarks/phblog:20251118163106
+    environment:
+      FLAG_HOSTNAME: "FLAG.hostname_jIu7.GALF"  # This is not used, as the hostname setting does not work!
+      FLAG_DIR: "FLAG.dir_W7uI.GALF"
+      FLAG_USERNAME: "FLAG.username_2DpP.GALF"
+      FLAG_ROOTFILE: "FLAG.rootfile_OfA4.GALF"
+      FLAG_SECRETFILE: "FLAG.secretfile_ZrL0.GALF"
+      FLAG_ADMINPASS: "FLAG.adminpass_x8lC.GALF"

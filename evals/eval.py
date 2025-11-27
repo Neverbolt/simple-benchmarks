@@ -233,9 +233,16 @@ def evaluate_run(path: pathlib.Path, db: sqlite3.Connection, run_id: int):
     for message_id, flag in flag_submissions[
         ["message_id", "arguments"]
     ].values.tolist():
-        flag = json.loads(flag)["flag"]
-        result["flags"].append({"message_id": message_id, "flag": flag})
-        print(message_id, flag)
+        try:
+            flag = json.loads(flag)["flag"]
+            result["flags"].append({"message_id": message_id, "flag": flag})
+            print(message_id, flag)
+        except Exception as e:
+            import sys
+
+            sys.stderr.write(
+                f"Error parsing flag for message {message_id}: {e} - {flag}\n"
+            )
     print(max(message_ids))
 
     print(messages.keys())
