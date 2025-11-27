@@ -1,0 +1,287 @@
+[2025-11-26T23:49:50.974295+00:00] pycket_simple_deepseek-v3.2-exp_coordination: INFO:     Started server process [1]
+[2025-11-26T23:49:50.974406+00:00] pycket_simple_deepseek-v3.2-exp_coordination: INFO:     Waiting for application startup.
+[2025-11-26T23:49:50.974564+00:00] pycket_simple_deepseek-v3.2-exp_coordination: INFO:     Application startup complete.
+[2025-11-26T23:49:50.974613+00:00] pycket_simple_deepseek-v3.2-exp_coordination: INFO:     Uvicorn running on http://0.0.0.0:4444 (Press CTRL+C to quit)
+[2025-11-26T23:49:57.671436+00:00] pycket_simple_deepseek-v3.2-exp_coordination: INFO:     ('172.25.0.3', 36452) - "WebSocket /ingress" [accepted]
+[2025-11-26T23:49:57.671916+00:00] pycket_simple_deepseek-v3.2-exp_coordination: INFO:     connection open
+[2025-11-26T23:49:57.677246+00:00] pycket_simple_deepseek-v3.2-exp_coordination: /usr/local/lib/python3.13/site-packages/dataclasses_json/core.py:201: RuntimeWarning: 'NoneType' object value of non-optional type id detected when decoding Run.
+[2025-11-26T23:49:57.677345+00:00] pycket_simple_deepseek-v3.2-exp_coordination:   warnings.warn(
+[2025-11-26T23:49:57.677378+00:00] pycket_simple_deepseek-v3.2-exp_coordination: /usr/local/lib/python3.13/site-packages/dataclasses_json/core.py:201: RuntimeWarning: 'NoneType' object value of non-optional type state detected when decoding Run.
+[2025-11-26T23:49:57.677403+00:00] pycket_simple_deepseek-v3.2-exp_coordination:   warnings.warn(
+[2025-11-26T23:49:57.683993+00:00] pycket_simple_deepseek-v3.2-exp_coordination: /usr/local/lib/python3.13/site-packages/dataclasses_json/core.py:201: RuntimeWarning: 'NoneType' object value of non-optional type conversation detected when decoding Message.
+[2025-11-26T23:49:57.684064+00:00] pycket_simple_deepseek-v3.2-exp_coordination:   warnings.warn(
+[2025-11-26T23:49:57.690297+00:00] pycket_simple_deepseek-v3.2-exp_coordination: /usr/local/lib/python3.13/site-packages/dataclasses_json/core.py:201: RuntimeWarning: 'NoneType' object value of non-optional type to_message detected when decoding Section.
+[2025-11-26T23:49:57.690370+00:00] pycket_simple_deepseek-v3.2-exp_coordination:   warnings.warn(
+[2025-11-26T23:49:59.206400+00:00] pycket_simple_deepseek-v3.2-exp_coordination: /usr/local/lib/python3.13/site-packages/dataclasses_json/core.py:201: RuntimeWarning: 'NoneType' object value of non-optional type id detected when decoding MessageStreamPart.
+[2025-11-26T23:49:59.206765+00:00] pycket_simple_deepseek-v3.2-exp_coordination:   warnings.warn(
+[2025-11-26T23:50:02.659109+00:00] pycket_simple_deepseek-v3.2-exp_coordination: INFO:     ('172.25.0.4', 34354) - "WebSocket /ingress" [accepted]
+[2025-11-26T23:50:02.659283+00:00] pycket_simple_deepseek-v3.2-exp_coordination: INFO:     connection open
+[2025-11-26T23:50:07.986261+00:00] pycket_simple_deepseek-v3.2-exp_coordination: INFO:     ('172.25.0.5', 50264) - "WebSocket /ingress" [accepted]
+[2025-11-26T23:50:07.986380+00:00] pycket_simple_deepseek-v3.2-exp_coordination: INFO:     connection open
+[2025-11-27T00:10:00.104998+00:00] pycket_simple_deepseek-v3.2-exp_coordination: Traceback (most recent call last):
+[2025-11-27T00:10:00.105648+00:00] pycket_simple_deepseek-v3.2-exp_coordination:   File "/app/src/hackingBuddyGPT/usecases/viewer.py", line 278, in ingress_endpoint
+[2025-11-27T00:10:00.105712+00:00] pycket_simple_deepseek-v3.2-exp_coordination:     data = await websocket.receive_json()
+[2025-11-27T00:10:00.105741+00:00] pycket_simple_deepseek-v3.2-exp_coordination:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[2025-11-27T00:10:00.106046+00:00] pycket_simple_deepseek-v3.2-exp_coordination:   File "/usr/local/lib/python3.13/site-packages/starlette/websockets.py", line 135, in receive_json
+[2025-11-27T00:10:00.106150+00:00] pycket_simple_deepseek-v3.2-exp_coordination:     self._raise_on_disconnect(message)
+[2025-11-27T00:10:00.106196+00:00] pycket_simple_deepseek-v3.2-exp_coordination:     ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+[2025-11-27T00:10:00.106232+00:00] pycket_simple_deepseek-v3.2-exp_coordination:   File "/usr/local/lib/python3.13/site-packages/starlette/websockets.py", line 113, in _raise_on_disconnect
+[2025-11-27T00:10:00.106272+00:00] pycket_simple_deepseek-v3.2-exp_coordination:     raise WebSocketDisconnect(message["code"], message.get("reason"))
+[2025-11-27T00:10:00.106304+00:00] pycket_simple_deepseek-v3.2-exp_coordination: starlette.websockets.WebSocketDisconnect: (<CloseCode.ABNORMAL_CLOSURE: 1006>, '')
+[2025-11-27T00:10:00.106345+00:00] pycket_simple_deepseek-v3.2-exp_coordination: INFO:     connection closed
+[2025-11-27T00:10:23.486140+00:00] pycket_simple_deepseek-v3.2-exp_coordination: Ingress WebSocket disconnected
+[2025-11-27T00:10:23.486352+00:00] pycket_simple_deepseek-v3.2-exp_coordination: INFO:     172.25.0.1:59720 - "GET / HTTP/1.1" 200 OK
+[2025-11-27T00:10:23.531666+00:00] pycket_simple_deepseek-v3.2-exp_coordination: INFO:     172.25.0.1:59720 - "GET /static/style.css HTTP/1.1" 200 OK
+[2025-11-27T00:10:23.554430+00:00] pycket_simple_deepseek-v3.2-exp_coordination: INFO:     172.25.0.1:59732 - "GET /static/client.js HTTP/1.1" 200 OK
+[2025-11-27T00:10:23.589129+00:00] pycket_simple_deepseek-v3.2-exp_coordination: INFO:     172.25.0.1:59732 - "GET /favicon.ico HTTP/1.1" 200 OK
+[2025-11-27T00:10:23.609188+00:00] pycket_simple_deepseek-v3.2-exp_coordination: INFO:     ('172.25.0.1', 59740) - "WebSocket /client" [accepted]
+[2025-11-27T00:10:23.609405+00:00] pycket_simple_deepseek-v3.2-exp_coordination: INFO:     connection open
+[2025-11-27T00:10:58.514170+00:00] pycket_simple_deepseek-v3.2-exp_coordination: INFO:     connection closed
+[2025-11-27T00:10:58.514764+00:00] pycket_simple_deepseek-v3.2-exp_coordination: Task exception was never retrieved
+[2025-11-27T00:10:58.514811+00:00] pycket_simple_deepseek-v3.2-exp_coordination: future: <Task finished name='Task-35' coro=<Client.receive_messages() done, defined at /app/src/hackingBuddyGPT/usecases/viewer.py:137> exception=WebSocketDisconnect(1001, '')>
+[2025-11-27T00:10:58.514838+00:00] pycket_simple_deepseek-v3.2-exp_coordination: Traceback (most recent call last):
+[2025-11-27T00:10:58.514881+00:00] pycket_simple_deepseek-v3.2-exp_coordination:   File "/app/src/hackingBuddyGPT/usecases/viewer.py", line 165, in receive_messages
+[2025-11-27T00:10:58.514912+00:00] pycket_simple_deepseek-v3.2-exp_coordination:     raise e
+[2025-11-27T00:10:58.514933+00:00] pycket_simple_deepseek-v3.2-exp_coordination:   File "/app/src/hackingBuddyGPT/usecases/viewer.py", line 140, in receive_messages
+[2025-11-27T00:10:58.514972+00:00] pycket_simple_deepseek-v3.2-exp_coordination:     msg = await self.websocket.receive_json()
+[2025-11-27T00:10:58.514993+00:00] pycket_simple_deepseek-v3.2-exp_coordination:           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[2025-11-27T00:10:58.515014+00:00] pycket_simple_deepseek-v3.2-exp_coordination:   File "/usr/local/lib/python3.13/site-packages/starlette/websockets.py", line 135, in receive_json
+[2025-11-27T00:10:58.515043+00:00] pycket_simple_deepseek-v3.2-exp_coordination:     self._raise_on_disconnect(message)
+[2025-11-27T00:10:58.515064+00:00] pycket_simple_deepseek-v3.2-exp_coordination:     ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+[2025-11-27T00:10:58.515083+00:00] pycket_simple_deepseek-v3.2-exp_coordination:   File "/usr/local/lib/python3.13/site-packages/starlette/websockets.py", line 113, in _raise_on_disconnect
+[2025-11-27T00:10:58.515104+00:00] pycket_simple_deepseek-v3.2-exp_coordination:     raise WebSocketDisconnect(message["code"], message.get("reason"))
+[2025-11-27T00:10:58.515124+00:00] pycket_simple_deepseek-v3.2-exp_coordination: starlette.websockets.WebSocketDisconnect: (1001, '')
+[2025-11-27T00:10:58.539145+00:00] pycket_simple_deepseek-v3.2-exp_coordination: INFO:     ('172.25.0.1', 34200) - "WebSocket /client" [accepted]
+[2025-11-27T00:10:58.539355+00:00] pycket_simple_deepseek-v3.2-exp_coordination: INFO:     connection open
+[2025-11-27T00:10:58.559154+00:00] pycket_simple_deepseek-v3.2-exp_coordination: INFO:     connection closed
+[2025-11-27T00:10:58.559739+00:00] pycket_simple_deepseek-v3.2-exp_coordination: Task exception was never retrieved
+[2025-11-27T00:10:58.559785+00:00] pycket_simple_deepseek-v3.2-exp_coordination: future: <Task finished name='Task-43' coro=<Client.receive_messages() done, defined at /app/src/hackingBuddyGPT/usecases/viewer.py:137> exception=WebSocketDisconnect(<CloseCode.ABNORMAL_CLOSURE: 1006>, '')>
+[2025-11-27T00:10:58.559823+00:00] pycket_simple_deepseek-v3.2-exp_coordination: Traceback (most recent call last):
+[2025-11-27T00:10:58.559845+00:00] pycket_simple_deepseek-v3.2-exp_coordination:   File "/app/src/hackingBuddyGPT/usecases/viewer.py", line 165, in receive_messages
+[2025-11-27T00:10:58.559867+00:00] pycket_simple_deepseek-v3.2-exp_coordination:     raise e
+[2025-11-27T00:10:58.559888+00:00] pycket_simple_deepseek-v3.2-exp_coordination:   File "/app/src/hackingBuddyGPT/usecases/viewer.py", line 140, in receive_messages
+[2025-11-27T00:10:58.559908+00:00] pycket_simple_deepseek-v3.2-exp_coordination:     msg = await self.websocket.receive_json()
+[2025-11-27T00:10:58.559928+00:00] pycket_simple_deepseek-v3.2-exp_coordination:           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[2025-11-27T00:10:58.559958+00:00] pycket_simple_deepseek-v3.2-exp_coordination:   File "/usr/local/lib/python3.13/site-packages/starlette/websockets.py", line 135, in receive_json
+[2025-11-27T00:10:58.559981+00:00] pycket_simple_deepseek-v3.2-exp_coordination:     self._raise_on_disconnect(message)
+[2025-11-27T00:10:58.560001+00:00] pycket_simple_deepseek-v3.2-exp_coordination:     ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+[2025-11-27T00:10:58.560020+00:00] pycket_simple_deepseek-v3.2-exp_coordination:   File "/usr/local/lib/python3.13/site-packages/starlette/websockets.py", line 113, in _raise_on_disconnect
+[2025-11-27T00:10:58.560038+00:00] pycket_simple_deepseek-v3.2-exp_coordination:     raise WebSocketDisconnect(message["code"], message.get("reason"))
+[2025-11-27T00:10:58.560058+00:00] pycket_simple_deepseek-v3.2-exp_coordination: starlette.websockets.WebSocketDisconnect: (<CloseCode.ABNORMAL_CLOSURE: 1006>, '')
+[2025-11-27T00:13:16.614386+00:00] pycket_simple_deepseek-v3.2-exp_coordination: INFO:     ('172.25.0.1', 39356) - "WebSocket /client" [accepted]
+[2025-11-27T00:13:16.614628+00:00] pycket_simple_deepseek-v3.2-exp_coordination: INFO:     connection open
+[2025-11-27T00:13:18.169635+00:00] pycket_simple_deepseek-v3.2-exp_coordination: INFO:     connection closed
+[2025-11-27T00:13:18.170046+00:00] pycket_simple_deepseek-v3.2-exp_coordination: Task exception was never retrieved
+[2025-11-27T00:13:18.170101+00:00] pycket_simple_deepseek-v3.2-exp_coordination: future: <Task finished name='Task-51' coro=<Client.receive_messages() done, defined at /app/src/hackingBuddyGPT/usecases/viewer.py:137> exception=WebSocketDisconnect(1001, '')>
+[2025-11-27T00:13:18.170130+00:00] pycket_simple_deepseek-v3.2-exp_coordination: Traceback (most recent call last):
+[2025-11-27T00:13:18.170153+00:00] pycket_simple_deepseek-v3.2-exp_coordination:   File "/app/src/hackingBuddyGPT/usecases/viewer.py", line 165, in receive_messages
+[2025-11-27T00:13:18.170175+00:00] pycket_simple_deepseek-v3.2-exp_coordination:     raise e
+[2025-11-27T00:13:18.170196+00:00] pycket_simple_deepseek-v3.2-exp_coordination:   File "/app/src/hackingBuddyGPT/usecases/viewer.py", line 140, in receive_messages
+[2025-11-27T00:13:18.170227+00:00] pycket_simple_deepseek-v3.2-exp_coordination:     msg = await self.websocket.receive_json()
+[2025-11-27T00:13:18.170249+00:00] pycket_simple_deepseek-v3.2-exp_coordination:           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[2025-11-27T00:13:18.170269+00:00] pycket_simple_deepseek-v3.2-exp_coordination:   File "/usr/local/lib/python3.13/site-packages/starlette/websockets.py", line 135, in receive_json
+[2025-11-27T00:13:18.170291+00:00] pycket_simple_deepseek-v3.2-exp_coordination:     self._raise_on_disconnect(message)
+[2025-11-27T00:13:18.170312+00:00] pycket_simple_deepseek-v3.2-exp_coordination:     ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+[2025-11-27T00:13:18.170333+00:00] pycket_simple_deepseek-v3.2-exp_coordination:   File "/usr/local/lib/python3.13/site-packages/starlette/websockets.py", line 113, in _raise_on_disconnect
+[2025-11-27T00:13:18.170368+00:00] pycket_simple_deepseek-v3.2-exp_coordination:     raise WebSocketDisconnect(message["code"], message.get("reason"))
+[2025-11-27T00:13:18.170391+00:00] pycket_simple_deepseek-v3.2-exp_coordination: starlette.websockets.WebSocketDisconnect: (1001, '')
+[2025-11-27T00:13:18.189310+00:00] pycket_simple_deepseek-v3.2-exp_coordination: Error receiving message: (1001, '')
+[2025-11-27T00:13:18.189407+00:00] pycket_simple_deepseek-v3.2-exp_coordination: Error receiving message: (<CloseCode.ABNORMAL_CLOSURE: 1006>, '')
+[2025-11-27T00:13:18.189450+00:00] pycket_simple_deepseek-v3.2-exp_coordination: Error receiving message: (1001, '')
+[2025-11-27T00:13:18.189477+00:00] pycket_simple_deepseek-v3.2-exp_coordination: INFO:     172.25.0.1:39362 - "GET / HTTP/1.1" 200 OK
+[2025-11-27T00:13:18.189643+00:00] pycket_simple_deepseek-v3.2-exp_coordination: INFO:     ('172.25.0.1', 39364) - "WebSocket /client" [accepted]
+[2025-11-27T00:13:18.189690+00:00] pycket_simple_deepseek-v3.2-exp_coordination: INFO:     connection open
+[2025-11-27T00:13:18.254572+00:00] pycket_simple_deepseek-v3.2-exp_coordination: INFO:     ('172.25.0.1', 39368) - "WebSocket /client" [accepted]
+[2025-11-27T00:13:18.254847+00:00] pycket_simple_deepseek-v3.2-exp_coordination: INFO:     connection open
+[2025-11-27T00:13:18.256848+00:00] pycket_simple_deepseek-v3.2-exp_coordination: INFO:     connection closed
+[2025-11-27T00:13:18.257464+00:00] pycket_simple_deepseek-v3.2-exp_coordination: Task exception was never retrieved
+[2025-11-27T00:13:18.257527+00:00] pycket_simple_deepseek-v3.2-exp_coordination: future: <Task finished name='Task-61' coro=<Client.receive_messages() done, defined at /app/src/hackingBuddyGPT/usecases/viewer.py:137> exception=WebSocketDisconnect(1001, '')>
+[2025-11-27T00:13:18.257557+00:00] pycket_simple_deepseek-v3.2-exp_coordination: Traceback (most recent call last):
+[2025-11-27T00:13:18.257580+00:00] pycket_simple_deepseek-v3.2-exp_coordination:   File "/app/src/hackingBuddyGPT/usecases/viewer.py", line 165, in receive_messages
+[2025-11-27T00:13:18.257602+00:00] pycket_simple_deepseek-v3.2-exp_coordination:     raise e
+[2025-11-27T00:13:18.257623+00:00] pycket_simple_deepseek-v3.2-exp_coordination:   File "/app/src/hackingBuddyGPT/usecases/viewer.py", line 140, in receive_messages
+[2025-11-27T00:13:18.257642+00:00] pycket_simple_deepseek-v3.2-exp_coordination:     msg = await self.websocket.receive_json()
+[2025-11-27T00:13:18.257663+00:00] pycket_simple_deepseek-v3.2-exp_coordination:           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[2025-11-27T00:13:18.257683+00:00] pycket_simple_deepseek-v3.2-exp_coordination:   File "/usr/local/lib/python3.13/site-packages/starlette/websockets.py", line 135, in receive_json
+[2025-11-27T00:13:18.257712+00:00] pycket_simple_deepseek-v3.2-exp_coordination:     self._raise_on_disconnect(message)
+[2025-11-27T00:13:18.257733+00:00] pycket_simple_deepseek-v3.2-exp_coordination:     ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+[2025-11-27T00:13:18.257753+00:00] pycket_simple_deepseek-v3.2-exp_coordination:   File "/usr/local/lib/python3.13/site-packages/starlette/websockets.py", line 113, in _raise_on_disconnect
+[2025-11-27T00:13:18.257773+00:00] pycket_simple_deepseek-v3.2-exp_coordination:     raise WebSocketDisconnect(message["code"], message.get("reason"))
+[2025-11-27T00:13:18.257792+00:00] pycket_simple_deepseek-v3.2-exp_coordination: starlette.websockets.WebSocketDisconnect: (1001, '')
+[2025-11-27T00:13:22.309428+00:00] pycket_simple_deepseek-v3.2-exp_coordination: INFO:     connection closed
+[2025-11-27T00:13:22.309929+00:00] pycket_simple_deepseek-v3.2-exp_coordination: Task exception was never retrieved
+[2025-11-27T00:13:22.310031+00:00] pycket_simple_deepseek-v3.2-exp_coordination: future: <Task finished name='Task-69' coro=<Client.receive_messages() done, defined at /app/src/hackingBuddyGPT/usecases/viewer.py:137> exception=WebSocketDisconnect(1001, '')>
+[2025-11-27T00:13:22.310063+00:00] pycket_simple_deepseek-v3.2-exp_coordination: Traceback (most recent call last):
+[2025-11-27T00:13:22.310109+00:00] pycket_simple_deepseek-v3.2-exp_coordination:   File "/app/src/hackingBuddyGPT/usecases/viewer.py", line 165, in receive_messages
+[2025-11-27T00:13:22.310132+00:00] pycket_simple_deepseek-v3.2-exp_coordination:     raise e
+[2025-11-27T00:13:22.310152+00:00] pycket_simple_deepseek-v3.2-exp_coordination:   File "/app/src/hackingBuddyGPT/usecases/viewer.py", line 140, in receive_messages
+[2025-11-27T00:13:22.310171+00:00] pycket_simple_deepseek-v3.2-exp_coordination:     msg = await self.websocket.receive_json()
+[2025-11-27T00:13:22.310192+00:00] pycket_simple_deepseek-v3.2-exp_coordination:           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[2025-11-27T00:13:22.310211+00:00] pycket_simple_deepseek-v3.2-exp_coordination:   File "/usr/local/lib/python3.13/site-packages/starlette/websockets.py", line 135, in receive_json
+[2025-11-27T00:13:22.310231+00:00] pycket_simple_deepseek-v3.2-exp_coordination:     self._raise_on_disconnect(message)
+[2025-11-27T00:13:22.310250+00:00] pycket_simple_deepseek-v3.2-exp_coordination:     ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+[2025-11-27T00:13:22.310270+00:00] pycket_simple_deepseek-v3.2-exp_coordination:   File "/usr/local/lib/python3.13/site-packages/starlette/websockets.py", line 113, in _raise_on_disconnect
+[2025-11-27T00:13:22.310289+00:00] pycket_simple_deepseek-v3.2-exp_coordination:     raise WebSocketDisconnect(message["code"], message.get("reason"))
+[2025-11-27T00:13:22.310308+00:00] pycket_simple_deepseek-v3.2-exp_coordination: starlette.websockets.WebSocketDisconnect: (1001, '')
+[2025-11-27T00:14:52.409216+00:00] pycket_simple_deepseek-v3.2-exp_coordination: Task exception was never retrieved
+[2025-11-27T00:14:52.409329+00:00] pycket_simple_deepseek-v3.2-exp_coordination: future: <Task finished name='Task-34' coro=<Client.send_messages() done, defined at /app/src/hackingBuddyGPT/usecases/viewer.py:105> exception=RuntimeError("Unexpected ASGI message 'websocket.send', after sending 'websocket.close' or response already completed.")>
+[2025-11-27T00:14:52.409367+00:00] pycket_simple_deepseek-v3.2-exp_coordination: Traceback (most recent call last):
+[2025-11-27T00:14:52.409392+00:00] pycket_simple_deepseek-v3.2-exp_coordination:   File "/app/src/hackingBuddyGPT/usecases/viewer.py", line 135, in send_messages
+[2025-11-27T00:14:52.409414+00:00] pycket_simple_deepseek-v3.2-exp_coordination:     raise e
+[2025-11-27T00:14:52.409439+00:00] pycket_simple_deepseek-v3.2-exp_coordination:   File "/app/src/hackingBuddyGPT/usecases/viewer.py", line 119, in send_messages
+[2025-11-27T00:14:52.409484+00:00] pycket_simple_deepseek-v3.2-exp_coordination:     await self.send_message(msg)
+[2025-11-27T00:14:52.409506+00:00] pycket_simple_deepseek-v3.2-exp_coordination:   File "/app/src/hackingBuddyGPT/usecases/viewer.py", line 100, in send_message
+[2025-11-27T00:14:52.409525+00:00] pycket_simple_deepseek-v3.2-exp_coordination:     await self.websocket.send_text(message.to_json())
+[2025-11-27T00:14:52.409546+00:00] pycket_simple_deepseek-v3.2-exp_coordination:   File "/usr/local/lib/python3.13/site-packages/starlette/websockets.py", line 165, in send_text
+[2025-11-27T00:14:52.409567+00:00] pycket_simple_deepseek-v3.2-exp_coordination:     await self.send({"type": "websocket.send", "text": data})
+[2025-11-27T00:14:52.409587+00:00] pycket_simple_deepseek-v3.2-exp_coordination:   File "/usr/local/lib/python3.13/site-packages/starlette/websockets.py", line 85, in send
+[2025-11-27T00:14:52.409607+00:00] pycket_simple_deepseek-v3.2-exp_coordination:     await self._send(message)
+[2025-11-27T00:14:52.409628+00:00] pycket_simple_deepseek-v3.2-exp_coordination:   File "/usr/local/lib/python3.13/site-packages/starlette/_exception_handler.py", line 48, in sender
+[2025-11-27T00:14:52.409648+00:00] pycket_simple_deepseek-v3.2-exp_coordination:     await send(message)
+[2025-11-27T00:14:52.409668+00:00] pycket_simple_deepseek-v3.2-exp_coordination:   File "/usr/local/lib/python3.13/site-packages/uvicorn/protocols/websockets/websockets_impl.py", line 360, in asgi_send
+[2025-11-27T00:14:52.409689+00:00] pycket_simple_deepseek-v3.2-exp_coordination:     raise RuntimeError(msg % message_type)
+[2025-11-27T00:14:52.409714+00:00] pycket_simple_deepseek-v3.2-exp_coordination: RuntimeError: Unexpected ASGI message 'websocket.send', after sending 'websocket.close' or response already completed.
+[2025-11-27T00:14:52.409755+00:00] pycket_simple_deepseek-v3.2-exp_coordination: Task exception was never retrieved
+[2025-11-27T00:14:52.409779+00:00] pycket_simple_deepseek-v3.2-exp_coordination: future: <Task finished name='Task-42' coro=<Client.send_messages() done, defined at /app/src/hackingBuddyGPT/usecases/viewer.py:105> exception=RuntimeError("Unexpected ASGI message 'websocket.send', after sending 'websocket.close' or response already completed.")>
+[2025-11-27T00:14:52.409800+00:00] pycket_simple_deepseek-v3.2-exp_coordination: Traceback (most recent call last):
+[2025-11-27T00:14:52.409826+00:00] pycket_simple_deepseek-v3.2-exp_coordination:   File "/app/src/hackingBuddyGPT/usecases/viewer.py", line 135, in send_messages
+[2025-11-27T00:14:52.409850+00:00] pycket_simple_deepseek-v3.2-exp_coordination:     raise e
+[2025-11-27T00:14:52.409873+00:00] pycket_simple_deepseek-v3.2-exp_coordination:   File "/app/src/hackingBuddyGPT/usecases/viewer.py", line 119, in send_messages
+[2025-11-27T00:14:52.409892+00:00] pycket_simple_deepseek-v3.2-exp_coordination:     await self.send_message(msg)
+[2025-11-27T00:14:52.409911+00:00] pycket_simple_deepseek-v3.2-exp_coordination:   File "/app/src/hackingBuddyGPT/usecases/viewer.py", line 100, in send_message
+[2025-11-27T00:14:52.409929+00:00] pycket_simple_deepseek-v3.2-exp_coordination:     await self.websocket.send_text(message.to_json())
+[2025-11-27T00:14:52.409968+00:00] pycket_simple_deepseek-v3.2-exp_coordination:   File "/usr/local/lib/python3.13/site-packages/starlette/websockets.py", line 165, in send_text
+[2025-11-27T00:14:52.409990+00:00] pycket_simple_deepseek-v3.2-exp_coordination:     await self.send({"type": "websocket.send", "text": data})
+[2025-11-27T00:14:52.410009+00:00] pycket_simple_deepseek-v3.2-exp_coordination:   File "/usr/local/lib/python3.13/site-packages/starlette/websockets.py", line 85, in send
+[2025-11-27T00:14:52.410028+00:00] pycket_simple_deepseek-v3.2-exp_coordination:     await self._send(message)
+[2025-11-27T00:14:52.410046+00:00] pycket_simple_deepseek-v3.2-exp_coordination:   File "/usr/local/lib/python3.13/site-packages/starlette/_exception_handler.py", line 48, in sender
+[2025-11-27T00:14:52.410072+00:00] pycket_simple_deepseek-v3.2-exp_coordination:     await send(message)
+[2025-11-27T00:14:52.410093+00:00] pycket_simple_deepseek-v3.2-exp_coordination:   File "/usr/local/lib/python3.13/site-packages/uvicorn/protocols/websockets/websockets_impl.py", line 360, in asgi_send
+[2025-11-27T00:14:52.410112+00:00] pycket_simple_deepseek-v3.2-exp_coordination:     raise RuntimeError(msg % message_type)
+[2025-11-27T00:14:52.410132+00:00] pycket_simple_deepseek-v3.2-exp_coordination: RuntimeError: Unexpected ASGI message 'websocket.send', after sending 'websocket.close' or response already completed.
+[2025-11-27T00:14:52.410415+00:00] pycket_simple_deepseek-v3.2-exp_coordination: Task exception was never retrieved
+[2025-11-27T00:14:52.410581+00:00] pycket_simple_deepseek-v3.2-exp_coordination: future: <Task finished name='Task-50' coro=<Client.send_messages() done, defined at /app/src/hackingBuddyGPT/usecases/viewer.py:105> exception=RuntimeError("Unexpected ASGI message 'websocket.send', after sending 'websocket.close' or response already completed.")>
+[2025-11-27T00:14:52.410673+00:00] pycket_simple_deepseek-v3.2-exp_coordination: Traceback (most recent call last):
+[2025-11-27T00:14:52.410706+00:00] pycket_simple_deepseek-v3.2-exp_coordination:   File "/app/src/hackingBuddyGPT/usecases/viewer.py", line 135, in send_messages
+[2025-11-27T00:14:52.410731+00:00] pycket_simple_deepseek-v3.2-exp_coordination:     raise e
+[2025-11-27T00:14:52.410753+00:00] pycket_simple_deepseek-v3.2-exp_coordination:   File "/app/src/hackingBuddyGPT/usecases/viewer.py", line 119, in send_messages
+[2025-11-27T00:14:52.410777+00:00] pycket_simple_deepseek-v3.2-exp_coordination:     await self.send_message(msg)
+[2025-11-27T00:14:52.410800+00:00] pycket_simple_deepseek-v3.2-exp_coordination:   File "/app/src/hackingBuddyGPT/usecases/viewer.py", line 100, in send_message
+[2025-11-27T00:14:52.410823+00:00] pycket_simple_deepseek-v3.2-exp_coordination:     await self.websocket.send_text(message.to_json())
+[2025-11-27T00:14:52.410842+00:00] pycket_simple_deepseek-v3.2-exp_coordination:   File "/usr/local/lib/python3.13/site-packages/starlette/websockets.py", line 165, in send_text
+[2025-11-27T00:14:52.410862+00:00] pycket_simple_deepseek-v3.2-exp_coordination:     await self.send({"type": "websocket.send", "text": data})
+[2025-11-27T00:14:52.410895+00:00] pycket_simple_deepseek-v3.2-exp_coordination:   File "/usr/local/lib/python3.13/site-packages/starlette/websockets.py", line 85, in send
+[2025-11-27T00:14:52.410916+00:00] pycket_simple_deepseek-v3.2-exp_coordination:     await self._send(message)
+[2025-11-27T00:14:52.410937+00:00] pycket_simple_deepseek-v3.2-exp_coordination:   File "/usr/local/lib/python3.13/site-packages/starlette/_exception_handler.py", line 48, in sender
+[2025-11-27T00:14:52.410974+00:00] pycket_simple_deepseek-v3.2-exp_coordination:     await send(message)
+[2025-11-27T00:14:52.410994+00:00] pycket_simple_deepseek-v3.2-exp_coordination:   File "/usr/local/lib/python3.13/site-packages/uvicorn/protocols/websockets/websockets_impl.py", line 360, in asgi_send
+[2025-11-27T00:14:52.411014+00:00] pycket_simple_deepseek-v3.2-exp_coordination:     raise RuntimeError(msg % message_type)
+[2025-11-27T00:14:52.411047+00:00] pycket_simple_deepseek-v3.2-exp_coordination: RuntimeError: Unexpected ASGI message 'websocket.send', after sending 'websocket.close' or response already completed.
+[2025-11-27T00:14:52.411168+00:00] pycket_simple_deepseek-v3.2-exp_coordination: Task exception was never retrieved
+[2025-11-27T00:14:52.411196+00:00] pycket_simple_deepseek-v3.2-exp_coordination: future: <Task finished name='Task-60' coro=<Client.send_messages() done, defined at /app/src/hackingBuddyGPT/usecases/viewer.py:105> exception=RuntimeError("Unexpected ASGI message 'websocket.send', after sending 'websocket.close' or response already completed.")>
+[2025-11-27T00:14:52.411217+00:00] pycket_simple_deepseek-v3.2-exp_coordination: Traceback (most recent call last):
+[2025-11-27T00:14:52.411237+00:00] pycket_simple_deepseek-v3.2-exp_coordination:   File "/app/src/hackingBuddyGPT/usecases/viewer.py", line 135, in send_messages
+[2025-11-27T00:14:52.411256+00:00] pycket_simple_deepseek-v3.2-exp_coordination:     raise e
+[2025-11-27T00:14:52.411275+00:00] pycket_simple_deepseek-v3.2-exp_coordination:   File "/app/src/hackingBuddyGPT/usecases/viewer.py", line 119, in send_messages
+[2025-11-27T00:14:52.411294+00:00] pycket_simple_deepseek-v3.2-exp_coordination:     await self.send_message(msg)
+[2025-11-27T00:14:52.411312+00:00] pycket_simple_deepseek-v3.2-exp_coordination:   File "/app/src/hackingBuddyGPT/usecases/viewer.py", line 100, in send_message
+[2025-11-27T00:14:52.411341+00:00] pycket_simple_deepseek-v3.2-exp_coordination:     await self.websocket.send_text(message.to_json())
+[2025-11-27T00:14:52.411361+00:00] pycket_simple_deepseek-v3.2-exp_coordination:   File "/usr/local/lib/python3.13/site-packages/starlette/websockets.py", line 165, in send_text
+[2025-11-27T00:14:52.411380+00:00] pycket_simple_deepseek-v3.2-exp_coordination:     await self.send({"type": "websocket.send", "text": data})
+[2025-11-27T00:14:52.411399+00:00] pycket_simple_deepseek-v3.2-exp_coordination:   File "/usr/local/lib/python3.13/site-packages/starlette/websockets.py", line 85, in send
+[2025-11-27T00:14:52.411417+00:00] pycket_simple_deepseek-v3.2-exp_coordination:     await self._send(message)
+[2025-11-27T00:14:52.411436+00:00] pycket_simple_deepseek-v3.2-exp_coordination:   File "/usr/local/lib/python3.13/site-packages/starlette/_exception_handler.py", line 48, in sender
+[2025-11-27T00:14:52.411455+00:00] pycket_simple_deepseek-v3.2-exp_coordination:     await send(message)
+[2025-11-27T00:14:52.411477+00:00] pycket_simple_deepseek-v3.2-exp_coordination:   File "/usr/local/lib/python3.13/site-packages/uvicorn/protocols/websockets/websockets_impl.py", line 360, in asgi_send
+[2025-11-27T00:14:52.411496+00:00] pycket_simple_deepseek-v3.2-exp_coordination:     raise RuntimeError(msg % message_type)
+[2025-11-27T00:14:52.411515+00:00] pycket_simple_deepseek-v3.2-exp_coordination: RuntimeError: Unexpected ASGI message 'websocket.send', after sending 'websocket.close' or response already completed.
+[2025-11-27T00:14:52.412080+00:00] pycket_simple_deepseek-v3.2-exp_coordination: Task exception was never retrieved
+[2025-11-27T00:14:52.412166+00:00] pycket_simple_deepseek-v3.2-exp_coordination: future: <Task finished name='Task-68' coro=<Client.send_messages() done, defined at /app/src/hackingBuddyGPT/usecases/viewer.py:105> exception=RuntimeError("Unexpected ASGI message 'websocket.send', after sending 'websocket.close' or response already completed.")>
+[2025-11-27T00:14:52.412200+00:00] pycket_simple_deepseek-v3.2-exp_coordination: Traceback (most recent call last):
+[2025-11-27T00:14:52.412224+00:00] pycket_simple_deepseek-v3.2-exp_coordination:   File "/app/src/hackingBuddyGPT/usecases/viewer.py", line 135, in send_messages
+[2025-11-27T00:14:52.412244+00:00] pycket_simple_deepseek-v3.2-exp_coordination:     raise e
+[2025-11-27T00:14:52.412355+00:00] pycket_simple_deepseek-v3.2-exp_coordination:   File "/app/src/hackingBuddyGPT/usecases/viewer.py", line 119, in send_messages
+[2025-11-27T00:14:52.412379+00:00] pycket_simple_deepseek-v3.2-exp_coordination:     await self.send_message(msg)
+[2025-11-27T00:14:52.412419+00:00] pycket_simple_deepseek-v3.2-exp_coordination:   File "/app/src/hackingBuddyGPT/usecases/viewer.py", line 100, in send_message
+[2025-11-27T00:14:52.412440+00:00] pycket_simple_deepseek-v3.2-exp_coordination:     await self.websocket.send_text(message.to_json())
+[2025-11-27T00:14:52.412483+00:00] pycket_simple_deepseek-v3.2-exp_coordination:   File "/usr/local/lib/python3.13/site-packages/starlette/websockets.py", line 165, in send_text
+[2025-11-27T00:14:52.412502+00:00] pycket_simple_deepseek-v3.2-exp_coordination:     await self.send({"type": "websocket.send", "text": data})
+[2025-11-27T00:14:52.412521+00:00] pycket_simple_deepseek-v3.2-exp_coordination:   File "/usr/local/lib/python3.13/site-packages/starlette/websockets.py", line 85, in send
+[2025-11-27T00:14:52.412540+00:00] pycket_simple_deepseek-v3.2-exp_coordination:     await self._send(message)
+[2025-11-27T00:14:52.412559+00:00] pycket_simple_deepseek-v3.2-exp_coordination:   File "/usr/local/lib/python3.13/site-packages/starlette/_exception_handler.py", line 48, in sender
+[2025-11-27T00:14:52.412703+00:00] pycket_simple_deepseek-v3.2-exp_coordination:     await send(message)
+[2025-11-27T00:14:52.412725+00:00] pycket_simple_deepseek-v3.2-exp_coordination:   File "/usr/local/lib/python3.13/site-packages/uvicorn/protocols/websockets/websockets_impl.py", line 360, in asgi_send
+[2025-11-27T00:14:52.412745+00:00] pycket_simple_deepseek-v3.2-exp_coordination:     raise RuntimeError(msg % message_type)
+[2025-11-27T00:14:52.412765+00:00] pycket_simple_deepseek-v3.2-exp_coordination: RuntimeError: Unexpected ASGI message 'websocket.send', after sending 'websocket.close' or response already completed.
+[2025-11-27T00:14:52.412799+00:00] pycket_simple_deepseek-v3.2-exp_coordination: Traceback (most recent call last):
+[2025-11-27T00:14:52.412820+00:00] pycket_simple_deepseek-v3.2-exp_coordination:   File "/app/src/hackingBuddyGPT/usecases/viewer.py", line 278, in ingress_endpoint
+[2025-11-27T00:14:52.412839+00:00] pycket_simple_deepseek-v3.2-exp_coordination:     data = await websocket.receive_json()
+[2025-11-27T00:14:52.412858+00:00] pycket_simple_deepseek-v3.2-exp_coordination:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[2025-11-27T00:14:52.412877+00:00] pycket_simple_deepseek-v3.2-exp_coordination:   File "/usr/local/lib/python3.13/site-packages/starlette/websockets.py", line 135, in receive_json
+[2025-11-27T00:14:52.412903+00:00] pycket_simple_deepseek-v3.2-exp_coordination:     self._raise_on_disconnect(message)
+[2025-11-27T00:14:52.412921+00:00] pycket_simple_deepseek-v3.2-exp_coordination:     ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+[2025-11-27T00:14:52.412948+00:00] pycket_simple_deepseek-v3.2-exp_coordination:   File "/usr/local/lib/python3.13/site-packages/starlette/websockets.py", line 113, in _raise_on_disconnect
+[2025-11-27T00:14:52.412994+00:00] pycket_simple_deepseek-v3.2-exp_coordination:     raise WebSocketDisconnect(message["code"], message.get("reason"))
+[2025-11-27T00:14:52.413014+00:00] pycket_simple_deepseek-v3.2-exp_coordination: starlette.websockets.WebSocketDisconnect: (1000, '')
+[2025-11-27T00:14:52.413033+00:00] pycket_simple_deepseek-v3.2-exp_coordination: INFO:     connection closed
+[2025-11-27T00:24:40.709536+00:00] pycket_simple_deepseek-v3.2-exp_coordination: Error receiving message: (1001, '')
+[2025-11-27T00:24:40.709656+00:00] pycket_simple_deepseek-v3.2-exp_coordination: Error receiving message: (1001, '')
+[2025-11-27T00:24:40.709687+00:00] pycket_simple_deepseek-v3.2-exp_coordination: Error sending message: Unexpected ASGI message 'websocket.send', after sending 'websocket.close' or response already completed.
+[2025-11-27T00:24:40.709711+00:00] pycket_simple_deepseek-v3.2-exp_coordination: Error sending message: Unexpected ASGI message 'websocket.send', after sending 'websocket.close' or response already completed.
+[2025-11-27T00:24:40.709732+00:00] pycket_simple_deepseek-v3.2-exp_coordination: Error sending message: Unexpected ASGI message 'websocket.send', after sending 'websocket.close' or response already completed.
+[2025-11-27T00:24:40.709752+00:00] pycket_simple_deepseek-v3.2-exp_coordination: Error sending message: Unexpected ASGI message 'websocket.send', after sending 'websocket.close' or response already completed.
+[2025-11-27T00:24:40.709784+00:00] pycket_simple_deepseek-v3.2-exp_coordination: Error sending message: Unexpected ASGI message 'websocket.send', after sending 'websocket.close' or response already completed.
+[2025-11-27T00:24:40.709805+00:00] pycket_simple_deepseek-v3.2-exp_coordination: Ingress WebSocket disconnected
+[2025-11-27T00:24:40.709825+00:00] pycket_simple_deepseek-v3.2-exp_coordination: INFO:     172.25.0.1:37184 - "GET / HTTP/1.1" 200 OK
+[2025-11-27T00:24:40.780049+00:00] pycket_simple_deepseek-v3.2-exp_coordination: INFO:     ('172.25.0.1', 37198) - "WebSocket /client" [accepted]
+[2025-11-27T00:24:40.780563+00:00] pycket_simple_deepseek-v3.2-exp_coordination: INFO:     connection open
+[2025-11-27T00:25:18.859779+00:00] pycket_simple_deepseek-v3.2-exp_coordination: Traceback (most recent call last):
+[2025-11-27T00:25:18.861077+00:00] pycket_simple_deepseek-v3.2-exp_coordination:   File "/app/src/hackingBuddyGPT/usecases/viewer.py", line 278, in ingress_endpoint
+[2025-11-27T00:25:18.861164+00:00] pycket_simple_deepseek-v3.2-exp_coordination:     data = await websocket.receive_json()
+[2025-11-27T00:25:18.861195+00:00] pycket_simple_deepseek-v3.2-exp_coordination:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[2025-11-27T00:25:18.861219+00:00] pycket_simple_deepseek-v3.2-exp_coordination:   File "/usr/local/lib/python3.13/site-packages/starlette/websockets.py", line 135, in receive_json
+[2025-11-27T00:25:18.861240+00:00] pycket_simple_deepseek-v3.2-exp_coordination:     self._raise_on_disconnect(message)
+[2025-11-27T00:25:18.861261+00:00] pycket_simple_deepseek-v3.2-exp_coordination:     ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+[2025-11-27T00:25:18.861292+00:00] pycket_simple_deepseek-v3.2-exp_coordination:   File "/usr/local/lib/python3.13/site-packages/starlette/websockets.py", line 113, in _raise_on_disconnect
+[2025-11-27T00:25:18.861314+00:00] pycket_simple_deepseek-v3.2-exp_coordination:     raise WebSocketDisconnect(message["code"], message.get("reason"))
+[2025-11-27T00:25:18.861335+00:00] pycket_simple_deepseek-v3.2-exp_coordination: starlette.websockets.WebSocketDisconnect: (<CloseCode.ABNORMAL_CLOSURE: 1006>, '')
+[2025-11-27T00:25:18.861355+00:00] pycket_simple_deepseek-v3.2-exp_coordination: INFO:     connection closed
+[2025-11-27T00:25:29.082384+00:00] pycket_simple_deepseek-v3.2-exp_coordination: INFO:     Shutting down
+[2025-11-27T00:25:29.082589+00:00] pycket_simple_deepseek-v3.2-exp_coordination: INFO:     connection closed
+[2025-11-27T00:25:29.083197+00:00] pycket_simple_deepseek-v3.2-exp_coordination: Task exception was never retrieved
+[2025-11-27T00:25:29.083245+00:00] pycket_simple_deepseek-v3.2-exp_coordination: future: <Task finished name='Task-82' coro=<Client.receive_messages() done, defined at /app/src/hackingBuddyGPT/usecases/viewer.py:137> exception=WebSocketDisconnect(1012, None)>
+[2025-11-27T00:25:29.083272+00:00] pycket_simple_deepseek-v3.2-exp_coordination: Traceback (most recent call last):
+[2025-11-27T00:25:29.083295+00:00] pycket_simple_deepseek-v3.2-exp_coordination:   File "/app/src/hackingBuddyGPT/usecases/viewer.py", line 165, in receive_messages
+[2025-11-27T00:25:29.083316+00:00] pycket_simple_deepseek-v3.2-exp_coordination:     raise e
+[2025-11-27T00:25:29.083337+00:00] pycket_simple_deepseek-v3.2-exp_coordination:   File "/app/src/hackingBuddyGPT/usecases/viewer.py", line 140, in receive_messages
+[2025-11-27T00:25:29.083366+00:00] pycket_simple_deepseek-v3.2-exp_coordination:     msg = await self.websocket.receive_json()
+[2025-11-27T00:25:29.083388+00:00] pycket_simple_deepseek-v3.2-exp_coordination:           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[2025-11-27T00:25:29.083408+00:00] pycket_simple_deepseek-v3.2-exp_coordination:   File "/usr/local/lib/python3.13/site-packages/starlette/websockets.py", line 135, in receive_json
+[2025-11-27T00:25:29.083427+00:00] pycket_simple_deepseek-v3.2-exp_coordination:     self._raise_on_disconnect(message)
+[2025-11-27T00:25:29.083462+00:00] pycket_simple_deepseek-v3.2-exp_coordination:     ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+[2025-11-27T00:25:29.083486+00:00] pycket_simple_deepseek-v3.2-exp_coordination:   File "/usr/local/lib/python3.13/site-packages/starlette/websockets.py", line 113, in _raise_on_disconnect
+[2025-11-27T00:25:29.083506+00:00] pycket_simple_deepseek-v3.2-exp_coordination:     raise WebSocketDisconnect(message["code"], message.get("reason"))
+[2025-11-27T00:25:29.083530+00:00] pycket_simple_deepseek-v3.2-exp_coordination: starlette.websockets.WebSocketDisconnect: (1012, None)
+[2025-11-27T00:25:29.183699+00:00] pycket_simple_deepseek-v3.2-exp_coordination: INFO:     Waiting for application shutdown.
+[2025-11-27T00:25:29.184948+00:00] pycket_simple_deepseek-v3.2-exp_coordination: ERROR:    Traceback (most recent call last):
+[2025-11-27T00:25:29.185002+00:00] pycket_simple_deepseek-v3.2-exp_coordination:   File "/usr/local/lib/python3.13/site-packages/starlette/routing.py", line 693, in lifespan
+[2025-11-27T00:25:29.185029+00:00] pycket_simple_deepseek-v3.2-exp_coordination:     async with self.lifespan_context(app) as maybe_state:
+[2025-11-27T00:25:29.185056+00:00] pycket_simple_deepseek-v3.2-exp_coordination:                ~~~~~~~~~~~~~~~~~~~~~^^^^^
+[2025-11-27T00:25:29.185077+00:00] pycket_simple_deepseek-v3.2-exp_coordination:   File "/usr/local/lib/python3.13/contextlib.py", line 221, in __aexit__
+[2025-11-27T00:25:29.185098+00:00] pycket_simple_deepseek-v3.2-exp_coordination:     await anext(self.gen)
+[2025-11-27T00:25:29.185119+00:00] pycket_simple_deepseek-v3.2-exp_coordination:   File "/app/src/hackingBuddyGPT/usecases/viewer.py", line 246, in lifespan
+[2025-11-27T00:25:29.185184+00:00] pycket_simple_deepseek-v3.2-exp_coordination:     await client.websocket.close()
+[2025-11-27T00:25:29.185255+00:00] pycket_simple_deepseek-v3.2-exp_coordination:   File "/usr/local/lib/python3.13/site-packages/starlette/websockets.py", line 180, in close
+[2025-11-27T00:25:29.185277+00:00] pycket_simple_deepseek-v3.2-exp_coordination:     await self.send({"type": "websocket.close", "code": code, "reason": reason or ""})
+[2025-11-27T00:25:29.185321+00:00] pycket_simple_deepseek-v3.2-exp_coordination:   File "/usr/local/lib/python3.13/site-packages/starlette/websockets.py", line 85, in send
+[2025-11-27T00:25:29.185352+00:00] pycket_simple_deepseek-v3.2-exp_coordination:     await self._send(message)
+[2025-11-27T00:25:29.185381+00:00] pycket_simple_deepseek-v3.2-exp_coordination:   File "/usr/local/lib/python3.13/site-packages/starlette/_exception_handler.py", line 48, in sender
+[2025-11-27T00:25:29.185413+00:00] pycket_simple_deepseek-v3.2-exp_coordination:     await send(message)
+[2025-11-27T00:25:29.185434+00:00] pycket_simple_deepseek-v3.2-exp_coordination:   File "/usr/local/lib/python3.13/site-packages/uvicorn/protocols/websockets/websockets_impl.py", line 360, in asgi_send
+[2025-11-27T00:25:29.185453+00:00] pycket_simple_deepseek-v3.2-exp_coordination:     raise RuntimeError(msg % message_type)
+[2025-11-27T00:25:29.185472+00:00] pycket_simple_deepseek-v3.2-exp_coordination: RuntimeError: Unexpected ASGI message 'websocket.close', after sending 'websocket.close' or response already completed.
+[2025-11-27T00:25:29.185492+00:00] pycket_simple_deepseek-v3.2-exp_coordination: 
+[2025-11-27T00:25:29.185513+00:00] pycket_simple_deepseek-v3.2-exp_coordination: ERROR:    Application shutdown failed. Exiting.
+[2025-11-27T00:25:29.185533+00:00] pycket_simple_deepseek-v3.2-exp_coordination: INFO:     Finished server process [1]
+[2025-11-27T00:25:29.188114+00:00] pycket_simple_deepseek-v3.2-exp_coordination: Ingress WebSocket disconnected
+[2025-11-27T00:25:29.188176+00:00] pycket_simple_deepseek-v3.2-exp_coordination: Error receiving message: (1012, None)

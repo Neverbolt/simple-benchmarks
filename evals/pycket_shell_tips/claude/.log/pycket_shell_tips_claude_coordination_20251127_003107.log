@@ -1,0 +1,159 @@
+[2025-11-27T00:31:09.695129+00:00] pycket_shell_tips_claude_coordination: INFO:     Started server process [1]
+[2025-11-27T00:31:09.695241+00:00] pycket_shell_tips_claude_coordination: INFO:     Waiting for application startup.
+[2025-11-27T00:31:09.695273+00:00] pycket_shell_tips_claude_coordination: INFO:     Application startup complete.
+[2025-11-27T00:31:09.695306+00:00] pycket_shell_tips_claude_coordination: INFO:     Uvicorn running on http://0.0.0.0:4444 (Press CTRL+C to quit)
+[2025-11-27T00:31:10.016390+00:00] pycket_shell_tips_claude_coordination: INFO:     172.20.0.1:50946 - "GET / HTTP/1.1" 200 OK
+[2025-11-27T00:31:10.105173+00:00] pycket_shell_tips_claude_coordination: INFO:     ('172.20.0.1', 50954) - "WebSocket /client" [accepted]
+[2025-11-27T00:31:10.105521+00:00] pycket_shell_tips_claude_coordination: INFO:     connection open
+[2025-11-27T00:31:32.904784+00:00] pycket_shell_tips_claude_coordination: INFO:     172.20.0.1:44620 - "GET / HTTP/1.1" 200 OK
+[2025-11-27T00:31:32.905134+00:00] pycket_shell_tips_claude_coordination: INFO:     connection closed
+[2025-11-27T00:31:32.906235+00:00] pycket_shell_tips_claude_coordination: Task exception was never retrieved
+[2025-11-27T00:31:32.906331+00:00] pycket_shell_tips_claude_coordination: future: <Task finished name='Task-16' coro=<Client.receive_messages() done, defined at /app/src/hackingBuddyGPT/usecases/viewer.py:137> exception=WebSocketDisconnect(1001, '')>
+[2025-11-27T00:31:32.906366+00:00] pycket_shell_tips_claude_coordination: Traceback (most recent call last):
+[2025-11-27T00:31:32.906391+00:00] pycket_shell_tips_claude_coordination:   File "/app/src/hackingBuddyGPT/usecases/viewer.py", line 165, in receive_messages
+[2025-11-27T00:31:32.906413+00:00] pycket_shell_tips_claude_coordination:     raise e
+[2025-11-27T00:31:32.906435+00:00] pycket_shell_tips_claude_coordination:   File "/app/src/hackingBuddyGPT/usecases/viewer.py", line 140, in receive_messages
+[2025-11-27T00:31:32.906470+00:00] pycket_shell_tips_claude_coordination:     msg = await self.websocket.receive_json()
+[2025-11-27T00:31:32.906492+00:00] pycket_shell_tips_claude_coordination:           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[2025-11-27T00:31:32.906514+00:00] pycket_shell_tips_claude_coordination:   File "/usr/local/lib/python3.13/site-packages/starlette/websockets.py", line 135, in receive_json
+[2025-11-27T00:31:32.906535+00:00] pycket_shell_tips_claude_coordination:     self._raise_on_disconnect(message)
+[2025-11-27T00:31:32.906555+00:00] pycket_shell_tips_claude_coordination:     ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+[2025-11-27T00:31:32.906576+00:00] pycket_shell_tips_claude_coordination:   File "/usr/local/lib/python3.13/site-packages/starlette/websockets.py", line 113, in _raise_on_disconnect
+[2025-11-27T00:31:32.906596+00:00] pycket_shell_tips_claude_coordination:     raise WebSocketDisconnect(message["code"], message.get("reason"))
+[2025-11-27T00:31:32.906616+00:00] pycket_shell_tips_claude_coordination: starlette.websockets.WebSocketDisconnect: (1001, '')
+[2025-11-27T00:31:32.924663+00:00] pycket_shell_tips_claude_coordination: INFO:     ('172.20.0.1', 44628) - "WebSocket /client" [accepted]
+[2025-11-27T00:31:32.925036+00:00] pycket_shell_tips_claude_coordination: INFO:     connection open
+[2025-11-27T00:31:32.945114+00:00] pycket_shell_tips_claude_coordination: INFO:     connection closed
+[2025-11-27T00:31:32.945212+00:00] pycket_shell_tips_claude_coordination: Task exception was never retrieved
+[2025-11-27T00:31:32.945245+00:00] pycket_shell_tips_claude_coordination: future: <Task finished name='Task-26' coro=<Client.receive_messages() done, defined at /app/src/hackingBuddyGPT/usecases/viewer.py:137> exception=WebSocketDisconnect(<CloseCode.ABNORMAL_CLOSURE: 1006>, '')>
+[2025-11-27T00:31:32.945271+00:00] pycket_shell_tips_claude_coordination: Traceback (most recent call last):
+[2025-11-27T00:31:32.945293+00:00] pycket_shell_tips_claude_coordination:   File "/app/src/hackingBuddyGPT/usecases/viewer.py", line 165, in receive_messages
+[2025-11-27T00:31:32.945315+00:00] pycket_shell_tips_claude_coordination:     raise e
+[2025-11-27T00:31:32.945344+00:00] pycket_shell_tips_claude_coordination:   File "/app/src/hackingBuddyGPT/usecases/viewer.py", line 140, in receive_messages
+[2025-11-27T00:31:32.945364+00:00] pycket_shell_tips_claude_coordination:     msg = await self.websocket.receive_json()
+[2025-11-27T00:31:32.945383+00:00] pycket_shell_tips_claude_coordination:           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[2025-11-27T00:31:32.945412+00:00] pycket_shell_tips_claude_coordination:   File "/usr/local/lib/python3.13/site-packages/starlette/websockets.py", line 135, in receive_json
+[2025-11-27T00:31:32.945432+00:00] pycket_shell_tips_claude_coordination:     self._raise_on_disconnect(message)
+[2025-11-27T00:31:32.945452+00:00] pycket_shell_tips_claude_coordination:     ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+[2025-11-27T00:31:32.945471+00:00] pycket_shell_tips_claude_coordination:   File "/usr/local/lib/python3.13/site-packages/starlette/websockets.py", line 113, in _raise_on_disconnect
+[2025-11-27T00:31:32.945491+00:00] pycket_shell_tips_claude_coordination:     raise WebSocketDisconnect(message["code"], message.get("reason"))
+[2025-11-27T00:31:32.945511+00:00] pycket_shell_tips_claude_coordination: starlette.websockets.WebSocketDisconnect: (<CloseCode.ABNORMAL_CLOSURE: 1006>, '')
+[2025-11-27T00:31:32.979717+00:00] pycket_shell_tips_claude_coordination: INFO:     ('172.20.0.1', 44630) - "WebSocket /client" [accepted]
+[2025-11-27T00:31:32.979798+00:00] pycket_shell_tips_claude_coordination: INFO:     connection open
+[2025-11-27T00:31:34.015470+00:00] pycket_shell_tips_claude_coordination: INFO:     connection closed
+[2025-11-27T00:31:34.016188+00:00] pycket_shell_tips_claude_coordination: Task exception was never retrieved
+[2025-11-27T00:31:34.016278+00:00] pycket_shell_tips_claude_coordination: future: <Task finished name='Task-34' coro=<Client.receive_messages() done, defined at /app/src/hackingBuddyGPT/usecases/viewer.py:137> exception=WebSocketDisconnect(1001, '')>
+[2025-11-27T00:31:34.016312+00:00] pycket_shell_tips_claude_coordination: Traceback (most recent call last):
+[2025-11-27T00:31:34.016337+00:00] pycket_shell_tips_claude_coordination:   File "/app/src/hackingBuddyGPT/usecases/viewer.py", line 165, in receive_messages
+[2025-11-27T00:31:34.016361+00:00] pycket_shell_tips_claude_coordination:     raise e
+[2025-11-27T00:31:34.016383+00:00] pycket_shell_tips_claude_coordination:   File "/app/src/hackingBuddyGPT/usecases/viewer.py", line 140, in receive_messages
+[2025-11-27T00:31:34.016403+00:00] pycket_shell_tips_claude_coordination:     msg = await self.websocket.receive_json()
+[2025-11-27T00:31:34.016423+00:00] pycket_shell_tips_claude_coordination:           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[2025-11-27T00:31:34.016444+00:00] pycket_shell_tips_claude_coordination:   File "/usr/local/lib/python3.13/site-packages/starlette/websockets.py", line 135, in receive_json
+[2025-11-27T00:31:34.016464+00:00] pycket_shell_tips_claude_coordination:     self._raise_on_disconnect(message)
+[2025-11-27T00:31:34.016482+00:00] pycket_shell_tips_claude_coordination:     ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+[2025-11-27T00:31:34.016502+00:00] pycket_shell_tips_claude_coordination:   File "/usr/local/lib/python3.13/site-packages/starlette/websockets.py", line 113, in _raise_on_disconnect
+[2025-11-27T00:31:34.016523+00:00] pycket_shell_tips_claude_coordination:     raise WebSocketDisconnect(message["code"], message.get("reason"))
+[2025-11-27T00:31:34.016553+00:00] pycket_shell_tips_claude_coordination: starlette.websockets.WebSocketDisconnect: (1001, '')
+[2025-11-27T00:31:34.040301+00:00] pycket_shell_tips_claude_coordination: Error receiving message: (1001, '')
+[2025-11-27T00:31:34.040376+00:00] pycket_shell_tips_claude_coordination: Error receiving message: (<CloseCode.ABNORMAL_CLOSURE: 1006>, '')
+[2025-11-27T00:31:34.040401+00:00] pycket_shell_tips_claude_coordination: Error receiving message: (1001, '')
+[2025-11-27T00:31:34.040423+00:00] pycket_shell_tips_claude_coordination: INFO:     172.20.0.1:44632 - "GET / HTTP/1.1" 200 OK
+[2025-11-27T00:31:34.040462+00:00] pycket_shell_tips_claude_coordination: INFO:     ('172.20.0.1', 44642) - "WebSocket /client" [accepted]
+[2025-11-27T00:31:34.040485+00:00] pycket_shell_tips_claude_coordination: INFO:     connection open
+[2025-11-27T00:31:34.089659+00:00] pycket_shell_tips_claude_coordination: INFO:     connection closed
+[2025-11-27T00:31:34.090346+00:00] pycket_shell_tips_claude_coordination: Task exception was never retrieved
+[2025-11-27T00:31:34.090415+00:00] pycket_shell_tips_claude_coordination: future: <Task finished name='Task-44' coro=<Client.receive_messages() done, defined at /app/src/hackingBuddyGPT/usecases/viewer.py:137> exception=WebSocketDisconnect(1001, '')>
+[2025-11-27T00:31:34.090452+00:00] pycket_shell_tips_claude_coordination: Traceback (most recent call last):
+[2025-11-27T00:31:34.090482+00:00] pycket_shell_tips_claude_coordination:   File "/app/src/hackingBuddyGPT/usecases/viewer.py", line 165, in receive_messages
+[2025-11-27T00:31:34.090511+00:00] pycket_shell_tips_claude_coordination:     raise e
+[2025-11-27T00:31:34.090540+00:00] pycket_shell_tips_claude_coordination:   File "/app/src/hackingBuddyGPT/usecases/viewer.py", line 140, in receive_messages
+[2025-11-27T00:31:34.090567+00:00] pycket_shell_tips_claude_coordination:     msg = await self.websocket.receive_json()
+[2025-11-27T00:31:34.090595+00:00] pycket_shell_tips_claude_coordination:           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[2025-11-27T00:31:34.090623+00:00] pycket_shell_tips_claude_coordination:   File "/usr/local/lib/python3.13/site-packages/starlette/websockets.py", line 135, in receive_json
+[2025-11-27T00:31:34.090663+00:00] pycket_shell_tips_claude_coordination:     self._raise_on_disconnect(message)
+[2025-11-27T00:31:34.090691+00:00] pycket_shell_tips_claude_coordination:     ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+[2025-11-27T00:31:34.090718+00:00] pycket_shell_tips_claude_coordination:   File "/usr/local/lib/python3.13/site-packages/starlette/websockets.py", line 113, in _raise_on_disconnect
+[2025-11-27T00:31:34.090745+00:00] pycket_shell_tips_claude_coordination:     raise WebSocketDisconnect(message["code"], message.get("reason"))
+[2025-11-27T00:31:34.090772+00:00] pycket_shell_tips_claude_coordination: starlette.websockets.WebSocketDisconnect: (1001, '')
+[2025-11-27T00:31:34.090792+00:00] pycket_shell_tips_claude_coordination: Error receiving message: (1001, '')
+[2025-11-27T00:31:34.090815+00:00] pycket_shell_tips_claude_coordination: INFO:     172.20.0.1:44632 - "GET /static/style.css HTTP/1.1" 200 OK
+[2025-11-27T00:31:34.109386+00:00] pycket_shell_tips_claude_coordination: INFO:     172.20.0.1:44650 - "GET /static/client.js HTTP/1.1" 200 OK
+[2025-11-27T00:31:34.144783+00:00] pycket_shell_tips_claude_coordination: INFO:     172.20.0.1:44650 - "GET /favicon.ico HTTP/1.1" 200 OK
+[2025-11-27T00:31:34.180660+00:00] pycket_shell_tips_claude_coordination: INFO:     ('172.20.0.1', 44658) - "WebSocket /client" [accepted]
+[2025-11-27T00:31:34.180813+00:00] pycket_shell_tips_claude_coordination: INFO:     connection open
+[2025-11-27T00:31:44.420271+00:00] pycket_shell_tips_claude_coordination: INFO:     connection closed
+[2025-11-27T00:31:44.420714+00:00] pycket_shell_tips_claude_coordination: Task exception was never retrieved
+[2025-11-27T00:31:44.420764+00:00] pycket_shell_tips_claude_coordination: future: <Task finished name='Task-56' coro=<Client.receive_messages() done, defined at /app/src/hackingBuddyGPT/usecases/viewer.py:137> exception=WebSocketDisconnect(1001, '')>
+[2025-11-27T00:31:44.420793+00:00] pycket_shell_tips_claude_coordination: Traceback (most recent call last):
+[2025-11-27T00:31:44.420817+00:00] pycket_shell_tips_claude_coordination:   File "/app/src/hackingBuddyGPT/usecases/viewer.py", line 165, in receive_messages
+[2025-11-27T00:31:44.420851+00:00] pycket_shell_tips_claude_coordination:     raise e
+[2025-11-27T00:31:44.420874+00:00] pycket_shell_tips_claude_coordination:   File "/app/src/hackingBuddyGPT/usecases/viewer.py", line 140, in receive_messages
+[2025-11-27T00:31:44.420894+00:00] pycket_shell_tips_claude_coordination:     msg = await self.websocket.receive_json()
+[2025-11-27T00:31:44.420923+00:00] pycket_shell_tips_claude_coordination:           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[2025-11-27T00:31:44.420957+00:00] pycket_shell_tips_claude_coordination:   File "/usr/local/lib/python3.13/site-packages/starlette/websockets.py", line 135, in receive_json
+[2025-11-27T00:31:44.420981+00:00] pycket_shell_tips_claude_coordination:     self._raise_on_disconnect(message)
+[2025-11-27T00:31:44.421002+00:00] pycket_shell_tips_claude_coordination:     ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+[2025-11-27T00:31:44.421022+00:00] pycket_shell_tips_claude_coordination:   File "/usr/local/lib/python3.13/site-packages/starlette/websockets.py", line 113, in _raise_on_disconnect
+[2025-11-27T00:31:44.421041+00:00] pycket_shell_tips_claude_coordination:     raise WebSocketDisconnect(message["code"], message.get("reason"))
+[2025-11-27T00:31:44.421060+00:00] pycket_shell_tips_claude_coordination: starlette.websockets.WebSocketDisconnect: (1001, '')
+[2025-11-27T00:31:44.439252+00:00] pycket_shell_tips_claude_coordination: Error receiving message: (1001, '')
+[2025-11-27T00:31:44.439323+00:00] pycket_shell_tips_claude_coordination: INFO:     172.20.0.1:52322 - "GET / HTTP/1.1" 200 OK
+[2025-11-27T00:31:44.459103+00:00] pycket_shell_tips_claude_coordination: INFO:     ('172.20.0.1', 52334) - "WebSocket /client" [accepted]
+[2025-11-27T00:31:44.459312+00:00] pycket_shell_tips_claude_coordination: INFO:     connection open
+[2025-11-27T00:31:44.474076+00:00] pycket_shell_tips_claude_coordination: INFO:     connection closed
+[2025-11-27T00:31:44.474702+00:00] pycket_shell_tips_claude_coordination: Task exception was never retrieved
+[2025-11-27T00:31:44.474749+00:00] pycket_shell_tips_claude_coordination: future: <Task finished name='Task-66' coro=<Client.receive_messages() done, defined at /app/src/hackingBuddyGPT/usecases/viewer.py:137> exception=WebSocketDisconnect(<CloseCode.ABNORMAL_CLOSURE: 1006>, '')>
+[2025-11-27T00:31:44.474774+00:00] pycket_shell_tips_claude_coordination: Traceback (most recent call last):
+[2025-11-27T00:31:44.474808+00:00] pycket_shell_tips_claude_coordination:   File "/app/src/hackingBuddyGPT/usecases/viewer.py", line 165, in receive_messages
+[2025-11-27T00:31:44.474830+00:00] pycket_shell_tips_claude_coordination:     raise e
+[2025-11-27T00:31:44.474850+00:00] pycket_shell_tips_claude_coordination:   File "/app/src/hackingBuddyGPT/usecases/viewer.py", line 140, in receive_messages
+[2025-11-27T00:31:44.474870+00:00] pycket_shell_tips_claude_coordination:     msg = await self.websocket.receive_json()
+[2025-11-27T00:31:44.474890+00:00] pycket_shell_tips_claude_coordination:           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[2025-11-27T00:31:44.474909+00:00] pycket_shell_tips_claude_coordination:   File "/usr/local/lib/python3.13/site-packages/starlette/websockets.py", line 135, in receive_json
+[2025-11-27T00:31:44.474930+00:00] pycket_shell_tips_claude_coordination:     self._raise_on_disconnect(message)
+[2025-11-27T00:31:44.474966+00:00] pycket_shell_tips_claude_coordination:     ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+[2025-11-27T00:31:44.474987+00:00] pycket_shell_tips_claude_coordination:   File "/usr/local/lib/python3.13/site-packages/starlette/websockets.py", line 113, in _raise_on_disconnect
+[2025-11-27T00:31:44.475007+00:00] pycket_shell_tips_claude_coordination:     raise WebSocketDisconnect(message["code"], message.get("reason"))
+[2025-11-27T00:31:44.475025+00:00] pycket_shell_tips_claude_coordination: starlette.websockets.WebSocketDisconnect: (<CloseCode.ABNORMAL_CLOSURE: 1006>, '')
+[2025-11-27T00:31:44.509225+00:00] pycket_shell_tips_claude_coordination: INFO:     ('172.20.0.1', 52350) - "WebSocket /client" [accepted]
+[2025-11-27T00:31:44.509482+00:00] pycket_shell_tips_claude_coordination: INFO:     connection open
+[2025-11-27T00:31:45.595442+00:00] pycket_shell_tips_claude_coordination: INFO:     Shutting down
+[2025-11-27T00:31:45.595736+00:00] pycket_shell_tips_claude_coordination: INFO:     connection closed
+[2025-11-27T00:31:45.596488+00:00] pycket_shell_tips_claude_coordination: Task exception was never retrieved
+[2025-11-27T00:31:45.596576+00:00] pycket_shell_tips_claude_coordination: future: <Task finished name='Task-74' coro=<Client.receive_messages() done, defined at /app/src/hackingBuddyGPT/usecases/viewer.py:137> exception=WebSocketDisconnect(1012, None)>
+[2025-11-27T00:31:45.596608+00:00] pycket_shell_tips_claude_coordination: Traceback (most recent call last):
+[2025-11-27T00:31:45.596633+00:00] pycket_shell_tips_claude_coordination:   File "/app/src/hackingBuddyGPT/usecases/viewer.py", line 165, in receive_messages
+[2025-11-27T00:31:45.596655+00:00] pycket_shell_tips_claude_coordination:     raise e
+[2025-11-27T00:31:45.596677+00:00] pycket_shell_tips_claude_coordination:   File "/app/src/hackingBuddyGPT/usecases/viewer.py", line 140, in receive_messages
+[2025-11-27T00:31:45.596698+00:00] pycket_shell_tips_claude_coordination:     msg = await self.websocket.receive_json()
+[2025-11-27T00:31:45.596720+00:00] pycket_shell_tips_claude_coordination:           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[2025-11-27T00:31:45.596753+00:00] pycket_shell_tips_claude_coordination:   File "/usr/local/lib/python3.13/site-packages/starlette/websockets.py", line 135, in receive_json
+[2025-11-27T00:31:45.596774+00:00] pycket_shell_tips_claude_coordination:     self._raise_on_disconnect(message)
+[2025-11-27T00:31:45.596795+00:00] pycket_shell_tips_claude_coordination:     ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+[2025-11-27T00:31:45.596815+00:00] pycket_shell_tips_claude_coordination:   File "/usr/local/lib/python3.13/site-packages/starlette/websockets.py", line 113, in _raise_on_disconnect
+[2025-11-27T00:31:45.596836+00:00] pycket_shell_tips_claude_coordination:     raise WebSocketDisconnect(message["code"], message.get("reason"))
+[2025-11-27T00:31:45.596855+00:00] pycket_shell_tips_claude_coordination: starlette.websockets.WebSocketDisconnect: (1012, None)
+[2025-11-27T00:31:45.696898+00:00] pycket_shell_tips_claude_coordination: INFO:     Waiting for application shutdown.
+[2025-11-27T00:31:45.698142+00:00] pycket_shell_tips_claude_coordination: ERROR:    Traceback (most recent call last):
+[2025-11-27T00:31:45.698195+00:00] pycket_shell_tips_claude_coordination:   File "/usr/local/lib/python3.13/site-packages/starlette/routing.py", line 693, in lifespan
+[2025-11-27T00:31:45.698223+00:00] pycket_shell_tips_claude_coordination:     async with self.lifespan_context(app) as maybe_state:
+[2025-11-27T00:31:45.698246+00:00] pycket_shell_tips_claude_coordination:                ~~~~~~~~~~~~~~~~~~~~~^^^^^
+[2025-11-27T00:31:45.698266+00:00] pycket_shell_tips_claude_coordination:   File "/usr/local/lib/python3.13/contextlib.py", line 221, in __aexit__
+[2025-11-27T00:31:45.698286+00:00] pycket_shell_tips_claude_coordination:     await anext(self.gen)
+[2025-11-27T00:31:45.698306+00:00] pycket_shell_tips_claude_coordination:   File "/app/src/hackingBuddyGPT/usecases/viewer.py", line 246, in lifespan
+[2025-11-27T00:31:45.698324+00:00] pycket_shell_tips_claude_coordination:     await client.websocket.close()
+[2025-11-27T00:31:45.698345+00:00] pycket_shell_tips_claude_coordination:   File "/usr/local/lib/python3.13/site-packages/starlette/websockets.py", line 180, in close
+[2025-11-27T00:31:45.698377+00:00] pycket_shell_tips_claude_coordination:     await self.send({"type": "websocket.close", "code": code, "reason": reason or ""})
+[2025-11-27T00:31:45.698397+00:00] pycket_shell_tips_claude_coordination:   File "/usr/local/lib/python3.13/site-packages/starlette/websockets.py", line 85, in send
+[2025-11-27T00:31:45.698418+00:00] pycket_shell_tips_claude_coordination:     await self._send(message)
+[2025-11-27T00:31:45.698438+00:00] pycket_shell_tips_claude_coordination:   File "/usr/local/lib/python3.13/site-packages/starlette/_exception_handler.py", line 48, in sender
+[2025-11-27T00:31:45.698457+00:00] pycket_shell_tips_claude_coordination:     await send(message)
+[2025-11-27T00:31:45.698477+00:00] pycket_shell_tips_claude_coordination:   File "/usr/local/lib/python3.13/site-packages/uvicorn/protocols/websockets/websockets_impl.py", line 360, in asgi_send
+[2025-11-27T00:31:45.698504+00:00] pycket_shell_tips_claude_coordination:     raise RuntimeError(msg % message_type)
+[2025-11-27T00:31:45.698525+00:00] pycket_shell_tips_claude_coordination: RuntimeError: Unexpected ASGI message 'websocket.close', after sending 'websocket.close' or response already completed.
+[2025-11-27T00:31:45.698547+00:00] pycket_shell_tips_claude_coordination: 
+[2025-11-27T00:31:45.698569+00:00] pycket_shell_tips_claude_coordination: ERROR:    Application shutdown failed. Exiting.
+[2025-11-27T00:31:45.698590+00:00] pycket_shell_tips_claude_coordination: INFO:     Finished server process [1]
+[2025-11-27T00:31:45.698716+00:00] pycket_shell_tips_claude_coordination: Error receiving message: (<CloseCode.ABNORMAL_CLOSURE: 1006>, '')
+[2025-11-27T00:31:45.698856+00:00] pycket_shell_tips_claude_coordination: Error receiving message: (1012, None)

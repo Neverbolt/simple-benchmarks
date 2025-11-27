@@ -1,0 +1,108 @@
+[2025-11-27T01:05:32.854055+00:00] pycket_simple_gpt-5.1_coordination: INFO:     Started server process [1]
+[2025-11-27T01:05:32.854177+00:00] pycket_simple_gpt-5.1_coordination: INFO:     Waiting for application startup.
+[2025-11-27T01:05:32.854212+00:00] pycket_simple_gpt-5.1_coordination: INFO:     Application startup complete.
+[2025-11-27T01:05:32.854236+00:00] pycket_simple_gpt-5.1_coordination: INFO:     Uvicorn running on http://0.0.0.0:4444 (Press CTRL+C to quit)
+[2025-11-27T01:05:39.094310+00:00] pycket_simple_gpt-5.1_coordination: INFO:     ('172.19.0.3', 53126) - "WebSocket /ingress" [accepted]
+[2025-11-27T01:05:39.094427+00:00] pycket_simple_gpt-5.1_coordination: INFO:     connection open
+[2025-11-27T01:05:39.096246+00:00] pycket_simple_gpt-5.1_coordination: /usr/local/lib/python3.13/site-packages/dataclasses_json/core.py:201: RuntimeWarning: 'NoneType' object value of non-optional type id detected when decoding Run.
+[2025-11-27T01:05:39.096339+00:00] pycket_simple_gpt-5.1_coordination:   warnings.warn(
+[2025-11-27T01:05:39.096371+00:00] pycket_simple_gpt-5.1_coordination: /usr/local/lib/python3.13/site-packages/dataclasses_json/core.py:201: RuntimeWarning: 'NoneType' object value of non-optional type state detected when decoding Run.
+[2025-11-27T01:05:39.096395+00:00] pycket_simple_gpt-5.1_coordination:   warnings.warn(
+[2025-11-27T01:05:39.100068+00:00] pycket_simple_gpt-5.1_coordination: /usr/local/lib/python3.13/site-packages/dataclasses_json/core.py:201: RuntimeWarning: 'NoneType' object value of non-optional type conversation detected when decoding Message.
+[2025-11-27T01:05:39.100148+00:00] pycket_simple_gpt-5.1_coordination:   warnings.warn(
+[2025-11-27T01:05:39.101487+00:00] pycket_simple_gpt-5.1_coordination: /usr/local/lib/python3.13/site-packages/dataclasses_json/core.py:201: RuntimeWarning: 'NoneType' object value of non-optional type to_message detected when decoding Section.
+[2025-11-27T01:05:39.101570+00:00] pycket_simple_gpt-5.1_coordination:   warnings.warn(
+[2025-11-27T01:05:39.552899+00:00] pycket_simple_gpt-5.1_coordination: /usr/local/lib/python3.13/site-packages/dataclasses_json/core.py:201: RuntimeWarning: 'NoneType' object value of non-optional type id detected when decoding MessageStreamPart.
+[2025-11-27T01:05:39.553030+00:00] pycket_simple_gpt-5.1_coordination:   warnings.warn(
+[2025-11-27T08:44:56.370964+00:00] pycket_simple_gpt-5.1_coordination: INFO:     172.19.0.1:53872 - "GET / HTTP/1.1" 200 OK
+[2025-11-27T08:44:56.428642+00:00] pycket_simple_gpt-5.1_coordination: INFO:     172.19.0.1:53872 - "GET /static/style.css HTTP/1.1" 200 OK
+[2025-11-27T08:44:56.443911+00:00] pycket_simple_gpt-5.1_coordination: INFO:     172.19.0.1:53880 - "GET /static/client.js HTTP/1.1" 200 OK
+[2025-11-27T08:44:56.509093+00:00] pycket_simple_gpt-5.1_coordination: INFO:     ('172.19.0.1', 53886) - "WebSocket /client" [accepted]
+[2025-11-27T08:44:56.509363+00:00] pycket_simple_gpt-5.1_coordination: INFO:     connection open
+[2025-11-27T08:45:11.243581+00:00] pycket_simple_gpt-5.1_coordination: INFO:     connection closed
+[2025-11-27T08:45:11.244539+00:00] pycket_simple_gpt-5.1_coordination: Task exception was never retrieved
+[2025-11-27T08:45:11.244624+00:00] pycket_simple_gpt-5.1_coordination: future: <Task finished name='Task-22' coro=<Client.receive_messages() done, defined at /app/src/hackingBuddyGPT/usecases/viewer.py:137> exception=WebSocketDisconnect(1001, '')>
+[2025-11-27T08:45:11.244657+00:00] pycket_simple_gpt-5.1_coordination: Traceback (most recent call last):
+[2025-11-27T08:45:11.244683+00:00] pycket_simple_gpt-5.1_coordination:   File "/app/src/hackingBuddyGPT/usecases/viewer.py", line 165, in receive_messages
+[2025-11-27T08:45:11.244704+00:00] pycket_simple_gpt-5.1_coordination:     raise e
+[2025-11-27T08:45:11.244727+00:00] pycket_simple_gpt-5.1_coordination:   File "/app/src/hackingBuddyGPT/usecases/viewer.py", line 140, in receive_messages
+[2025-11-27T08:45:11.244748+00:00] pycket_simple_gpt-5.1_coordination:     msg = await self.websocket.receive_json()
+[2025-11-27T08:45:11.244769+00:00] pycket_simple_gpt-5.1_coordination:           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[2025-11-27T08:45:11.244811+00:00] pycket_simple_gpt-5.1_coordination:   File "/usr/local/lib/python3.13/site-packages/starlette/websockets.py", line 135, in receive_json
+[2025-11-27T08:45:11.244833+00:00] pycket_simple_gpt-5.1_coordination:     self._raise_on_disconnect(message)
+[2025-11-27T08:45:11.244854+00:00] pycket_simple_gpt-5.1_coordination:     ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+[2025-11-27T08:45:11.244873+00:00] pycket_simple_gpt-5.1_coordination:   File "/usr/local/lib/python3.13/site-packages/starlette/websockets.py", line 113, in _raise_on_disconnect
+[2025-11-27T08:45:11.244892+00:00] pycket_simple_gpt-5.1_coordination:     raise WebSocketDisconnect(message["code"], message.get("reason"))
+[2025-11-27T08:45:11.244912+00:00] pycket_simple_gpt-5.1_coordination: starlette.websockets.WebSocketDisconnect: (1001, '')
+[2025-11-27T08:45:11.263976+00:00] pycket_simple_gpt-5.1_coordination: INFO:     ('172.19.0.1', 47214) - "WebSocket /client" [accepted]
+[2025-11-27T08:45:11.264200+00:00] pycket_simple_gpt-5.1_coordination: INFO:     connection open
+[2025-11-27T08:45:11.288732+00:00] pycket_simple_gpt-5.1_coordination: INFO:     connection closed
+[2025-11-27T08:45:11.289270+00:00] pycket_simple_gpt-5.1_coordination: Task exception was never retrieved
+[2025-11-27T08:45:11.289318+00:00] pycket_simple_gpt-5.1_coordination: future: <Task finished name='Task-30' coro=<Client.receive_messages() done, defined at /app/src/hackingBuddyGPT/usecases/viewer.py:137> exception=WebSocketDisconnect(<CloseCode.ABNORMAL_CLOSURE: 1006>, '')>
+[2025-11-27T08:45:11.289347+00:00] pycket_simple_gpt-5.1_coordination: Traceback (most recent call last):
+[2025-11-27T08:45:11.289369+00:00] pycket_simple_gpt-5.1_coordination:   File "/app/src/hackingBuddyGPT/usecases/viewer.py", line 165, in receive_messages
+[2025-11-27T08:45:11.289392+00:00] pycket_simple_gpt-5.1_coordination:     raise e
+[2025-11-27T08:45:11.289412+00:00] pycket_simple_gpt-5.1_coordination:   File "/app/src/hackingBuddyGPT/usecases/viewer.py", line 140, in receive_messages
+[2025-11-27T08:45:11.289443+00:00] pycket_simple_gpt-5.1_coordination:     msg = await self.websocket.receive_json()
+[2025-11-27T08:45:11.289464+00:00] pycket_simple_gpt-5.1_coordination:           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[2025-11-27T08:45:11.289484+00:00] pycket_simple_gpt-5.1_coordination:   File "/usr/local/lib/python3.13/site-packages/starlette/websockets.py", line 135, in receive_json
+[2025-11-27T08:45:11.289503+00:00] pycket_simple_gpt-5.1_coordination:     self._raise_on_disconnect(message)
+[2025-11-27T08:45:11.289523+00:00] pycket_simple_gpt-5.1_coordination:     ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+[2025-11-27T08:45:11.289542+00:00] pycket_simple_gpt-5.1_coordination:   File "/usr/local/lib/python3.13/site-packages/starlette/websockets.py", line 113, in _raise_on_disconnect
+[2025-11-27T08:45:11.289562+00:00] pycket_simple_gpt-5.1_coordination:     raise WebSocketDisconnect(message["code"], message.get("reason"))
+[2025-11-27T08:45:11.289581+00:00] pycket_simple_gpt-5.1_coordination: starlette.websockets.WebSocketDisconnect: (<CloseCode.ABNORMAL_CLOSURE: 1006>, '')
+[2025-11-27T08:46:12.434169+00:00] pycket_simple_gpt-5.1_coordination: Error receiving message: (1001, '')
+[2025-11-27T08:46:12.434272+00:00] pycket_simple_gpt-5.1_coordination: Error receiving message: (<CloseCode.ABNORMAL_CLOSURE: 1006>, '')
+[2025-11-27T08:46:12.434315+00:00] pycket_simple_gpt-5.1_coordination: INFO:     172.19.0.1:46408 - "GET / HTTP/1.1" 200 OK
+[2025-11-27T08:46:12.504263+00:00] pycket_simple_gpt-5.1_coordination: INFO:     ('172.19.0.1', 46418) - "WebSocket /client" [accepted]
+[2025-11-27T08:46:12.504550+00:00] pycket_simple_gpt-5.1_coordination: INFO:     connection open
+[2025-11-27T08:46:57.505699+00:00] pycket_simple_gpt-5.1_coordination: Traceback (most recent call last):
+[2025-11-27T08:46:57.506656+00:00] pycket_simple_gpt-5.1_coordination:   File "/app/src/hackingBuddyGPT/usecases/viewer.py", line 278, in ingress_endpoint
+[2025-11-27T08:46:57.506748+00:00] pycket_simple_gpt-5.1_coordination:     data = await websocket.receive_json()
+[2025-11-27T08:46:57.506798+00:00] pycket_simple_gpt-5.1_coordination:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[2025-11-27T08:46:57.506823+00:00] pycket_simple_gpt-5.1_coordination:   File "/usr/local/lib/python3.13/site-packages/starlette/websockets.py", line 135, in receive_json
+[2025-11-27T08:46:57.506845+00:00] pycket_simple_gpt-5.1_coordination:     self._raise_on_disconnect(message)
+[2025-11-27T08:46:57.506871+00:00] pycket_simple_gpt-5.1_coordination:     ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+[2025-11-27T08:46:57.506905+00:00] pycket_simple_gpt-5.1_coordination:   File "/usr/local/lib/python3.13/site-packages/starlette/websockets.py", line 113, in _raise_on_disconnect
+[2025-11-27T08:46:57.506928+00:00] pycket_simple_gpt-5.1_coordination:     raise WebSocketDisconnect(message["code"], message.get("reason"))
+[2025-11-27T08:46:57.506965+00:00] pycket_simple_gpt-5.1_coordination: starlette.websockets.WebSocketDisconnect: (<CloseCode.ABNORMAL_CLOSURE: 1006>, '')
+[2025-11-27T08:46:57.506988+00:00] pycket_simple_gpt-5.1_coordination: INFO:     connection closed
+[2025-11-27T08:47:03.450516+00:00] pycket_simple_gpt-5.1_coordination: INFO:     Shutting down
+[2025-11-27T08:47:03.450830+00:00] pycket_simple_gpt-5.1_coordination: INFO:     connection closed
+[2025-11-27T08:47:03.451448+00:00] pycket_simple_gpt-5.1_coordination: Task exception was never retrieved
+[2025-11-27T08:47:03.451500+00:00] pycket_simple_gpt-5.1_coordination: future: <Task finished name='Task-40' coro=<Client.receive_messages() done, defined at /app/src/hackingBuddyGPT/usecases/viewer.py:137> exception=WebSocketDisconnect(1012, None)>
+[2025-11-27T08:47:03.451530+00:00] pycket_simple_gpt-5.1_coordination: Traceback (most recent call last):
+[2025-11-27T08:47:03.451553+00:00] pycket_simple_gpt-5.1_coordination:   File "/app/src/hackingBuddyGPT/usecases/viewer.py", line 165, in receive_messages
+[2025-11-27T08:47:03.451575+00:00] pycket_simple_gpt-5.1_coordination:     raise e
+[2025-11-27T08:47:03.451597+00:00] pycket_simple_gpt-5.1_coordination:   File "/app/src/hackingBuddyGPT/usecases/viewer.py", line 140, in receive_messages
+[2025-11-27T08:47:03.451618+00:00] pycket_simple_gpt-5.1_coordination:     msg = await self.websocket.receive_json()
+[2025-11-27T08:47:03.451638+00:00] pycket_simple_gpt-5.1_coordination:           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[2025-11-27T08:47:03.451659+00:00] pycket_simple_gpt-5.1_coordination:   File "/usr/local/lib/python3.13/site-packages/starlette/websockets.py", line 135, in receive_json
+[2025-11-27T08:47:03.451679+00:00] pycket_simple_gpt-5.1_coordination:     self._raise_on_disconnect(message)
+[2025-11-27T08:47:03.451699+00:00] pycket_simple_gpt-5.1_coordination:     ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+[2025-11-27T08:47:03.451727+00:00] pycket_simple_gpt-5.1_coordination:   File "/usr/local/lib/python3.13/site-packages/starlette/websockets.py", line 113, in _raise_on_disconnect
+[2025-11-27T08:47:03.451749+00:00] pycket_simple_gpt-5.1_coordination:     raise WebSocketDisconnect(message["code"], message.get("reason"))
+[2025-11-27T08:47:03.451769+00:00] pycket_simple_gpt-5.1_coordination: starlette.websockets.WebSocketDisconnect: (1012, None)
+[2025-11-27T08:47:03.551830+00:00] pycket_simple_gpt-5.1_coordination: INFO:     Waiting for application shutdown.
+[2025-11-27T08:47:03.553071+00:00] pycket_simple_gpt-5.1_coordination: ERROR:    Traceback (most recent call last):
+[2025-11-27T08:47:03.553150+00:00] pycket_simple_gpt-5.1_coordination:   File "/usr/local/lib/python3.13/site-packages/starlette/routing.py", line 693, in lifespan
+[2025-11-27T08:47:03.553179+00:00] pycket_simple_gpt-5.1_coordination:     async with self.lifespan_context(app) as maybe_state:
+[2025-11-27T08:47:03.553203+00:00] pycket_simple_gpt-5.1_coordination:                ~~~~~~~~~~~~~~~~~~~~~^^^^^
+[2025-11-27T08:47:03.553224+00:00] pycket_simple_gpt-5.1_coordination:   File "/usr/local/lib/python3.13/contextlib.py", line 221, in __aexit__
+[2025-11-27T08:47:03.553245+00:00] pycket_simple_gpt-5.1_coordination:     await anext(self.gen)
+[2025-11-27T08:47:03.553290+00:00] pycket_simple_gpt-5.1_coordination:   File "/app/src/hackingBuddyGPT/usecases/viewer.py", line 246, in lifespan
+[2025-11-27T08:47:03.553312+00:00] pycket_simple_gpt-5.1_coordination:     await client.websocket.close()
+[2025-11-27T08:47:03.553333+00:00] pycket_simple_gpt-5.1_coordination:   File "/usr/local/lib/python3.13/site-packages/starlette/websockets.py", line 180, in close
+[2025-11-27T08:47:03.553352+00:00] pycket_simple_gpt-5.1_coordination:     await self.send({"type": "websocket.close", "code": code, "reason": reason or ""})
+[2025-11-27T08:47:03.553371+00:00] pycket_simple_gpt-5.1_coordination:   File "/usr/local/lib/python3.13/site-packages/starlette/websockets.py", line 85, in send
+[2025-11-27T08:47:03.553390+00:00] pycket_simple_gpt-5.1_coordination:     await self._send(message)
+[2025-11-27T08:47:03.553409+00:00] pycket_simple_gpt-5.1_coordination:   File "/usr/local/lib/python3.13/site-packages/starlette/_exception_handler.py", line 48, in sender
+[2025-11-27T08:47:03.553429+00:00] pycket_simple_gpt-5.1_coordination:     await send(message)
+[2025-11-27T08:47:03.553448+00:00] pycket_simple_gpt-5.1_coordination:   File "/usr/local/lib/python3.13/site-packages/uvicorn/protocols/websockets/websockets_impl.py", line 360, in asgi_send
+[2025-11-27T08:47:03.553467+00:00] pycket_simple_gpt-5.1_coordination:     raise RuntimeError(msg % message_type)
+[2025-11-27T08:47:03.553485+00:00] pycket_simple_gpt-5.1_coordination: RuntimeError: Unexpected ASGI message 'websocket.close', after sending 'websocket.close' or response already completed.
+[2025-11-27T08:47:03.553505+00:00] pycket_simple_gpt-5.1_coordination: 
+[2025-11-27T08:47:03.553526+00:00] pycket_simple_gpt-5.1_coordination: ERROR:    Application shutdown failed. Exiting.
+[2025-11-27T08:47:03.553545+00:00] pycket_simple_gpt-5.1_coordination: INFO:     Finished server process [1]
+[2025-11-27T08:47:03.553570+00:00] pycket_simple_gpt-5.1_coordination: Ingress WebSocket disconnected
+[2025-11-27T08:47:03.553590+00:00] pycket_simple_gpt-5.1_coordination: Error receiving message: (1012, None)

@@ -1,0 +1,72 @@
+[2025-11-26T23:34:40.303279+00:00] phblog_simple_claude_coordination: INFO:     Started server process [1]
+[2025-11-26T23:34:40.303391+00:00] phblog_simple_claude_coordination: INFO:     Waiting for application startup.
+[2025-11-26T23:34:40.303437+00:00] phblog_simple_claude_coordination: INFO:     Application startup complete.
+[2025-11-26T23:34:40.303464+00:00] phblog_simple_claude_coordination: INFO:     Uvicorn running on http://0.0.0.0:4444 (Press CTRL+C to quit)
+[2025-11-26T23:34:46.575804+00:00] phblog_simple_claude_coordination: INFO:     ('172.18.0.3', 58810) - "WebSocket /ingress" [accepted]
+[2025-11-26T23:34:46.576031+00:00] phblog_simple_claude_coordination: INFO:     connection open
+[2025-11-26T23:34:46.578166+00:00] phblog_simple_claude_coordination: /usr/local/lib/python3.13/site-packages/dataclasses_json/core.py:201: RuntimeWarning: 'NoneType' object value of non-optional type id detected when decoding Run.
+[2025-11-26T23:34:46.578262+00:00] phblog_simple_claude_coordination:   warnings.warn(
+[2025-11-26T23:34:46.578306+00:00] phblog_simple_claude_coordination: /usr/local/lib/python3.13/site-packages/dataclasses_json/core.py:201: RuntimeWarning: 'NoneType' object value of non-optional type state detected when decoding Run.
+[2025-11-26T23:34:46.578333+00:00] phblog_simple_claude_coordination:   warnings.warn(
+[2025-11-26T23:34:46.581471+00:00] phblog_simple_claude_coordination: /usr/local/lib/python3.13/site-packages/dataclasses_json/core.py:201: RuntimeWarning: 'NoneType' object value of non-optional type conversation detected when decoding Message.
+[2025-11-26T23:34:46.581506+00:00] phblog_simple_claude_coordination:   warnings.warn(
+[2025-11-26T23:34:46.583226+00:00] phblog_simple_claude_coordination: /usr/local/lib/python3.13/site-packages/dataclasses_json/core.py:201: RuntimeWarning: 'NoneType' object value of non-optional type to_message detected when decoding Section.
+[2025-11-26T23:34:46.583293+00:00] phblog_simple_claude_coordination:   warnings.warn(
+[2025-11-26T23:34:48.619759+00:00] phblog_simple_claude_coordination: /usr/local/lib/python3.13/site-packages/dataclasses_json/core.py:201: RuntimeWarning: 'NoneType' object value of non-optional type id detected when decoding MessageStreamPart.
+[2025-11-26T23:34:48.619876+00:00] phblog_simple_claude_coordination:   warnings.warn(
+[2025-11-27T00:09:54.708008+00:00] phblog_simple_claude_coordination: Traceback (most recent call last):
+[2025-11-27T00:09:54.708464+00:00] phblog_simple_claude_coordination:   File "/app/src/hackingBuddyGPT/usecases/viewer.py", line 278, in ingress_endpoint
+[2025-11-27T00:09:54.708536+00:00] phblog_simple_claude_coordination:     data = await websocket.receive_json()
+[2025-11-27T00:09:54.708575+00:00] phblog_simple_claude_coordination:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[2025-11-27T00:09:54.708601+00:00] phblog_simple_claude_coordination:   File "/usr/local/lib/python3.13/site-packages/starlette/websockets.py", line 135, in receive_json
+[2025-11-27T00:09:54.708631+00:00] phblog_simple_claude_coordination:     self._raise_on_disconnect(message)
+[2025-11-27T00:09:54.708653+00:00] phblog_simple_claude_coordination:     ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+[2025-11-27T00:09:54.708673+00:00] phblog_simple_claude_coordination:   File "/usr/local/lib/python3.13/site-packages/starlette/websockets.py", line 113, in _raise_on_disconnect
+[2025-11-27T00:09:54.708694+00:00] phblog_simple_claude_coordination:     raise WebSocketDisconnect(message["code"], message.get("reason"))
+[2025-11-27T00:09:54.708715+00:00] phblog_simple_claude_coordination: starlette.websockets.WebSocketDisconnect: (1000, '')
+[2025-11-27T00:09:54.708736+00:00] phblog_simple_claude_coordination: INFO:     connection closed
+[2025-11-27T00:10:58.517306+00:00] phblog_simple_claude_coordination: Ingress WebSocket disconnected
+[2025-11-27T00:10:58.517413+00:00] phblog_simple_claude_coordination: INFO:     172.18.0.1:54388 - "GET / HTTP/1.1" 200 OK
+[2025-11-27T00:10:58.558883+00:00] phblog_simple_claude_coordination: INFO:     172.18.0.1:54388 - "GET /static/style.css HTTP/1.1" 200 OK
+[2025-11-27T00:10:58.579249+00:00] phblog_simple_claude_coordination: INFO:     172.18.0.1:54396 - "GET /static/client.js HTTP/1.1" 200 OK
+[2025-11-27T00:10:58.599667+00:00] phblog_simple_claude_coordination: INFO:     172.18.0.1:54396 - "GET /favicon.ico HTTP/1.1" 200 OK
+[2025-11-27T00:10:58.619340+00:00] phblog_simple_claude_coordination: INFO:     ('172.18.0.1', 54404) - "WebSocket /client" [accepted]
+[2025-11-27T00:10:58.619562+00:00] phblog_simple_claude_coordination: INFO:     connection open
+[2025-11-27T00:11:05.983517+00:00] phblog_simple_claude_coordination: INFO:     Shutting down
+[2025-11-27T00:11:05.983782+00:00] phblog_simple_claude_coordination: INFO:     connection closed
+[2025-11-27T00:11:05.984549+00:00] phblog_simple_claude_coordination: Task exception was never retrieved
+[2025-11-27T00:11:05.984599+00:00] phblog_simple_claude_coordination: future: <Task finished name='Task-23' coro=<Client.receive_messages() done, defined at /app/src/hackingBuddyGPT/usecases/viewer.py:137> exception=WebSocketDisconnect(1012, None)>
+[2025-11-27T00:11:05.984626+00:00] phblog_simple_claude_coordination: Traceback (most recent call last):
+[2025-11-27T00:11:05.984648+00:00] phblog_simple_claude_coordination:   File "/app/src/hackingBuddyGPT/usecases/viewer.py", line 165, in receive_messages
+[2025-11-27T00:11:05.984671+00:00] phblog_simple_claude_coordination:     raise e
+[2025-11-27T00:11:05.984692+00:00] phblog_simple_claude_coordination:   File "/app/src/hackingBuddyGPT/usecases/viewer.py", line 140, in receive_messages
+[2025-11-27T00:11:05.984713+00:00] phblog_simple_claude_coordination:     msg = await self.websocket.receive_json()
+[2025-11-27T00:11:05.984735+00:00] phblog_simple_claude_coordination:           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[2025-11-27T00:11:05.984756+00:00] phblog_simple_claude_coordination:   File "/usr/local/lib/python3.13/site-packages/starlette/websockets.py", line 135, in receive_json
+[2025-11-27T00:11:05.984778+00:00] phblog_simple_claude_coordination:     self._raise_on_disconnect(message)
+[2025-11-27T00:11:05.984799+00:00] phblog_simple_claude_coordination:     ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+[2025-11-27T00:11:05.984819+00:00] phblog_simple_claude_coordination:   File "/usr/local/lib/python3.13/site-packages/starlette/websockets.py", line 113, in _raise_on_disconnect
+[2025-11-27T00:11:05.984838+00:00] phblog_simple_claude_coordination:     raise WebSocketDisconnect(message["code"], message.get("reason"))
+[2025-11-27T00:11:05.984858+00:00] phblog_simple_claude_coordination: starlette.websockets.WebSocketDisconnect: (1012, None)
+[2025-11-27T00:11:06.084961+00:00] phblog_simple_claude_coordination: INFO:     Waiting for application shutdown.
+[2025-11-27T00:11:06.086240+00:00] phblog_simple_claude_coordination: ERROR:    Traceback (most recent call last):
+[2025-11-27T00:11:06.086289+00:00] phblog_simple_claude_coordination:   File "/usr/local/lib/python3.13/site-packages/starlette/routing.py", line 693, in lifespan
+[2025-11-27T00:11:06.086318+00:00] phblog_simple_claude_coordination:     async with self.lifespan_context(app) as maybe_state:
+[2025-11-27T00:11:06.086342+00:00] phblog_simple_claude_coordination:                ~~~~~~~~~~~~~~~~~~~~~^^^^^
+[2025-11-27T00:11:06.086363+00:00] phblog_simple_claude_coordination:   File "/usr/local/lib/python3.13/contextlib.py", line 221, in __aexit__
+[2025-11-27T00:11:06.086384+00:00] phblog_simple_claude_coordination:     await anext(self.gen)
+[2025-11-27T00:11:06.086404+00:00] phblog_simple_claude_coordination:   File "/app/src/hackingBuddyGPT/usecases/viewer.py", line 246, in lifespan
+[2025-11-27T00:11:06.086424+00:00] phblog_simple_claude_coordination:     await client.websocket.close()
+[2025-11-27T00:11:06.086445+00:00] phblog_simple_claude_coordination:   File "/usr/local/lib/python3.13/site-packages/starlette/websockets.py", line 180, in close
+[2025-11-27T00:11:06.086472+00:00] phblog_simple_claude_coordination:     await self.send({"type": "websocket.close", "code": code, "reason": reason or ""})
+[2025-11-27T00:11:06.086502+00:00] phblog_simple_claude_coordination:   File "/usr/local/lib/python3.13/site-packages/starlette/websockets.py", line 85, in send
+[2025-11-27T00:11:06.086539+00:00] phblog_simple_claude_coordination:     await self._send(message)
+[2025-11-27T00:11:06.086564+00:00] phblog_simple_claude_coordination:   File "/usr/local/lib/python3.13/site-packages/starlette/_exception_handler.py", line 48, in sender
+[2025-11-27T00:11:06.086589+00:00] phblog_simple_claude_coordination:     await send(message)
+[2025-11-27T00:11:06.086615+00:00] phblog_simple_claude_coordination:   File "/usr/local/lib/python3.13/site-packages/uvicorn/protocols/websockets/websockets_impl.py", line 360, in asgi_send
+[2025-11-27T00:11:06.086643+00:00] phblog_simple_claude_coordination:     raise RuntimeError(msg % message_type)
+[2025-11-27T00:11:06.086668+00:00] phblog_simple_claude_coordination: RuntimeError: Unexpected ASGI message 'websocket.close', after sending 'websocket.close' or response already completed.
+[2025-11-27T00:11:06.086700+00:00] phblog_simple_claude_coordination: 
+[2025-11-27T00:11:06.086740+00:00] phblog_simple_claude_coordination: ERROR:    Application shutdown failed. Exiting.
+[2025-11-27T00:11:06.086767+00:00] phblog_simple_claude_coordination: INFO:     Finished server process [1]
+[2025-11-27T00:11:06.086792+00:00] phblog_simple_claude_coordination: Error receiving message: (1012, None)

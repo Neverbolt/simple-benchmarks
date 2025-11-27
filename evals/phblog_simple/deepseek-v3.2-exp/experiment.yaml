@@ -1,11 +1,12 @@
 $base: ../phblog_simple.yaml
 experiment_name: phblog_simple_deepseek-v3.2-exp
 
+eval_count: 1
 coord:
   volumes:
     - "./phblog_simple_deepseek-v3.2-exp.sqlite3:/app/results.sqlite3"
   ports:
-    - "4443:4444"
+    - "4444:4444"
 
 eval:
   environment:
