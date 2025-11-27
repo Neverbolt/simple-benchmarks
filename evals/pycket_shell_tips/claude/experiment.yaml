@@ -1,0 +1,13 @@
+$base: ../pycket_shell_tips.yaml
+experiment_name: pycket_shell_tips_claude
+
+coord:
+  volumes:
+    - "./pycket_shell_tips_claude.sqlite3:/app/results.sqlite3"
+  ports:
+    - "4440:4444"
+
+eval:
+  environment:
+    llm.model: anthropic/claude-sonnet-4.5
+    llm.provider: anthropic

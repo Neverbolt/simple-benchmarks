@@ -1,0 +1,14 @@
+$base: ../pycket_shell_tips.yaml
+experiment_name: pycket_shell_tips_gpt-5.1
+
+eval_count: 4
+coord:
+  volumes:
+    - "./pycket_shell_tips_gpt-5.1.sqlite3:/app/results.sqlite3"
+  ports:
+    - "4446:4444"
+
+eval:
+  environment:
+    llm.model: openai/gpt-5.1
+    llm.provider: openai
