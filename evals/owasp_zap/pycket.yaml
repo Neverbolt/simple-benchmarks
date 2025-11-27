@@ -12,7 +12,7 @@ coord:
 
 eval:
   image: ghcr.io/zaproxy/zaproxy:2.16.1
-  command: ["zap-full-scan.py", "-t", "http://pycket:8000", "-r", "/zap/wrk/pycket_zap.html", "-z", "'-config api.disablekey=true'"]
+  command: ["sleep", "10000"] #,"zap-full-scan.py", "-t", "http://pycket:8000", "-r", "/zap/wrk/pycket_zap.html", "-z", "'-config api.disablekey=true'"]
   volumes:
     - ./output/:/zap/wrk
 

@@ -15,6 +15,7 @@ import datetime
 import json
 import pathlib
 import sqlite3
+import sys
 
 import matplotlib.pyplot as plt
 import pandas as pd
@@ -66,6 +67,7 @@ def evaluate_datasets(
 def evaluate_dataset(
     path: pathlib.Path, possible_flags: list[str], ignore_states: list[str]
 ) -> dict:
+    sys.stderr.write(f"{path.as_posix()}\n")
     result = {
         "cost": 0,
         "#flags": 0,
@@ -238,8 +240,6 @@ def evaluate_run(path: pathlib.Path, db: sqlite3.Connection, run_id: int):
             result["flags"].append({"message_id": message_id, "flag": flag})
             print(message_id, flag)
         except Exception as e:
-            import sys
-
             sys.stderr.write(
                 f"Error parsing flag for message {message_id}: {e} - {flag}\n"
             )
